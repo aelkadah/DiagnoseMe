@@ -7,6 +7,7 @@ const ForgetPasswordPage = () => {
     <Container>
       <SecTitle title={"Forget Password"} />
       <Row>
+        <h1>Cossstaaaaaaaaaaaaaaaaaa</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio,
           pariatur possimus porro ut officiis accusantium et minima. Laborum,
