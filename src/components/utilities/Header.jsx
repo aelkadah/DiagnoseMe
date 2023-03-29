@@ -45,12 +45,16 @@ const Header = () => {
             </Nav>
             <div className="d-flex gap-2">
               <Button
+                to="/login"
+                as={Link}
                 variant="light"
                 className="text-primary border-primary rounded-pill px-4"
               >
                 Log in
               </Button>
-              <Button className="rounded-pill ">Sign up</Button>
+              <Button to="/signup" as={Link} className="rounded-pill ">
+                Sign up
+              </Button>
             </div>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
