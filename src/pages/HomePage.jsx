@@ -7,6 +7,7 @@ const HomePage = () => {
     <Container>
       <Row className="bg-light" style={{ minHeight: "calc(100vh - 100px)" }}>
         <Col xs={12} md={6}>
+          <h1>Ahmeeeeeeeeeeeeeeeeeed</h1>
           <h1
             className="text-noto fw-bold text-secondary"
             style={{ fontSize: "60px" }}
