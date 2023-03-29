@@ -11,7 +11,13 @@ import "bootstrap/dist/css/bootstrap.rtl.min.css";
 import "./scss/index.scss";
 
 import { Header, Footer } from "./components";
-import { ErrorPage, HomePage, LoginPage, SignupPage } from "./pages";
+import {
+  ErrorPage,
+  ForgetPasswordPage,
+  HomePage,
+  LoginPage,
+  SignupPage,
+} from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 
 const Layout = () => {
@@ -30,6 +36,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
     </Route>
   )
 );
