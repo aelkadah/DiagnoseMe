@@ -80,7 +80,7 @@ const NewsPage = () => {
                     <span style={{ fontSize: "10px" }}>{item.user}</span>
                     <span style={{ fontSize: "10px" }}>{item.comments}</span>
                   </div>
-                  <Card.Text>{item.par}</Card.Text>
+                  <Card.Text className="mt-3">{item.par}</Card.Text>
                   <a href="#">{item.link}</a>
                 </Card.Body>
               </Card>
