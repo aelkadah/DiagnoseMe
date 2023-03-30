@@ -1,9 +1,14 @@
 $blue: #1e32aa;
 $gray-100: #f5f7f9;
 $gray-600: #00005a;
-// $gray-100: #f7f8fd;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+p {
+  color: $gray-600;
+  font-weight: 100;
+  line-height: 1.2;
+}
 
 .btn {
   font-weight: 500;
