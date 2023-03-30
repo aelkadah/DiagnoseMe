@@ -48,7 +48,7 @@ const ServicesPage = () => {
   return (
     <Container>
       <SecTitle title={"Services "} desc="What we provide?" />
-      <Row className="mt-5" style={{ textAlign: "center" }}>
+      <Row className="mt-5">
         {dataa.map((item) => {
           return (
             <Col sm={12} md={6} lg={3}>
