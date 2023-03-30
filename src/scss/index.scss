@@ -8,6 +8,16 @@ $Ubuntu: "Ubuntu ", sans-serif;
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 $Noto: "Noto Serif", serif;
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $blue;
+}
+
 html {
   scroll-behavior: smooth;
   body {
@@ -56,6 +66,29 @@ html {
         text-align: center;
         margin-top: -15px;
         padding: 0;
+      }
+    }
+
+    // login page section
+
+    .form-section {
+      form {
+        div {
+          margin-top: 20px;
+          input {
+            width: 100%;
+            border-radius: 10px;
+            background-color: $gray-100;
+            border: none;
+            padding: 10px;
+            &::placeholder {
+              font-size: 12px;
+            }
+          }
+          h1 {
+            font-size: 15px;
+          }
+        }
       }
     }
   }

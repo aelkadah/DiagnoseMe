@@ -3,10 +3,11 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
-const LoginPage = () => {
+
+const Resetpassword = () => {
   return (
     <Container className="form-section">
-      <SecTitle title={"Login"} />
+      <SecTitle title={"Reset password"} />
 
       <Row>
         <div className="col-lg-6 col-md-12 col-sm-12">
@@ -23,37 +24,21 @@ const LoginPage = () => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Enter your password here..."
-              />
-              <div style={{ textAlign: "end" }}>
-                <span>
-                  Forget password ?{" "}
-                  <Link style={{ textDecoration: "none" }} to="/resetpass">
-                    {" "}
-                    Reset Passwrod{" "}
-                  </Link>
-                </span>
-              </div>
-            </Form.Group>
-
             <Button
               style={{ width: "100%", borderRadius: "10px" }}
               variant="primary"
               type="submit"
             >
-              Submit
+              Send Code
             </Button>
           </Form>
           <div className="mt-3" style={{ textAlign: "center" }}>
             <span>
-              Don’t have an account ?{" "}
-              <Link style={{ textDecoration: "none" }} to="/signup">
-                Sign up ?
-              </Link>
+              Back to{" "}
+              <Link style={{ textDecoration: "none" }} to="/login">
+                Log in
+              </Link>{" "}
+              Page
             </span>
           </div>
         </Col>
@@ -62,4 +47,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Resetpassword;

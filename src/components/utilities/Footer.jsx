@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 
 const Footer = () => {
   return (
-    <Container className="bg-light mt-4 border" fluid>
+    <Container className="bg-light mt-5 border" fluid>
       <Container>
         <Row className="py-3">
           <img src={logo} alt="logo" height="80px" />

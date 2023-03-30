@@ -16,6 +16,8 @@ import {
   ForgetPasswordPage,
   HomePage,
   LoginPage,
+  Resetpassword,
+  ResetPasswordNotification,
   SignupPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
@@ -37,6 +39,11 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
+      <Route path="/resetpass" element={<Resetpassword />} />
+      <Route
+        path="/ResetPasswordNotification"
+        element={<ResetPasswordNotification />}
+      />
     </Route>
   )
 );
