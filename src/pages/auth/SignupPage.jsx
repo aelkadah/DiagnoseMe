@@ -9,17 +9,16 @@ const SignupPage = () => {
     <Container className="form-section">
       <SecTitle title={"Signup"} />
       <Row>
-        <div className="col-lg-6 col-md-12 col-sm-12">
+        <Col xs={12} md={6} className="pb-4">
           <img src={loginpic} style={{ width: "100%" }} />
-        </div>
-        <Col sm={12} lg={6} style={{ marginTop: "80px" }}>
+        </Col>
+        <Col sm={12} lg={6}>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Full Name </Form.Label>
               <Form.Control
                 type="text"
                 placeholder=" Enter your name here..."
-                className=""
               />
             </Form.Group>
 
@@ -28,25 +27,22 @@ const SignupPage = () => {
               <Form.Control
                 type="email"
                 placeholder=" Enter your email here..."
-                className=""
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>phone number </Form.Label>
+              <Form.Label>Phone number </Form.Label>
               <Form.Control
                 type="tel"
                 placeholder=" Enter your number here..."
-                className=""
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>password </Form.Label>
+              <Form.Label>Password </Form.Label>
               <Form.Control
                 type="password"
                 placeholder=" Enter your password here..."
-                className=""
               />
             </Form.Group>
 
@@ -55,7 +51,6 @@ const SignupPage = () => {
               <Form.Control
                 type="password"
                 placeholder=" Please confirm your password.."
-                className=""
               />
             </Form.Group>
             <Button

@@ -4,23 +4,21 @@ import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
 
-const Resetpassword = () => {
+const ResetPasswordPage = () => {
   return (
-    <Container className="form-section">
+    <Container>
       <SecTitle title={"Reset password"} />
-
       <Row>
-        <div className="col-lg-6 col-md-12 col-sm-12">
+        <Col xs={12} md={6}>
           <img src={loginpic} style={{ width: "100%" }} />
-        </div>
+        </Col>
         <Col sm={12} lg={6} style={{ marginTop: "80px" }}>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email </Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
-                placeholder=" Enter your email here..."
-                className=""
+                placeholder="Enter your email here..."
               />
             </Form.Group>
 
@@ -47,4 +45,4 @@ const Resetpassword = () => {
   );
 };
 
-export default Resetpassword;
+export default ResetPasswordPage;

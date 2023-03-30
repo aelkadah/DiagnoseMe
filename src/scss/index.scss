@@ -71,34 +71,34 @@ html {
 
     // login page section
 
-    .form-section {
-      form {
-        div {
-          margin-top: 20px;
-          input,
-          textarea {
-            width: 100%;
-            border-radius: 10px;
-            background-color: $gray-100;
-            border: none;
-            padding: 10px;
-            &::placeholder {
-              font-size: 12px;
-            }
-          }
-          h1 {
-            font-size: 15px;
-          }
-        }
-      }
-    }
+    // .form-section {
+    //   form {
+    //     div {
+    //       margin-top: 20px;
+    //       input,
+    //       textarea {
+    //         width: 100%;
+    //         border-radius: 10px;
+    //         background-color: $gray-100;
+    //         border: none;
+    //         padding: 10px;
+    //         &::placeholder {
+    //           font-size: 12px;
+    //         }
+    //       }
+    //       h1 {
+    //         font-size: 15px;
+    //       }
+    //     }
+    //   }
+    // }
 
-    .second-tittle {
-      color: $gray-600;
-      font-size: 40px;
-      font-weight: bold;
-      padding-bottom: 50px;
-    }
+    // .second-tittle {
+    //   color: $gray-600;
+    //   font-size: 40px;
+    //   font-weight: bold;
+    //   padding-bottom: 50px;
+    // }
 
     .card {
       border: none;

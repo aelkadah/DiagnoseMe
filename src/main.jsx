@@ -12,16 +12,16 @@ import "./scss/index.scss";
 
 import { Header, Footer } from "./components";
 import {
-  Contact,
-  DoctorsPage,
   ErrorPage,
-  ForgetPasswordPage,
   HomePage,
+  SignupPage,
   LoginPage,
-  Resetpassword,
+  ResetPasswordPage,
   ResetPasswordNotification,
   ServicesPage,
-  SignupPage,
+  ContactPage,
+  DoctorsPage,
+  ForgetPasswordPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 
@@ -42,14 +42,14 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
-      <Route path="/resetpass" element={<Resetpassword />} />
+      <Route path="/resetpassword" element={<ResetPasswordPage />} />
       <Route
-        path="/ResetPasswordNotification"
+        path="/resetpasswordnotification"
         element={<ResetPasswordNotification />}
       />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/contact" element={<ContactPage />} />
       <Route path="/services" element={<ServicesPage />} />
-      <Route path="/Doctors" element={<DoctorsPage />} />
+      <Route path="/doctors" element={<DoctorsPage />} />
     </Route>
   )
 );

@@ -33,10 +33,10 @@ const Header = () => {
               <Nav.Link to="/services" as={Link}>
                 Services
               </Nav.Link>
-              <Nav.Link to="/Doctors" as={Link}>
+              <Nav.Link to="/doctors" as={Link}>
                 Doctors
               </Nav.Link>
-              <Nav.Link to="/login" as={Link}>
+              <Nav.Link to="/news" as={Link}>
                 News
               </Nav.Link>
               <Nav.Link to="/contact" as={Link}>

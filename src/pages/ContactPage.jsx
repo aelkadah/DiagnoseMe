@@ -6,15 +6,12 @@ import contact from "/src/images/contactus.svg";
 const ContactPage = () => {
   return (
     <Container className="form-section">
-      <SecTitle title={"Contact "} />
-      <div style={{ textAlign: "center" }}>
-        {" "}
-        <span className="second-tittle"> Contact us for support 24/7 </span>
-      </div>
+      <SecTitle title="Contact" desc="Contact us for support 24/7" />
+
       <Row>
-        <div className="col-lg-6 col-md-12 col-sm-12">
+        <Col xs={12} md={6}>
           <img src={contact} style={{ width: "100%" }} />
-        </div>
+        </Col>
         <Col sm={12} lg={6} style={{ marginTop: "80px" }}>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -10,25 +10,32 @@ $gray-600: #00005a;
   border-radius: 0;
   padding: 10px 30px;
 }
-// .form-label {
-//   font-weight: 700 !important;
-//   font-size: 1rem !important;
-// }
-// .form-control {
-//   border: 1px solid $secondary;
-//   border-radius: 0;
-//   padding: 0.75rem 0.75rem;
-//   &:hover {
-//     border: 1px solid #000;
-//   }
-//   &:focus {
-//     border: 1px solid $primary;
-//     box-shadow: none;
-//   }
-//   &:disabled {
-//     border: 0;
-//   }
-// }
+
+.form-label {
+  font-size: 16px !important;
+}
+
+.form-control {
+  width: 100%;
+  // border-radius: 10px;
+  background-color: $gray-100;
+  border: none;
+  padding: 10px;
+  &::placeholder {
+    font-size: 14px;
+  }
+  // &:hover {
+  //   border: 1px solid #000;
+  // }
+  // &:focus {
+  //   border: 1px solid $primary;
+  //   box-shadow: none;
+  // }
+  // &:disabled {
+  //   border: 0;
+  // }
+}
+
 // .form-select {
 //   font-size: inherit;
 //   border: 1px solid $secondary;

@@ -46,12 +46,8 @@ const ServicesPage = () => {
     },
   ];
   return (
-    <Container className="form-section">
-      <SecTitle title={"Services "} />
-      <div style={{ textAlign: "center" }}>
-        {" "}
-        <span className="second-tittle">What we provide ? </span>
-      </div>
+    <Container>
+      <SecTitle title={"Services "} desc="What we provide?" />
       <Row className="mt-5" style={{ textAlign: "center" }}>
         {dataa.map((item) => {
           return (

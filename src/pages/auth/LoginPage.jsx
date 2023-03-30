@@ -32,7 +32,7 @@ const LoginPage = () => {
               <div style={{ textAlign: "end" }}>
                 <span>
                   Forget password ?{" "}
-                  <Link style={{ textDecoration: "none" }} to="/resetpass">
+                  <Link style={{ textDecoration: "none" }} to="/resetpassword">
                     {" "}
                     Reset Passwrod{" "}
                   </Link>
