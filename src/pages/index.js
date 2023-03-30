@@ -5,3 +5,6 @@ export { default as SignupPage } from "./auth/SignupPage";
 export { default as ForgetPasswordPage } from "./auth/ForgetPasswordPage";
 export { default as Resetpassword } from "./auth/ResetPasswordPage";
 export { default as ResetPasswordNotification } from "./auth/ResetPasswordNotification";
+export { default as Contact } from "./ContactPage";
+export { default as ServicesPage } from "./ServicesPage";
+export { default as DoctorsPage } from "./DoctorsPage";

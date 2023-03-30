@@ -30,16 +30,16 @@ const Header = () => {
               <Nav.Link to="/" as={Link} active>
                 Home
               </Nav.Link>
-              <Nav.Link to="/login" as={Link}>
+              <Nav.Link to="/services" as={Link}>
                 Services
               </Nav.Link>
-              <Nav.Link to="/login" as={Link}>
+              <Nav.Link to="/Doctors" as={Link}>
                 Doctors
               </Nav.Link>
               <Nav.Link to="/login" as={Link}>
                 News
               </Nav.Link>
-              <Nav.Link to="/login" as={Link}>
+              <Nav.Link to="/contact" as={Link}>
                 Contact
               </Nav.Link>
             </Nav>

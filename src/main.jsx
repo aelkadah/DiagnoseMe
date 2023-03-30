@@ -12,12 +12,15 @@ import "./scss/index.scss";
 
 import { Header, Footer } from "./components";
 import {
+  Contact,
+  DoctorsPage,
   ErrorPage,
   ForgetPasswordPage,
   HomePage,
   LoginPage,
   Resetpassword,
   ResetPasswordNotification,
+  ServicesPage,
   SignupPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
@@ -44,6 +47,9 @@ const router = createBrowserRouter(
         path="/ResetPasswordNotification"
         element={<ResetPasswordNotification />}
       />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/services" element={<ServicesPage />} />
+      <Route path="/Doctors" element={<DoctorsPage />} />
     </Route>
   )
 );
