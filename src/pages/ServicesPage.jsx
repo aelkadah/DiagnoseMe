@@ -52,7 +52,7 @@ const ServicesPage = () => {
         {dataa.map((item) => {
           return (
             <Col sm={12} md={6} lg={3}>
-              <div className="card mt-5">
+              <div className="card-services mt-5">
                 <img src={person} />
                 <h1> {item.tittle} </h1>
                 <p>{item.paragrapgh}</p>

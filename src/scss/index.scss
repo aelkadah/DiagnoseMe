@@ -100,7 +100,9 @@ html {
     //   padding-bottom: 50px;
     // }
 
-    .card {
+    // card-services
+
+    .card-services {
       border: none;
       img {
         width: 100%;
@@ -147,7 +149,7 @@ html {
     }
 
     // doctor card
-    .card {
+    .card-doctors {
       border: 1px solid $blue;
       padding: 15px;
       text-align: start !important;

@@ -69,7 +69,7 @@ const DoctorsPage = () => {
         {dataa.map((item) => {
           return (
             <Col sm={6} md={12} lg={6}>
-              <div class="card mb-3" style={{ maxwidth: "540px" }}>
+              <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
