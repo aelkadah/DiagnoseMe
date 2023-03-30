@@ -22,6 +22,7 @@ import {
   ContactPage,
   DoctorsPage,
   ForgetPasswordPage,
+  NewsPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 
@@ -50,6 +51,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/doctors" element={<DoctorsPage />} />
+      <Route path="/news" element={<NewsPage />} />
     </Route>
   )
 );

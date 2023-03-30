@@ -8,3 +8,4 @@ export { default as ResetPasswordNotification } from "./auth/ResetPasswordNotifi
 export { default as ContactPage } from "./ContactPage";
 export { default as ServicesPage } from "./ServicesPage";
 export { default as DoctorsPage } from "./DoctorsPage";
+export { default as NewsPage } from "./NewsPage";
