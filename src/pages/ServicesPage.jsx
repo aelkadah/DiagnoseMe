@@ -51,7 +51,7 @@ const ServicesPage = () => {
       <Row className="mt-5" style={{ textAlign: "center" }}>
         {dataa.map((item) => {
           return (
-            <Col sm={3}>
+            <Col sm={12} md={6} lg={3}>
               <div className="card mt-5">
                 <img src={person} />
                 <h1> {item.tittle} </h1>
