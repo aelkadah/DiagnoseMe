@@ -151,7 +151,9 @@ html {
       border: 1px solid $blue;
       padding: 15px;
       text-align: start !important;
-
+      img {
+        width: 100%;
+      }
       .card-name {
         color: $blue;
       }
@@ -189,6 +191,7 @@ html {
       img {
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
+        width: 100%;
       }
       span {
         position: absolute;
