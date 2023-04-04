@@ -5,7 +5,7 @@ import contact from "/src/images/contactus.svg";
 
 const ContactPage = () => {
   return (
-    <Container className="form-section">
+    <Container>
       <SecTitle title="Contact" desc="Contact us for support 24/7" />
 
       <Row>
