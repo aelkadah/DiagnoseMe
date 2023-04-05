@@ -212,4 +212,57 @@ html {
       border-bottom-left-radius: 10px;
     }
   }
+
+  // age and gender section
+  .age-gender-section {
+    text-align: center;
+    .bg {
+      border-radius: 10px;
+      box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.338);
+      background-color: $gray-100;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    h2 {
+      color: rgba(128, 128, 128, 0.675);
+      font-size: 25px;
+    }
+    .age {
+      button,
+      input {
+        border-radius: 10px;
+        background-color: white;
+        border: 1px solid $blue !important;
+      }
+
+      button {
+        color: $blue;
+      }
+
+      input {
+        outline: none;
+        text-align: center;
+        color: $blue;
+        width: 80px !important;
+      }
+    }
+
+    .genders {
+      button {
+        border-radius: 10px;
+      }
+      .women-btn {
+        background-color: #1e32aa99;
+      }
+      .man-btn {
+        background-color: $gray-100;
+      }
+    }
+
+    .continue {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
 }
