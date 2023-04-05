@@ -4,6 +4,14 @@ $gray-600: #00005a;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+a {
+  width: fit-content;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 p {
   color: $gray-600;
   font-weight: 100;
