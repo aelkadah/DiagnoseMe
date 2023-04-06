@@ -289,10 +289,23 @@ html {
           border: 1px solid $blue;
           color: $blue;
           font-weight: bold;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            background-color: $blue;
+            color: white;
+          }
         }
         &:last-of-type {
           background-color: $blue;
           color: white;
+          transition: all 0.4s ease-in-out;
+          font-weight: bold;
+
+          &:hover {
+            background-color: white;
+            color: $blue;
+            border: 1px solid $blue;
+          }
         }
       }
     }

@@ -25,8 +25,10 @@ import {
   NewsPage,
   FirstCheckupPgae,
   SecondCheckupPgae,
+  ThirdCheckupPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
+import FourthCheckupPage from "./pages/FourthCheckupPgae";
 
 const Layout = () => {
   return (
@@ -56,6 +58,8 @@ const router = createBrowserRouter(
       <Route path="/news" element={<NewsPage />} />
       <Route path="/FirstCheckupPgae" element={<FirstCheckupPgae />} />
       <Route path="/SecondCheckupPgae" element={<SecondCheckupPgae />} />
+      <Route path="/ThirdCheckupPage" element={<ThirdCheckupPage />} />
+      <Route path="/FourthCheckupPage" element={<FourthCheckupPage />} />
     </Route>
   )
 );

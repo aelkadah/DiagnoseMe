@@ -11,3 +11,5 @@ export { default as DoctorsPage } from "./DoctorsPage";
 export { default as NewsPage } from "./NewsPage";
 export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
 export { default as SecondCheckupPgae } from "./SecondCheckupPgae";
+export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
+export { default as FourthCheckupPgae } from "./FourthCheckupPgae";

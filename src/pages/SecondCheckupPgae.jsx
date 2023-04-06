@@ -51,7 +51,10 @@ const SecondCheckupPgae = () => {
               {" "}
               back
             </Link>
-            <Link className="mt-4 "> Continue</Link>{" "}
+            <Link to="/ThirdCheckupPage" className="mt-4 ">
+              {" "}
+              Continue
+            </Link>{" "}
           </div>
         </Col>
       </Row>
