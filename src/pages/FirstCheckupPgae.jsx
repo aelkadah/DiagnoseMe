@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Pagination, Button } from "react-bootstrap";
 import digonse from "./../images/dignose.svg";
 import man from "./../images/man.svg";
 import women from "./../images/women.svg";
-
+import { Link } from "react-router-dom";
 const FirstCheckupPgae = () => {
   const [age, setage] = useState(0);
 
@@ -22,7 +22,7 @@ const FirstCheckupPgae = () => {
     <Container>
       <SecTitle title={"Checkup"} desc="Feel free to start your checkup" />
 
-      <Row className="age-gender-section mt-5">
+      <Row className="age-gender-section mt-5 align-items-center">
         <Col lg={6}>
           <img src={digonse} alt="" />
         </Col>
@@ -55,8 +55,10 @@ const FirstCheckupPgae = () => {
               </div>
             </div>
           </div>
-          <Button className="mt-4 continue"> Continue </Button>
         </Col>
+        <Link className="mt-4 continue" to="/SecondCheckupPgae">
+          continue
+        </Link>
       </Row>
     </Container>
   );

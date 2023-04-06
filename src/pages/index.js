@@ -10,3 +10,4 @@ export { default as ServicesPage } from "./ServicesPage";
 export { default as DoctorsPage } from "./DoctorsPage";
 export { default as NewsPage } from "./NewsPage";
 export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
+export { default as SecondCheckupPgae } from "./SecondCheckupPgae";

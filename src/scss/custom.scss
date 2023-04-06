@@ -5,13 +5,17 @@ $gray-600: #00005a;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 a {
-  width: fit-content;
+  // width: fit-content;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // color: white;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // text-align: center;
 }
-
+img {
+  width: 100%;
+}
 p {
   color: $gray-600;
   font-weight: 100;

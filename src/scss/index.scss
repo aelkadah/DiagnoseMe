@@ -213,7 +213,7 @@ html {
     }
   }
 
-  // age and gender section
+  //first checkup age and gender section
   .age-gender-section {
     text-align: center;
     .bg {
@@ -263,6 +263,38 @@ html {
     .continue {
       width: 100%;
       border-radius: 10px;
+      background-color: $blue;
+      color: white;
+      padding: 20px;
+      position: relative;
+    }
+  }
+
+  //second checkup
+  .diseases-section {
+    text-align: center;
+    .bg {
+      border-radius: 10px;
+      box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.338);
+      background-color: $gray-100;
+    }
+    .two-btns {
+      justify-content: space-around;
+      a {
+        padding: 15px;
+        width: 300px;
+        border-radius: 10px;
+        &:first-of-type {
+          background-color: white;
+          border: 1px solid $blue;
+          color: $blue;
+          font-weight: bold;
+        }
+        &:last-of-type {
+          background-color: $blue;
+          color: white;
+        }
+      }
     }
   }
 }
