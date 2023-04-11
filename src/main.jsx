@@ -48,22 +48,20 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
       <Route path="/resetpassword" element={<ResetPasswordPage />} />
-      <Route
-        path="/resetpasswordnotification"
-        element={<ResetPasswordNotification />}
-      />
+      <Route path="/verifycode" element={<ResetPasswordNotification />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/doctors" element={<DoctorsPage />} />
       <Route path="/news" element={<NewsPage />} />
-      <Route path="/FirstCheckupPgae" element={<FirstCheckupPgae />} />
-      <Route path="/SecondCheckupPgae" element={<SecondCheckupPgae />} />
-      <Route path="/ThirdCheckupPage" element={<ThirdCheckupPage />} />
-      <Route path="/FourthCheckupPage" element={<FourthCheckupPage />} />
+      <Route path="/checkup" element={<FirstCheckupPgae />} />
+      <Route path="/checkup2" element={<SecondCheckupPgae />} />
+      <Route path="/checkup3" element={<ThirdCheckupPage />} />
+      <Route path="/checkup4" element={<FourthCheckupPage />} />
     </Route>
   )
 );
 
+// @ts-ignore
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider dir="ltr">

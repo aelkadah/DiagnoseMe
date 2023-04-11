@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
+import { Services } from "../components";
 
 const HomePage = () => {
   return (
@@ -37,6 +38,7 @@ const HomePage = () => {
       </Row>
 
       <Covid />
+      <Services />
     </Container>
   );
 };
