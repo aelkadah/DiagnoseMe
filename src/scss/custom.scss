@@ -70,3 +70,22 @@ p {
 //     border: 0;
 //   }
 // }
+
+.control-arrow {
+  background: none !important;
+}
+.carousel-slider {
+  overflow: visible !important;
+}
+.carousel .control-prev.control-arrow::before,
+.carousel .control-next.control-arrow::before {
+  border-right: 20px solid $gray-600 !important;
+}
+.carousel .control-dots {
+  bottom: -30px !important;
+  li {
+    background-color: $gray-600 !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+}

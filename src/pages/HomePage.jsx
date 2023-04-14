@@ -1,8 +1,21 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
 import { Services } from "../components";
+import { SecTitle } from "../components";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import doctor from "/src/images/doctor.svg";
+import {
+  faRightLong,
+  faArrowLeftRotate,
+  faArrowRightArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import Accordion from "react-bootstrap/Accordion";
+import question from "../images/qustion.svg";
+import Cards from "../components/utilities/card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HomePage = () => {
   return (
@@ -39,6 +52,348 @@ const HomePage = () => {
 
       <Covid />
       <Services />
+
+      {/* doctorssssssss */}
+      <SecTitle
+        title={"Doctors"}
+        desc="Find and meet our professional doctors"
+      />
+
+      <Carousel autoPlay>
+        <div className="row">
+          <Col sm={6} md={12} lg={6}>
+            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
+                    <p class="card-text">
+                      Physiotherapist, Sports Therapist,Manual Therapist
+                    </p>
+                    <p class="card-text">
+                      Lectus condimentum sagittis velinteger. Pretium vel enim
+                      viva-rnus odio interdum ac integer. Enim id
+                    </p>
+
+                    <p class="card-text">
+                      <small class="text-body-secondary">
+                        Consultation at : Lubuklinggau Clinic
+                      </small>
+                    </p>
+
+                    <a href="#"> More About Tantawy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+
+          <Col sm={6} md={12} lg={6}>
+            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
+                    <p class="card-text">
+                      Physiotherapist, Sports Therapist,Manual Therapist
+                    </p>
+                    <p class="card-text">
+                      Lectus condimentum sagittis velinteger. Pretium vel enim
+                      viva-rnus odio interdum ac integer. Enim id
+                    </p>
+
+                    <p class="card-text">
+                      <small class="text-body-secondary">
+                        Consultation at : Lubuklinggau Clinic
+                      </small>
+                    </p>
+
+                    <a href="#"> More About Tantawy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+        </div>
+
+        <div className="row">
+          <Col sm={6} md={12} lg={6}>
+            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
+                    <p class="card-text">
+                      Physiotherapist, Sports Therapist,Manual Therapist
+                    </p>
+                    <p class="card-text">
+                      Lectus condimentum sagittis velinteger. Pretium vel enim
+                      viva-rnus odio interdum ac integer. Enim id
+                    </p>
+
+                    <p class="card-text">
+                      <small class="text-body-secondary">
+                        Consultation at : Lubuklinggau Clinic
+                      </small>
+                    </p>
+
+                    <a href="#"> More About Tantawy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+
+          <Col sm={6} md={12} lg={6}>
+            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
+                    <p class="card-text">
+                      Physiotherapist, Sports Therapist,Manual Therapist
+                    </p>
+                    <p class="card-text">
+                      Lectus condimentum sagittis velinteger. Pretium vel enim
+                      viva-rnus odio interdum ac integer. Enim id
+                    </p>
+
+                    <p class="card-text">
+                      <small class="text-body-secondary">
+                        Consultation at : Lubuklinggau Clinic
+                      </small>
+                    </p>
+
+                    <a href="#"> More About Tantawy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+        </div>
+
+        <div className="row">
+          <Col sm={6} md={12} lg={6}>
+            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
+                    <p class="card-text">
+                      Physiotherapist, Sports Therapist,Manual Therapist
+                    </p>
+                    <p class="card-text">
+                      Lectus condimentum sagittis velinteger. Pretium vel enim
+                      viva-rnus odio interdum ac integer. Enim id
+                    </p>
+
+                    <p class="card-text">
+                      <small class="text-body-secondary">
+                        Consultation at : Lubuklinggau Clinic
+                      </small>
+                    </p>
+
+                    <a href="#"> More About Tantawy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+
+          <Col sm={6} md={12} lg={6}>
+            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
+                    <p class="card-text">
+                      Physiotherapist, Sports Therapist,Manual Therapist
+                    </p>
+                    <p class="card-text">
+                      Lectus condimentum sagittis velinteger. Pretium vel enim
+                      viva-rnus odio interdum ac integer. Enim id
+                    </p>
+
+                    <p class="card-text">
+                      <small class="text-body-secondary">
+                        Consultation at : Lubuklinggau Clinic
+                      </small>
+                    </p>
+
+                    <a href="#"> More About Tantawy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+        </div>
+      </Carousel>
+      <div className="text-center show-all-doctors-div">
+        {" "}
+        <Button> View All Doctors </Button>
+      </div>
+
+      {/* Accordingggg */}
+      <div className="according-home mt-5">
+        <Row className="align-items-center">
+          <Col lg={6} md={12} sm={12}>
+            <h1>Frequently Asked Questions</h1>
+            <h2>We Got You The Answers</h2>
+            <Accordion defaultActiveKey="0" flush>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>
+                  Can I start checkup without registration?
+                </Accordion.Header>
+                <Accordion.Body>
+                  Yes, you can start your checkup easily without registration
+                  from any device at any time
+                </Accordion.Body>
+              </Accordion.Item>
+
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>
+                  Can I start checkup without registration?
+                </Accordion.Header>
+                <Accordion.Body>
+                  Yes, you can start your checkup easily without registration
+                  from any device at any time
+                </Accordion.Body>
+              </Accordion.Item>
+
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>
+                  Can I start checkup without registration?
+                </Accordion.Header>
+                <Accordion.Body>
+                  Yes, you can start your checkup easily without registration
+                  from any device at any time
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </Col>
+
+          <Col lg={6} md={12}>
+            <img src={question} alt="" />
+          </Col>
+        </Row>
+      </div>
+
+      {/* Newsssssss */}
+
+      <div className="new">
+        <SecTitle title={"News"} desc="See our latest trending news" />
+        <Row>
+          <Col lg={4}>
+            <Cards />
+          </Col>
+          <Col lg={4}>
+            <Cards />
+          </Col>
+          <Col lg={4}>
+            <Cards />
+          </Col>
+          <div className="text-center show-all-doctors-div">
+            {" "}
+            <Button> More News </Button>
+          </div>
+        </Row>
+      </div>
+
+      {/* last section */}
+      <div className="last-sec mt-5">
+        <Row className="mt-5 align-items-center">
+          <Col lg={4}>
+            <h1>Let’s get started</h1>
+            <p>
+              Lorem ipsum is placeholder text commonly used in the graphic,
+              print, and publishing industries{" "}
+            </p>
+          </Col>
+          <Col lg={8}>
+            <Row>
+              <Col lg={6} md={12} sm={12}>
+                <Card>
+                  <span className="text-center">STARTUP</span>
+                  <h2>free</h2>
+                  <div className="d-flex ">
+                    <span>x</span>
+
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="text-center show-all-doctors-div">
+                    {" "}
+                    <Button> GET FREE </Button>
+                  </div>
+                </Card>
+              </Col>
+              <Col lg={6} md={12} sm={12}>
+                <Card>
+                  <span className="text-center">PREMIUM</span>
+                  <h2>50 egp</h2>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="d-flex ">
+                    <span>x</span>
+                    <span>Unlimited doctor meetings</span>
+                  </div>
+                  <div className="text-center show-all-doctors-div">
+                    {" "}
+                    <Button> GET PREMIUM </Button>
+                  </div>
+                </Card>
+              </Col>{" "}
+            </Row>
+          </Col>
+        </Row>
+      </div>
     </Container>
   );
 };
