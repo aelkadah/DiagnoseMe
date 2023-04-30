@@ -2,6 +2,9 @@ import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../components";
 import person from "/src/images/person.svg";
+import Return from "../components/utilities/Return";
+import Call from "../components/utilities/Call";
+
 const ServicesPage = () => {
   const dataa = [
     {
@@ -47,6 +50,8 @@ const ServicesPage = () => {
   ];
   return (
     <Container>
+      <Return />
+      <Call />
       <SecTitle title={"Services "} desc="What we provide?" />
       <Row className="mt-5">
         {dataa.map((item) => {

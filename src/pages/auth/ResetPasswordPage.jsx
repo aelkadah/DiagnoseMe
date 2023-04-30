@@ -3,10 +3,11 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
-
+import Call from "../../components/utilities/Call";
 const ResetPasswordPage = () => {
   return (
     <Container>
+      <Call />
       <SecTitle title={"Reset password"} />
       <Row>
         <Col xs={12} md={6}>

@@ -2,10 +2,14 @@ import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../components";
 import contact from "/src/images/contactus.svg";
+import Return from "../components/utilities/Return";
+import Call from "../components/utilities/Call";
 
 const ContactPage = () => {
   return (
     <Container>
+      <Return />
+      <Call />
       <SecTitle title="Contact" desc="Contact us for support 24/7" />
 
       <Row>

@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import doctor from "/src/images/doctor.svg";
 import Paginationn from "../components/utilities/Pagination";
+import Return from "../components/utilities/Return";
+import Call from "../components/utilities/Call";
 
 const DoctorsPage = () => {
   const dataa = [
@@ -53,6 +55,8 @@ const DoctorsPage = () => {
   ];
   return (
     <Container className="form-section">
+      <Return />
+      <Call />
       <SecTitle
         title={"Doctors"}
         desc="Find and meet our professional doctors"

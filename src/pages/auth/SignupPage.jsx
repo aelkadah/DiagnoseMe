@@ -3,10 +3,12 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
+import Call from "../../components/utilities/Call";
 
 const SignupPage = () => {
   return (
     <Container className="form-section">
+      <Call />
       <SecTitle title={"Signup"} />
       <Row>
         <Col xs={12} md={6} className="pb-4">

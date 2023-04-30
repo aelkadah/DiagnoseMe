@@ -6,6 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import news from "/src/images/news.svg";
 import Paginationn from "../components/utilities/Pagination";
+import Return from "../components/utilities/Return";
+import Call from "../components/utilities/Call";
+
 const NewsPage = () => {
   const dataa = [
     {
@@ -53,6 +56,8 @@ const NewsPage = () => {
   ];
   return (
     <Container className="form-section">
+      <Return />
+      <Call />
       <SecTitle title={"News"} desc="See our latest trending news" />
       <div style={{ textAlign: "center" }}>
         <div style={{ justifyContent: "center" }} className="search-box d-flex">

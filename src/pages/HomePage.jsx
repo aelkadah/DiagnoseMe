@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
@@ -16,10 +16,14 @@ import Accordion from "react-bootstrap/Accordion";
 import question from "../images/qustion.svg";
 import Cards from "../components/utilities/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Return from "./../components/utilities/Return";
+import Call from "../components/utilities/Call";
 
 const HomePage = () => {
   return (
     <Container>
+      <Return />
+      <Call />
       <Row
         className="flex-row-reverse"
         style={{ minHeight: "calc(100vh - 100px)" }}

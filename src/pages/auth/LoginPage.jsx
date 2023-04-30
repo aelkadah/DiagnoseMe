@@ -3,11 +3,13 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
+import Call from "../../components/utilities/Call";
 const LoginPage = () => {
   return (
     <Container className="form-section">
-      <SecTitle title={"Login"} />
+      <Call />
 
+      <SecTitle title={"Login"} />
       <Row>
         <div className="col-lg-6 col-md-12 col-sm-12">
           <img src={loginpic} style={{ width: "100%" }} />

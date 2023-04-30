@@ -2,10 +2,12 @@ import React from "react";
 import notifcation from "/src/images/reset_notification.svg";
 import { Container } from "react-bootstrap";
 import { SecTitle } from "../../components";
+import Call from "../../components/utilities/Call";
 
 const ResetPasswordNotification = () => {
   return (
     <Container className="form-section">
+      <Call />
       <SecTitle title={"Reset code"} />
 
       <div style={{ textAlign: "center" }}>
