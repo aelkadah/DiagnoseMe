@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
 import "./scss/index.scss";
-
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import { Header, Footer } from "./components";
 import {
   ErrorPage,
@@ -65,9 +66,9 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider dir="ltr">
-      {/* <Provider store={store}> */}
-      <RouterProvider router={router} />
-      {/* </Provider> */}
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
       {/* <ToastContainer rtl /> */}
     </ThemeProvider>
   </React.StrictMode>

@@ -4,10 +4,17 @@ import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
 import Call from "../../components/utilities/Call";
-
+import axios from "axios";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 const SignupPage = () => {
+  const count = useSelector((state) => state.counter);
+  const dispatch = useDispatch();
+  console.log(count);
   return (
     <Container className="form-section">
+      <button onClick={() => dispatch({ type: "inc" })}>click </button>
       <Call />
       <SecTitle title={"Signup"} />
       <Row>
