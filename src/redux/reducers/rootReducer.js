@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
-import { counter } from "./test";
+import authReducer from "./AuthReducer";
+import DoctorsReducer from "./DoctorsReducer";
 export default combineReducers({
-  counter: counter,
+  authReducer: authReducer,
+  DoctorsReducer: DoctorsReducer,
 });

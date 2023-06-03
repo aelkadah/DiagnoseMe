@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Pagination } from "react-bootstrap";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { SecTitle } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -7,52 +7,13 @@ import doctor from "/src/images/doctor.svg";
 import Paginationn from "../components/utilities/Pagination";
 import Return from "../components/utilities/Return";
 import Call from "../components/utilities/Call";
+import DoctorsHook from "../redux/Hooks/DoctorsHook";
 
 const DoctorsPage = () => {
-  const dataa = [
-    {
-      name: "Ahmed Tantawy,B,BSc.",
-      par1: "Physiotherapist, Sports Therapist,Manual Therapist",
-      par2: "Lectus condimentum sagittis velinteger. Pretium vel enim viva-rnus odio interdum ac integer. Enim id",
-      title: "Consultation at : Lubuklinggau Clinic",
-      link: "More About Tantawy",
-    },
-    {
-      name: "Ahmed Tantawy,B,BSc.",
-      par1: "Physiotherapist, Sports Therapist,Manual Therapist",
-      par2: "Lectus condimentum sagittis velinteger. Pretium vel enim viva-rnus odio interdum ac integer. Enim id",
-      title: "Consultation at : Lubuklinggau Clinic",
-      link: "More About Tantawy",
-    },
-    {
-      name: "Ahmed Tantawy,B,BSc.",
-      par1: "Physiotherapist, Sports Therapist,Manual Therapist",
-      par2: "Lectus condimentum sagittis velinteger. Pretium vel enim viva-rnus odio interdum ac integer. Enim id",
-      title: "Consultation at : Lubuklinggau Clinic",
-      link: "More About Tantawy",
-    },
-    {
-      name: "Ahmed Tantawy,B,BSc.",
-      par1: "Physiotherapist, Sports Therapist,Manual Therapist",
-      par2: "Lectus condimentum sagittis velinteger. Pretium vel enim viva-rnus odio interdum ac integer. Enim id",
-      title: "Consultation at : Lubuklinggau Clinic",
-      link: "More About Tantawy",
-    },
-    {
-      name: "Ahmed Tantawy,B,BSc.",
-      par1: "Physiotherapist, Sports Therapist,Manual Therapist",
-      par2: "Lectus condimentum sagittis velinteger. Pretium vel enim viva-rnus odio interdum ac integer. Enim id",
-      title: "Consultation at : Lubuklinggau Clinic",
-      link: "More About Tantawy",
-    },
-    {
-      name: "Ahmed Tantawy,B,BSc.",
-      par1: "Physiotherapist, Sports Therapist,Manual Therapist",
-      par2: "Lectus condimentum sagittis velinteger. Pretium vel enim viva-rnus odio interdum ac integer. Enim id",
-      title: "Consultation at : Lubuklinggau Clinic",
-      link: "More About Tantawy",
-    },
-  ];
+  const [Doctor, loading] = DoctorsHook();
+  if (Doctor) {
+    console.log(Doctor);
+  }
   return (
     <Container className="form-section">
       <Return />
@@ -69,38 +30,111 @@ const DoctorsPage = () => {
           </button>
         </div>
       </div>
-      <Row className="mt-5" style={{ textAlign: "center" }}>
-        {dataa.map((item) => {
-          return (
-            <Col sm={6} md={12} lg={6}>
-              <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src={doctor}
-                      class="img-fluid rounded-start"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-name">{item.name} </h5>
-                      <p class="card-text">{item.par1}</p>
-                      <p class="card-text">{item.par2}</p>
 
-                      <p class="card-text">
-                        <small class="text-body-secondary">{item.title}</small>
-                      </p>
-
-                      <a href="#"> {item.link}</a>
+      {loading === false ? (
+        Doctor ? (
+          Doctor.map((item) => {
+            return (
+              <Row
+                key={item.id}
+                className="mt-5"
+                style={{ textAlign: "center" }}
+              >
+                <Col sm={6} md={12} lg={12}>
+                  <div
+                    className="card mb-3 card-doctors"
+                    style={{ maxwidth: "540px" }}
+                  >
+                    <div className="row g-0 align-items-center">
+                      <div className="col-md-4">
+                        <img
+                          src={doctor}
+                          className="img-fluid rounded-start"
+                          alt="..."
+                        />
+                      </div>
+                      <div className="col-md-8">
+                        <div className="card-body">
+                          <h5 className="card-name">
+                            <span
+                              style={{
+                                color: "black",
+                                fontWeight: "bold",
+                                marginRight: "10px",
+                              }}
+                            >
+                              Name:
+                            </span>
+                            {item.name}{" "}
+                          </h5>
+                          <p className="card-text">
+                            {" "}
+                            <span
+                              style={{
+                                color: "black",
+                                fontWeight: "bold",
+                                marginRight: "10px",
+                              }}
+                            >
+                              address:
+                            </span>
+                            {item.address}
+                          </p>
+                          <p className="card-text">
+                            {" "}
+                            <span
+                              style={{
+                                color: "black",
+                                fontWeight: "bold",
+                                marginRight: "10px",
+                              }}
+                            >
+                              info:
+                            </span>
+                            {item.info}
+                          </p>
+                          <p className="card-text">
+                            <small className="text-body-secondary">
+                              <span
+                                style={{
+                                  color: "black",
+                                  fontWeight: "bold",
+                                  marginRight: "10px",
+                                }}
+                              >
+                                PhoneNumber:
+                              </span>
+                              {item.PhoneNumber}
+                            </small>
+                          </p>
+                          <a href="#">
+                            {" "}
+                            <span
+                              style={{
+                                color: "black",
+                                fontWeight: "bold",
+                                marginRight: "10px",
+                              }}
+                            >
+                              id:
+                            </span>
+                            {item.id}
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </Col>
-          );
-        })}
-      </Row>
+                </Col>
+              </Row>
+            );
+          })
+        ) : (
+          <h4> لا يوجد دكاتره متاحه</h4>
+        )
+      ) : (
+        <Spinner animation="border" variant="primary" />
+      )}
+
       <Paginationn />
     </Container>
   );

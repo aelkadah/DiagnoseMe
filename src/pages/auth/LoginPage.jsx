@@ -4,7 +4,20 @@ import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
 import Call from "../../components/utilities/Call";
+import LoginHook from "../../redux/Hooks/Auth/LooginHook";
+import { ToastContainer } from "react-toastify";
 const LoginPage = () => {
+  const [
+    email,
+    password,
+    loading,
+    onChangeEmail,
+    onChangePassword,
+    onSubmit,
+    isPress,
+  ] = LoginHook();
+
+  console.log(password);
   return (
     <Container className="form-section">
       <Call />
@@ -22,6 +35,8 @@ const LoginPage = () => {
                 type="email"
                 placeholder=" Enter your email here..."
                 className=""
+                onChange={onChangeEmail}
+                value={email}
               />
             </Form.Group>
 
@@ -30,6 +45,8 @@ const LoginPage = () => {
               <Form.Control
                 type="password"
                 placeholder="Enter your password here..."
+                value={password}
+                onChange={onChangePassword}
               />
               <div style={{ textAlign: "end" }}>
                 <span>
@@ -45,7 +62,7 @@ const LoginPage = () => {
             <Button
               style={{ width: "100%", borderRadius: "10px" }}
               variant="primary"
-              type="submit"
+              onClick={onSubmit}
             >
               Submit
             </Button>
@@ -60,6 +77,7 @@ const LoginPage = () => {
           </div>
         </Col>
       </Row>
+      <ToastContainer />
     </Container>
   );
 };
