@@ -17,7 +17,6 @@ const LoginPage = () => {
     isPress,
   ] = LoginHook();
 
-  console.log(password);
   return (
     <Container className="form-section">
       <Call />

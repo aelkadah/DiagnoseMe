@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
-import { Services } from "../components";
+import { FeaturedDoctors, Services } from "../components";
 import { SecTitle } from "../components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -57,203 +57,7 @@ const HomePage = () => {
       <Covid />
       <Services />
 
-      {/* doctorssssssss */}
-      <SecTitle
-        title={"Doctors"}
-        desc="Find and meet our professional doctors"
-      />
-
-      <Carousel autoPlay>
-        <div className="row">
-          <Col sm={6} md={12} lg={6}>
-            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
-                    <p class="card-text">
-                      Physiotherapist, Sports Therapist,Manual Therapist
-                    </p>
-                    <p class="card-text">
-                      Lectus condimentum sagittis velinteger. Pretium vel enim
-                      viva-rnus odio interdum ac integer. Enim id
-                    </p>
-
-                    <p class="card-text">
-                      <small class="text-body-secondary">
-                        Consultation at : Lubuklinggau Clinic
-                      </small>
-                    </p>
-
-                    <a href="#"> More About Tantawy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-
-          <Col sm={6} md={12} lg={6}>
-            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
-                    <p class="card-text">
-                      Physiotherapist, Sports Therapist,Manual Therapist
-                    </p>
-                    <p class="card-text">
-                      Lectus condimentum sagittis velinteger. Pretium vel enim
-                      viva-rnus odio interdum ac integer. Enim id
-                    </p>
-
-                    <p class="card-text">
-                      <small class="text-body-secondary">
-                        Consultation at : Lubuklinggau Clinic
-                      </small>
-                    </p>
-
-                    <a href="#"> More About Tantawy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-        </div>
-
-        <div className="row">
-          <Col sm={6} md={12} lg={6}>
-            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
-                    <p class="card-text">
-                      Physiotherapist, Sports Therapist,Manual Therapist
-                    </p>
-                    <p class="card-text">
-                      Lectus condimentum sagittis velinteger. Pretium vel enim
-                      viva-rnus odio interdum ac integer. Enim id
-                    </p>
-
-                    <p class="card-text">
-                      <small class="text-body-secondary">
-                        Consultation at : Lubuklinggau Clinic
-                      </small>
-                    </p>
-
-                    <a href="#"> More About Tantawy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-
-          <Col sm={6} md={12} lg={6}>
-            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
-                    <p class="card-text">
-                      Physiotherapist, Sports Therapist,Manual Therapist
-                    </p>
-                    <p class="card-text">
-                      Lectus condimentum sagittis velinteger. Pretium vel enim
-                      viva-rnus odio interdum ac integer. Enim id
-                    </p>
-
-                    <p class="card-text">
-                      <small class="text-body-secondary">
-                        Consultation at : Lubuklinggau Clinic
-                      </small>
-                    </p>
-
-                    <a href="#"> More About Tantawy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-        </div>
-
-        <div className="row">
-          <Col sm={6} md={12} lg={6}>
-            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
-                    <p class="card-text">
-                      Physiotherapist, Sports Therapist,Manual Therapist
-                    </p>
-                    <p class="card-text">
-                      Lectus condimentum sagittis velinteger. Pretium vel enim
-                      viva-rnus odio interdum ac integer. Enim id
-                    </p>
-
-                    <p class="card-text">
-                      <small class="text-body-secondary">
-                        Consultation at : Lubuklinggau Clinic
-                      </small>
-                    </p>
-
-                    <a href="#"> More About Tantawy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-
-          <Col sm={6} md={12} lg={6}>
-            <div class="card mb-3 card-doctors" style={{ maxwidth: "540px" }}>
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src={doctor} class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-name">Ahmed Tantawy,B,BSc.</h5>
-                    <p class="card-text">
-                      Physiotherapist, Sports Therapist,Manual Therapist
-                    </p>
-                    <p class="card-text">
-                      Lectus condimentum sagittis velinteger. Pretium vel enim
-                      viva-rnus odio interdum ac integer. Enim id
-                    </p>
-
-                    <p class="card-text">
-                      <small class="text-body-secondary">
-                        Consultation at : Lubuklinggau Clinic
-                      </small>
-                    </p>
-
-                    <a href="#"> More About Tantawy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
-        </div>
-      </Carousel>
-      <div className="text-center show-all-doctors-div">
-        {" "}
-        <Button> View All Doctors </Button>
-      </div>
+      <FeaturedDoctors />
 
       {/* Accordingggg */}
       <div className="according-home mt-5">
@@ -315,7 +119,6 @@ const HomePage = () => {
             <Cards />
           </Col>
           <div className="text-center show-all-doctors-div">
-            {" "}
             <Button> More News </Button>
           </div>
         </Row>

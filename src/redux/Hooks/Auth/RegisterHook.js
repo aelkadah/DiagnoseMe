@@ -83,7 +83,7 @@ const RegisterHook = () => {
   useEffect(() => {
     if (loading === false) {
       if (res) {
-        console.log(res);
+        // console.log(res);
         if (res.status == 200) {
           // console.log(res.data.data.token);
           localStorage.setItem("token", res.data.data.token);

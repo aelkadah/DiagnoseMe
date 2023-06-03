@@ -14,9 +14,9 @@ const Cards = () => {
   ];
   return (
     <Row className="mt-5" style={{ textAlign: "center" }}>
-      {dataa.map((item) => {
+      {dataa.map((item, index) => {
         return (
-          <Col>
+          <Col key={index}>
             <Card className="news-card">
               {/* <Card.Img variant="top" src={news} /> */}
               <div className="div-background">

@@ -10,10 +10,10 @@ const DoctorsHook = () => {
   }, []);
 
   //to get state from redux
-  const Doctor = useSelector((state) => state.DoctorsReducer.Doctors);
+  const doctors = useSelector((state) => state.DoctorsReducer.Doctors);
   const loading = useSelector((state) => state.DoctorsReducer.loading);
 
-  return [Doctor, loading];
+  return [doctors, loading];
 };
 
 export default DoctorsHook;

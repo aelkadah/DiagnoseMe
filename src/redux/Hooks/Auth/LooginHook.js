@@ -21,8 +21,12 @@ const LoginHook = () => {
   };
 
   const onSubmit = async () => {
+    if (email === "") return notify("Please enter your email!", "warn");
+    else if (password === "") return notify("Please enter password!", "warn");
+
     setIsPress(true);
     setLoading(true);
+
     await dispatch(
       loginUser({
         email,
@@ -34,28 +38,18 @@ const LoginHook = () => {
     setIsPress(false);
   };
   const res = useSelector((state) => state.authReducer.loginUser);
-  useEffect(() => {
-    if (loading === false) {
-      if (res) {
-        if (res.status === 200) {
-          setEmail("");
-          setPassword("");
-        }
-        if (res.status != 200) {
-          notify("راجع معلوماتك", "warn");
-        }
-        if (res.data.data.token) {
-          localStorage.setItem("token", res.data.data.token);
-          localStorage.setItem("user", JSON.stringify(res.data.data.token));
-          notify("تم تسجيل الدخول بنجاح", "success");
-          setTimeout(() => navigate("/"), 2000);
-        } else {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-        }
 
-        setLoading(true);
-      }
+  useEffect(() => {
+    if (!loading) {
+      if (res?.status == 200) {
+        setEmail("");
+        setPassword("");
+        localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
+        notify("Successfully Logged in", "success");
+        setTimeout(() => navigate("/"), 2000);
+      } else if (res?.status != 200)
+        return notify("Email or Password is Incorrect!", "error");
     }
   }, [loading]);
 
