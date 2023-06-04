@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Container,
   Navbar,
@@ -15,15 +15,10 @@ import {
   faSliders,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import LogoutHook from "./../../redux/Hooks/Auth/LogoutHook";
 
 const Header = () => {
-  const navigate = useNavigate();
-
-  const Logout = async () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userInfo");
-    await navigate("/");
-  };
+  const [handleLogout] = LogoutHook();
 
   return (
     <Navbar className="shadow-sm mb-3 py-1" expand="md">
@@ -111,7 +106,7 @@ const Header = () => {
                         Profile
                       </Dropdown.Item>
 
-                      <Dropdown.Item onClick={Logout}>
+                      <Dropdown.Item onClick={handleLogout}>
                         <FontAwesomeIcon
                           icon={faRightFromBracket}
                           className="ps-0 pe-2"
