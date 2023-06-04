@@ -46,22 +46,19 @@ const RegisterHook = () => {
 
   const OnSubmit = async () => {
     if (firstname === "") {
-      return notify("من فضلك ادخل الاسم الاول", "error");
+      return notify("Please enter your first name!", "warn");
     } else if (lastname === "") {
-      return notify("من فضلك ادخل الاسم الثاني", "error");
+      return notify("Please enter your lasts name!", "warn");
     } else if (userName === "") {
-      return notify("من فضلك ادخل اسم المستخدم", "error");
+      return notify("Please enter username!", "warn");
     } else if (phone.length <= 10) {
-      return notify("من فضلك ادخل رقم هاتف صحيح", "error");
+      return notify("Please enter phone number", "warn");
     } else if (password == "") {
-      return notify("من فضلك تاكيد من كلمه السر", "error");
+      return notify("Please type a password", "warn");
     } else if (password < 10) {
-      return notify(
-        "     يجب ان لا تقل كلمه المرور عن 10 احرف وارقام",
-        "error"
-      );
+      return notify("Phone number cannot be less than 10 numbers", "warn");
     } else if (password != confirmPassword) {
-      return notify("من فضلك تاكيد من كلمه السر", "error");
+      return notify("Password confirmation is not correctly!", "warn");
     }
 
     setLoading(true);

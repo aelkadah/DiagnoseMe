@@ -1,10 +1,10 @@
 import React from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
-import { DoctorCard, SecTitle } from "../components";
+import { DoctorCard, SecTitle } from "../../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import DoctorsHook from "../redux/Hooks/DoctorsHook";
-import Pagination from "./../components/utilities/Pagination";
+import DoctorsHook from "../../redux/Hooks/DoctorsHook";
+import Pagination from "../../components/utilities/Pagination";
 
 const DoctorsPage = () => {
   const [doctors, loading, pageCount, getPage] = DoctorsHook();

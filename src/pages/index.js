@@ -10,9 +10,11 @@ export { default as ResetPasswordPage } from "./auth/ResetPasswordPage";
 export { default as ResetPasswordNotification } from "./auth/ResetPasswordNotification";
 export { default as ContactPage } from "./ContactPage";
 export { default as ServicesPage } from "./ServicesPage";
-export { default as DoctorsPage } from "./DoctorsPage";
 export { default as NewsPage } from "./NewsPage";
 export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
 export { default as SecondCheckupPgae } from "./SecondCheckupPgae";
 export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
 export { default as FourthCheckupPgae } from "./FourthCheckupPgae";
+
+export { default as DoctorsPage } from "./Doctors/DoctorsPage";
+export { default as DoctorDetailsPage } from "./Doctors/DoctorDetailsPage";

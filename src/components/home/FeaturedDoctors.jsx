@@ -5,6 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import DoctorCard from "./../utilities/DoctorCard";
 import DoctorsHook from "../../redux/Hooks/DoctorsHook";
+import { Link } from "react-router-dom";
 
 const FeaturedDoctors = () => {
   const [doctors, loading] = DoctorsHook();
@@ -57,7 +58,9 @@ const FeaturedDoctors = () => {
       )}
 
       <div className="text-center show-all-doctors-div mt-3">
-        <Button>More Doctors</Button>
+        <Button as={Link} to={`/doctors`}>
+          More Doctors
+        </Button>
       </div>
     </Row>
   );

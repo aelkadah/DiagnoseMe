@@ -29,6 +29,7 @@ import {
   ThirdCheckupPage,
   ProfilePage,
   DashboardPage,
+  DoctorDetailsPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import FourthCheckupPage from "./pages/FourthCheckupPgae";
@@ -57,6 +58,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/doctors" element={<DoctorsPage />} />
+      <Route path="/doctors/:id" element={<DoctorDetailsPage />} />
       <Route path="/news" element={<NewsPage />} />
       <Route path="/checkup" element={<FirstCheckupPgae />} />
       <Route path="/checkup2" element={<SecondCheckupPgae />} />
