@@ -2,9 +2,9 @@ import { GET_ALL_Doctors, GET_ERROR } from "../type";
 
 import useGetData from "./../../Hook/useGetData";
 
-export const getAllDoctors = () => async (dispatch) => {
+export const getAllDoctors = (page) => async (dispatch) => {
   try {
-    const response = await useGetData(`/api/doctor`);
+    const response = await useGetData(`/api/doctor?page=${page}`);
 
     dispatch({
       type: GET_ALL_Doctors,

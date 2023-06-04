@@ -9,11 +9,20 @@ const DoctorsHook = () => {
     dispatch(getAllDoctors());
   }, []);
 
+  let pageCount = 0;
+
   //to get state from redux
-  const doctors = useSelector((state) => state.DoctorsReducer.Doctors);
+  const data = useSelector((state) => state.DoctorsReducer.Doctors);
+  const doctors = useSelector((state) => state.DoctorsReducer.Doctors.data);
   const loading = useSelector((state) => state.DoctorsReducer.loading);
 
-  return [doctors, loading];
+  if (data?.last_page) pageCount = data.last_page;
+
+  const getPage = (page) => {
+    dispatch(getAllDoctors(page));
+  };
+
+  return [doctors, loading, pageCount, getPage];
 };
 
 export default DoctorsHook;

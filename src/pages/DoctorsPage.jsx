@@ -4,9 +4,11 @@ import { DoctorCard, SecTitle } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import DoctorsHook from "../redux/Hooks/DoctorsHook";
+import Pagination from "./../components/utilities/Pagination";
 
 const DoctorsPage = () => {
-  const [doctors, loading] = DoctorsHook();
+  const [doctors, loading, pageCount, getPage] = DoctorsHook();
+  if (doctors) console.log(doctors);
 
   return (
     <Container className="form-section">
@@ -40,7 +42,7 @@ const DoctorsPage = () => {
         )}
       </Row>
 
-      {/* <Paginationn /> */}
+      <Pagination pageCount={pageCount} onPress={getPage} />
     </Container>
   );
 };
