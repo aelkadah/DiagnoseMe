@@ -27,6 +27,8 @@ import {
   FirstCheckupPgae,
   SecondCheckupPgae,
   ThirdCheckupPage,
+  ProfilePage,
+  DashboardPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import FourthCheckupPage from "./pages/FourthCheckupPgae";
@@ -47,6 +49,8 @@ const router = createBrowserRouter(
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
       <Route path="/resetpassword" element={<ResetPasswordPage />} />
       <Route path="/verifycode" element={<ResetPasswordNotification />} />

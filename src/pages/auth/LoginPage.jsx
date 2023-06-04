@@ -4,7 +4,7 @@ import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
 import Call from "../../components/utilities/Call";
-import LoginHook from "../../redux/Hooks/Auth/LooginHook";
+import LoginHook from "../../redux/Hooks/Auth/LoginHook";
 import { ToastContainer } from "react-toastify";
 const LoginPage = () => {
   const [

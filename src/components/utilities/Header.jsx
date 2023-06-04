@@ -1,9 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Navbar, Nav, Offcanvas, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Container,
+  Navbar,
+  Nav,
+  Offcanvas,
+  Button,
+  Dropdown,
+} from "react-bootstrap";
 import logo from "../../images/logo.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faRightFromBracket,
+  faSliders,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const Logout = async () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userInfo");
+    await navigate("/");
+  };
+
   return (
     <Navbar className="shadow-sm mb-3 py-1" expand="md">
       <Container>
@@ -43,18 +64,64 @@ const Header = () => {
                 Contact
               </Nav.Link>
             </Nav>
+
             <div className="d-flex gap-2">
-              <Button
-                to="/login"
-                as={Link}
-                variant="light"
-                className="text-primary border-primary rounded-pill px-4"
-              >
-                Log in
-              </Button>
-              <Button to="/signup" as={Link} className="rounded-pill ">
-                Sign up
-              </Button>
+              {!localStorage.getItem("userInfo") ? (
+                <>
+                  <Button
+                    to="/login"
+                    as={Link}
+                    variant="light"
+                    className="text-primary border-primary rounded-pill px-4"
+                  >
+                    Log in
+                  </Button>
+                  <Button to="/signup" as={Link} className="rounded-pill ">
+                    Sign up
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button to="/checkup" as={Link} className="rounded-pill ">
+                    Checkup
+                  </Button>
+
+                  <Dropdown>
+                    <Dropdown.Toggle className="py-2 px-3 bg-white text-primary border-0 d-flex align-items-center h-100">
+                      Hi!{" "}
+                      {JSON.parse(localStorage.getItem("userInfo")).first_name}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {JSON.parse(localStorage.getItem("userInfo")).role ==
+                      1 ? (
+                        <Dropdown.Item as={Link} to="/Dashboard">
+                          <FontAwesomeIcon
+                            icon={faSliders}
+                            className="ps-0 pe-2"
+                          />
+                          Dashboard
+                        </Dropdown.Item>
+                      ) : null}
+
+                      <Dropdown.Item as={Link} to="/profile">
+                        <FontAwesomeIcon
+                          icon={faUserCircle}
+                          className="ps-0 pe-2"
+                        />
+                        Profile
+                      </Dropdown.Item>
+
+                      <Dropdown.Item onClick={Logout}>
+                        <FontAwesomeIcon
+                          icon={faRightFromBracket}
+                          className="ps-0 pe-2"
+                        />
+                        Log out
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </>
+              )}
             </div>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
