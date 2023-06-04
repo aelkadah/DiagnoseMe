@@ -8,7 +8,6 @@ import Pagination from "./../components/utilities/Pagination";
 
 const DoctorsPage = () => {
   const [doctors, loading, pageCount, getPage] = DoctorsHook();
-  if (doctors) console.log(doctors);
 
   return (
     <Container className="form-section">
