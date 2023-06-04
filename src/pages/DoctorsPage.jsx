@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { DoctorCard, SecTitle } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -29,7 +29,11 @@ const DoctorsPage = () => {
         {!loading ? (
           doctors?.length >= 1 ? (
             doctors.map((doctor, index) => {
-              return <DoctorCard doctor={doctor} key={index} />;
+              return (
+                <Col sm={12} md={6} lg={6} key={index}>
+                  <DoctorCard doctor={doctor} />
+                </Col>
+              );
             })
           ) : (
             <h2 className="text-center py-5">No Doctors right now!</h2>
