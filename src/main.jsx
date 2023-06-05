@@ -30,6 +30,10 @@ import {
   ProfilePage,
   DashboardPage,
   DoctorDetailsPage,
+  DashNewsPage,
+  DashConditionsPage,
+  DashDoctorsPage,
+  DashServicesPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import FourthCheckupPage from "./pages/FourthCheckupPgae";
@@ -52,6 +56,10 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/dashboard/services" element={<DashServicesPage />} />
+      <Route path="/dashboard/doctors" element={<DashDoctorsPage />} />
+      <Route path="/dashboard/conditions" element={<DashConditionsPage />} />
+      <Route path="/dashboard/news" element={<DashNewsPage />} />
       <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
       <Route path="/resetpassword" element={<ResetPasswordPage />} />
       <Route path="/verifycode" element={<ResetPasswordNotification />} />

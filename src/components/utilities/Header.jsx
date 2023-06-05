@@ -89,7 +89,7 @@ const Header = () => {
                     <Dropdown.Menu>
                       {JSON.parse(localStorage.getItem("userInfo")).role ==
                       1 ? (
-                        <Dropdown.Item as={Link} to="/Dashboard">
+                        <Dropdown.Item as={Link} to="/dashboard">
                           <FontAwesomeIcon
                             icon={faSliders}
                             className="ps-0 pe-2"

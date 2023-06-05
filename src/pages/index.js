@@ -3,7 +3,6 @@ export { default as HomePage } from "./HomePage";
 export { default as LoginPage } from "./auth/LoginPage";
 export { default as SignupPage } from "./auth/SignupPage";
 export { default as ProfilePage } from "./ProfilePage";
-export { default as DashboardPage } from "./DashboardPage";
 
 export { default as ForgetPasswordPage } from "./auth/ForgetPasswordPage";
 export { default as ResetPasswordPage } from "./auth/ResetPasswordPage";
@@ -18,3 +17,9 @@ export { default as FourthCheckupPgae } from "./FourthCheckupPgae";
 
 export { default as DoctorsPage } from "./Doctors/DoctorsPage";
 export { default as DoctorDetailsPage } from "./Doctors/DoctorDetailsPage";
+
+export { default as DashboardPage } from "./Dashboard/DashboardPage";
+export { default as DashServicesPage } from "./Dashboard/DashServicesPage";
+export { default as DashDoctorsPage } from "./Dashboard/DashDoctorsPage";
+export { default as DashConditionsPage } from "./Dashboard/DashConditionsPage";
+export { default as DashNewsPage } from "./Dashboard/DashNewsPage";
