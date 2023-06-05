@@ -1,7 +1,8 @@
-import { GET_ALL_Doctors, GET_ERROR } from "../type";
+import { GET_ALL_Doctors, GET_ONE_DOCTOR, GET_ERROR } from "../type";
 
 const inital = {
   Doctors: [],
+  oneDoctor: [],
   loading: true,
 };
 const DoctorsReducer = (state = inital, action) => {
@@ -10,6 +11,13 @@ const DoctorsReducer = (state = inital, action) => {
       return {
         ...state,
         Doctors: action.payload,
+        loading: false,
+      };
+
+    case GET_ONE_DOCTOR:
+      return {
+        ...state,
+        oneDoctor: action.payload,
         loading: false,
       };
 

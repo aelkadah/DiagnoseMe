@@ -1,19 +1,20 @@
 import {
   faArrowLeft,
   faEllipsisVertical,
-  faLocation,
   faLocationDot,
   faStar,
-  faStarHalf,
-  faStarHalfAlt,
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import DoctorDetailsHook from "../../redux/Hooks/Doctor/DoctorDetailsHook";
 
 const DoctorDetailsPage = () => {
+  const { id } = useParams();
+  const [doctor, loading] = DoctorDetailsHook(id);
+
   return (
     <Container>
       <Row className="d-flex justify-content-between align-items-center mt-3">
@@ -47,7 +48,7 @@ const DoctorDetailsPage = () => {
           className="d-flex flex-column align-items-sm-center align-items-md-start"
         >
           <div className="w-100 d-flex flex-md-row flex-column mb-1 mb-md-0 justify-content-between align-items-center">
-            <h3 className="mb-2">Dr. Ahmed ElKadah</h3>
+            <h3 className="mb-2">Dr. {doctor?.name}</h3>
             <Button className="px-3 rounded-5" disabled>
               Message
             </Button>
@@ -65,34 +66,10 @@ const DoctorDetailsPage = () => {
 
           <h6 className="d-flex justify-content-start align-items-center text-danger">
             <FontAwesomeIcon icon={faLocationDot} fixedWidth />
-            Mansoura, Salam
+            {doctor?.address}
           </h6>
 
-          <p className="text-secondary mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore id
-            ratione natus dolore cupiditate distinctio mollitia eveniet quidem
-            pariatur ullam nostrum vero porro, itaque, earum temporibus culpa
-            impedit at eum. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Labore id ratione natus dolore cupiditate distinctio mollitia
-            eveniet quidem pariatur ullam nostrum vero porro, itaque, earum
-            temporibus culpa impedit at eum. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore id ratione natus dolore
-            cupiditate distinctio mollitia eveniet quidem pariatur ullam nostrum
-            vero porro, itaque, earum temporibus culpa impedit at eum. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Labore id ratione
-            natus dolore cupiditate distinctio mollitia eveniet quidem pariatur
-            ullam nostrum vero porro, itaque, earum temporibus culpa impedit at
-            eum.
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore id
-            ratione natus dolore cupiditate distinctio mollitia eveniet quidem
-            pariatur ullam nostrum vero porro, itaque, earum temporibus culpa
-            impedit at eum. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Labore id ratione natus dolore cupiditate distinctio mollitia
-            eveniet quidem pariatur ullam nostrum vero porro, itaque, earum
-            temporibus culpa impedit at eum.
-          </p>
+          <p className="text-secondary mt-2">{doctor?.info}</p>
         </Col>
       </Row>
     </Container>

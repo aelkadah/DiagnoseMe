@@ -4,8 +4,8 @@ import SecTitle from "../utilities/SecTitle";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import DoctorCard from "./../utilities/DoctorCard";
-import DoctorsHook from "../../redux/Hooks/DoctorsHook";
 import { Link } from "react-router-dom";
+import DoctorsHook from "../../redux/Hooks/Doctor/DoctorsHook";
 
 const FeaturedDoctors = () => {
   const [doctors, loading] = DoctorsHook();

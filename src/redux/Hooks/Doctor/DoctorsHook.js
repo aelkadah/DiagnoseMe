@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllDoctors } from "../actions/Doctorsaction";
+import { getAllDoctors } from "../../actions/Doctorsaction";
 
 const DoctorsHook = () => {
   const dispatch = useDispatch();
