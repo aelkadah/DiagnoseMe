@@ -345,4 +345,11 @@ html {
       font-size: 20px;
     }
   }
+  .an-card {
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      transform: scale(0.99);
+      box-shadow: 0.9px 0.5px 0.7px 0.5px rgba(0, 0, 0, 0.449) !important;
+    }
+  }
 }
