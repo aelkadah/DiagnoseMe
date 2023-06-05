@@ -69,6 +69,10 @@ html {
       }
     }
 
+    .cursor-pointer {
+      cursor: pointer !important;
+    }
+
     .carousel-root {
       button {
         display: none !important;
@@ -199,11 +203,6 @@ html {
       a {
         text-decoration: none !important;
       }
-    }
-
-    .dashboard-card {
-      background-color: red;
-      padding: 20px;
     }
   }
 
