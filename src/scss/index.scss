@@ -352,4 +352,94 @@ html {
       box-shadow: 0.9px 0.5px 0.7px 0.5px rgba(0, 0, 0, 0.449) !important;
     }
   }
+
+  .fab {
+    position: fixed;
+    left: 30px;
+    bottom: 38px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .fab > button {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 0;
+    background: $blue;
+    font-size: 25px;
+    font-weight: bold;
+    color: #f9f9f9;
+    transition: 0.2s;
+    rotate: 0;
+  }
+
+  .fab > button > span {
+    font-size: 32px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+    translate: -50% -50%;
+    border: 80px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    rotate: -248deg;
+    scale: 0.7;
+    opacity: 0;
+    transition: 0.4s ease-out;
+  }
+  .fab.open {
+    z-index: 64964;
+  }
+  .fab.open > button {
+    rotate: 45deg;
+  }
+
+  .fab.open .menu {
+    transform: rotate(360deg);
+    scale: 0.8;
+    opacity: 1;
+  }
+
+  .menu > button {
+    position: absolute;
+    transition: 0.3s;
+    z-index: 2181;
+    border: none;
+    border-radius: 30%;
+    padding: 15px;
+    color: white;
+    background-color: $blue;
+  }
+
+  .menu > button:hover {
+    scale: 1.2;
+  }
+
+  .material-symbols-outlined {
+    font-size: 40px;
+  }
+
+  .menu > button:nth-child(1) {
+    left: 76px;
+    top: -62px;
+  }
+
+  .menu > button:nth-child(2) {
+    left: -20px;
+    top: -16px;
+  }
+
+  .menu > button:nth-child(3) {
+    left: -64px;
+    top: 80px;
+  }
 }
