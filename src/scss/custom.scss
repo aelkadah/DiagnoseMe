@@ -41,6 +41,7 @@ p {
   padding: 10px;
   &::placeholder {
     font-size: 14px;
+    opacity: 0.5;
   }
   // &:hover {
   //   border: 1px solid #000;

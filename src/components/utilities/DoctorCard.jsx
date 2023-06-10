@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const DoctorCard = ({ doctor }) => {
   return (
@@ -9,64 +11,27 @@ const DoctorCard = ({ doctor }) => {
         <div className="row g-0 align-items-center">
           <div className="col-md-4">
             <img
-              //   src={doctorImg}
-              src="https://avatars.githubusercontent.com/u/73890344?v=4"
+              // src="https://avatars.githubusercontent.com/u/73890344?v=4"
+              src={`http://127.0.0.1:8000/storage/app/public/doctors/${doctor.image}`}
               className="img-fluid rounded-start"
               alt="..."
             />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-name">
-                <span
-                  style={{
-                    color: "black",
-                    fontWeight: "bold",
-                    marginRight: "10px",
-                  }}
-                >
-                  Name:
-                </span>
-                {doctor.name}
-              </h5>
-              <p className="card-text">
-                <span
-                  style={{
-                    color: "black",
-                    fontWeight: "bold",
-                    marginRight: "10px",
-                  }}
-                >
-                  address:
-                </span>
-                {doctor.address}
-              </p>
-              <p className="card-text">
-                <span
-                  style={{
-                    color: "black",
-                    fontWeight: "bold",
-                    marginRight: "10px",
-                  }}
-                >
-                  info:
-                </span>
+              <h4 className="card-name mb-1">Dr. {doctor.name}</h4>
+              <h6 className="text-secondary">{doctor.Specialization}</h6>
+              <p className="text-secondary truncate-two text-secondary my-2">
                 {doctor.info}
               </p>
-              <p className="card-text">
-                <small className="text-body-secondary">
-                  <span
-                    style={{
-                      color: "black",
-                      fontWeight: "bold",
-                      marginRight: "10px",
-                    }}
-                  >
-                    PhoneNumber:
-                  </span>
-                  {doctor.PhoneNumber}
-                </small>
-              </p>
+              <h6 className="text-secondary">
+                <FontAwesomeIcon icon={faLocationDot} className="ms-0 me-1" />
+                {doctor.address}
+              </h6>
+              <h6 className="text-secondary">
+                <FontAwesomeIcon icon={faPhone} className="ms-0 me-1" />
+                {doctor.PhoneNumber}
+              </h6>
             </div>
           </div>
         </div>

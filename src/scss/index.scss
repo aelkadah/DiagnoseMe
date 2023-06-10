@@ -49,6 +49,13 @@ html {
       font-family: $Noto;
     }
 
+    .truncate-two {
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
     .secTitle {
       color: $blue-200;
       font-family: $Noto;
