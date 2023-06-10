@@ -1,16 +1,26 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faUserDoctor } from "@fortawesome/free-solid-svg-icons";
+import { FC, PropsWithChildren, useState } from "react";
 const Call = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div>
-      <button className="butonn2">
-        {" "}
-        <a href="tel:0102101874">
+    <div className={`fab ${isOpen ? "open" : ""}`}>
+      <button onClick={() => setIsOpen(!isOpen)}>+</button>
+      <div className="menu">
+        <button>
+          <FontAwesomeIcon icon={faPhone} />
+        </button>
+        <button>
+          {" "}
+          <FontAwesomeIcon icon={faUserDoctor} />
+        </button>
+        <button>
           {" "}
           <FontAwesomeIcon icon={faPhone} />
-        </a>
-      </button>
+        </button>
+      </div>
     </div>
   );
 };

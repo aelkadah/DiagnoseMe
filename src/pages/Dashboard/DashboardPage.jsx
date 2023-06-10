@@ -26,7 +26,7 @@ const DashboardPage = () => {
           <Card
             as={Link}
             to="/dashboard/services"
-            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer"
+            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer an-card"
           >
             <FontAwesomeIcon
               icon={faPuzzlePiece}
@@ -47,7 +47,7 @@ const DashboardPage = () => {
           <Card
             as={Link}
             to="/dashboard/doctors"
-            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer"
+            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer an-card"
           >
             <FontAwesomeIcon
               icon={faUserDoctor}
@@ -68,7 +68,7 @@ const DashboardPage = () => {
           <Card
             as={Link}
             to="/dashboard/conditions"
-            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer"
+            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer an-card"
           >
             <FontAwesomeIcon
               icon={faNotesMedical}
@@ -89,7 +89,7 @@ const DashboardPage = () => {
           <Card
             as={Link}
             to="/dashboard/news"
-            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer"
+            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer an-card"
           >
             <FontAwesomeIcon
               icon={faNewspaper}
