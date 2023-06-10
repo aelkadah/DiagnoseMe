@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createDoctor } from "./../../actions/Doctorsaction";
-import notify from "./../../../Hook/useNotifaction";
 import avi from "../../../images/messi.jpg";
+import notify from "./../../../Hook/useNotifaction";
 
 const AddDoctorHook = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const AddDoctorHook = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const [spec, setSpec] = useState("");
   const [address, setAddress] = useState("");
@@ -57,13 +57,15 @@ const AddDoctorHook = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit clicked");
-
-    if (name === "" || selectedFile === null) {
-      console.log("من فضلك اكمل البيانات");
-      notify("من فضلك اكمل البيانات", "warn");
-      return;
-    }
+    // if (
+    //   name === "" ||
+    //   spec == "" ||
+    //   name === "" ||
+    //   phone == "" ||
+    //   info == "" ||
+    //   selectedFile === null
+    // )
+    //   return notify("Please enter required fields!", "warn");
 
     const formData = new FormData();
     formData.append("name", name);
@@ -92,7 +94,7 @@ const AddDoctorHook = () => {
         setSelectedFile(null);
 
         return notify("Doctor added successfully", "success");
-      } else console.log(res);
+      }
     }
   }, [loading]);
 
