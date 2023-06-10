@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
-import baseUrl from "./../../api/Baseurl";
 
 const DoctorCard = ({ doctor }) => {
   return (
@@ -12,8 +11,7 @@ const DoctorCard = ({ doctor }) => {
         <div className="row g-0 align-items-center">
           <div className="col-md-4">
             <img
-              // src="https://avatars.githubusercontent.com/u/73890344?v=4"
-              src={`${baseUrl}/${doctor.image}`}
+              src={`http://127.0.0.1:8000/storage/${doctor.image}`}
               className="img-fluid rounded-start"
               alt={`${doctor.name} Image`}
             />

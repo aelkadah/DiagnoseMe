@@ -1,12 +1,27 @@
 import React, { useState } from "react";
 import { Container, Row, Button, Col, Form, Modal } from "react-bootstrap";
 import DashboardHeader from "../../components/utilities/DashboardHeader";
+import AddDoctorHook from "../../redux/Hooks/Doctor/AddDoctorHook";
 
 const DashDoctorsPage = () => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [
+    show,
+    handleShow,
+    handleClose,
+    name,
+    onChangeName,
+    spec,
+    onChangeSpec,
+    address,
+    onChangeAddress,
+    phone,
+    onChangePhone,
+    info,
+    onChangeInfo,
+    image,
+    onChangeImage,
+    handleSubmit,
+  ] = AddDoctorHook();
 
   return (
     <Container>
@@ -29,6 +44,8 @@ const DashDoctorsPage = () => {
                       <Form.Control
                         type="text"
                         placeholder="Ahmed, Mohamed, ..."
+                        value={name}
+                        onChange={onChangeName}
                         autoFocus
                       />
                     </Form.Group>
@@ -39,6 +56,8 @@ const DashDoctorsPage = () => {
                       <Form.Control
                         type="text"
                         placeholder="Blood Diseases, Diabetes, ..."
+                        value={spec}
+                        onChange={onChangeSpec}
                       />
                     </Form.Group>
                   </Col>
@@ -48,22 +67,38 @@ const DashDoctorsPage = () => {
                       <Form.Control
                         type="text"
                         placeholder="Salam, Manoura, Egypt."
+                        value={address}
+                        onChange={onChangeAddress}
                       />
                     </Form.Group>
                   </Col>
                   <Col xs={12} lg={6}>
                     <Form.Group className="mb-3">
                       <Form.Label>Phone Number</Form.Label>
-                      <Form.Control type="text" placeholder="01012345678" />
+                      <Form.Control
+                        type="text"
+                        placeholder="01012345678"
+                        value={phone}
+                        onChange={onChangePhone}
+                      />
                     </Form.Group>
                   </Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Summary</Form.Label>
-                    <Form.Control as="textarea" rows={3} />
+                    <Form.Control
+                      as="textarea"
+                      rows={3}
+                      value={info}
+                      onChange={onChangeInfo}
+                    />
                   </Form.Group>
                   <Form.Group className="mb-3">
                     <Form.Label>Doctor Image</Form.Label>
-                    <Form.Control type="file" />
+                    <Form.Control
+                      type="file"
+                      // value={image}
+                      onChange={onChangeImage}
+                    />
                   </Form.Group>
                 </Row>
               </Form>
@@ -72,7 +107,7 @@ const DashDoctorsPage = () => {
               <Button variant="danger" onClick={handleClose}>
                 Close
               </Button>
-              <Button variant="primary" onClick={handleClose}>
+              <Button variant="primary" onClick={handleSubmit}>
                 Submit
               </Button>
             </Modal.Footer>
