@@ -23,3 +23,4 @@ export { default as DashServicesPage } from "./Dashboard/DashServicesPage";
 export { default as DashDoctorsPage } from "./Dashboard/DashDoctorsPage";
 export { default as DashConditionsPage } from "./Dashboard/DashConditionsPage";
 export { default as DashNewsPage } from "./Dashboard/DashNewsPage";
+export { default as DashNewsAddPage } from "./Dashboard/DashNewsAddPage";
