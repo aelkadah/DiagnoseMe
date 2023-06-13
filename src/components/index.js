@@ -12,3 +12,8 @@ export { default as DashboardHeader } from "./utilities/DashboardHeader";
 
 export { default as DashDoctorsContainer } from "./Doctors/DashDoctorsContainer";
 export { default as DashDoctorCard } from "./Doctors/DashDoctorCard";
+
+export { default as ServicesContainer } from "./Services/ServicesContainer";
+export { default as ServiceCard } from "./Services/ServiceCard";
+export { default as DashServicesContainer } from "./Services/DashServicesContainer";
+export { default as DashServiceCard } from "./Services/DashServiceCard";

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
-import { FeaturedDoctors, Services } from "../components";
+import { FeaturedDoctors, Services, ServicesContainer } from "../components";
 import { SecTitle } from "../components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -55,6 +55,7 @@ const HomePage = () => {
       </Row>
 
       <Covid />
+
       <Services />
 
       <FeaturedDoctors />

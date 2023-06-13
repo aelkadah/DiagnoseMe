@@ -30,7 +30,7 @@ const DashDoctorsPage = () => {
   return (
     <Container>
       <DashboardHeader text="Dashboard / Doctors" />
-      <Container className="">
+      <Container>
         <Row className="mt-3">
           <Row className="d-flex justify-content-between align-items-center">
             <h5 className="w-auto text-secondary">
