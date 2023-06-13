@@ -7,7 +7,7 @@ import Pagination from "../../components/utilities/Pagination";
 import DoctorsHook from "./../../redux/Hooks/Doctor/DoctorsHook";
 
 const DoctorsPage = () => {
-  const [doctors, loading, pageCount, getPage] = DoctorsHook();
+  const [doctors, loading, pageCount, getPage, total] = DoctorsHook();
 
   return (
     <Container className="form-section">

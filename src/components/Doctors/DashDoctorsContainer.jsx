@@ -5,7 +5,7 @@ import DashDoctorCard from "./DashDoctorCard";
 import Pagination from "./../utilities/Pagination";
 
 const DashDoctorsContainer = () => {
-  const [doctors, loading, pageCount, getPage] = DoctorsHook();
+  const [doctors, loading, pageCount, getPage, total] = DoctorsHook();
 
   return (
     <Row className="mt-4">

@@ -25,7 +25,7 @@ const DashDoctorsPage = () => {
     handleSubmit,
   ] = AddDoctorHook();
 
-  const [doctors, loading, pageCount, getPage] = DoctorsHook();
+  const [doctors, loading, pageCount, getPage, total] = DoctorsHook();
 
   return (
     <Container>

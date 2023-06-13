@@ -14,6 +14,7 @@ const DoctorsHook = () => {
   //to get state from redux
   const data = useSelector((state) => state.DoctorsReducer.Doctors);
   const doctors = useSelector((state) => state.DoctorsReducer.Doctors.data);
+  const total = useSelector((state) => state.DoctorsReducer.Doctors.total);
   const loading = useSelector((state) => state.DoctorsReducer.loading);
 
   if (data?.last_page) pageCount = data.last_page;
@@ -22,7 +23,7 @@ const DoctorsHook = () => {
     dispatch(getAllDoctors(page));
   };
 
-  return [doctors, loading, pageCount, getPage];
+  return [doctors, loading, pageCount, getPage, total];
 };
 
 export default DoctorsHook;
