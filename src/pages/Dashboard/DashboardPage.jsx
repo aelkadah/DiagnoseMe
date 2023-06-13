@@ -11,9 +11,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import DoctorsHook from "./../../redux/Hooks/Doctor/DoctorsHook";
+import ServicesHook from "./../../redux/Hooks/Services/ServicesHook";
 
 const DashboardPage = () => {
   const [doctors, loading, pageCount, getPage, total] = DoctorsHook();
+  const [services] = ServicesHook();
 
   return (
     <Container>
@@ -38,7 +40,9 @@ const DashboardPage = () => {
               style={{ fontSize: "60px" }}
             />
             <Card.Body className="w-auto">
-              <h2 className="my-0 fw-bold text-secondary">12</h2>
+              <h2 className="my-0 fw-bold text-secondary">
+                {services ? services.length : 0}
+              </h2>
               <h6 className="my-0 text-black-50">Services</h6>
             </Card.Body>
             <Card.Body className="d-flex flex-row-reverse h-100">
