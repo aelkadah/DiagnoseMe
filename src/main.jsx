@@ -37,6 +37,7 @@ import {
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import FourthCheckupPage from "./pages/FourthCheckupPgae";
+import { ToastContainer } from "react-toastify";
 
 const Layout = () => {
   return (
@@ -83,7 +84,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>
-      {/* <ToastContainer rtl /> */}
+      <ToastContainer />
     </ThemeProvider>
   </React.StrictMode>
 );

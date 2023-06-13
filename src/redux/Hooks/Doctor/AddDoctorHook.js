@@ -57,15 +57,15 @@ const AddDoctorHook = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (
-    //   name === "" ||
-    //   spec == "" ||
-    //   name === "" ||
-    //   phone == "" ||
-    //   info == "" ||
-    //   selectedFile === null
-    // )
-    //   return notify("Please enter required fields!", "warn");
+    if (
+      name === "" ||
+      spec == "" ||
+      name === "" ||
+      phone == "" ||
+      info == "" ||
+      selectedFile === null
+    )
+      return notify("Please enter required fields!", "warn");
 
     const formData = new FormData();
     formData.append("name", name);
