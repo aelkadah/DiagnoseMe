@@ -3,12 +3,14 @@ import {
   GET_ONE_DOCTOR,
   CREATE_DOCTOR,
   GET_ERROR,
+  DELETE_DOCTOR,
 } from "../type";
 
 const inital = {
   Doctors: [],
   oneDoctor: [],
   created: [],
+  deleted: null,
   loading: true,
 };
 const DoctorsReducer = (state = inital, action) => {
@@ -31,6 +33,13 @@ const DoctorsReducer = (state = inital, action) => {
       return {
         ...state,
         created: action.payload,
+        loading: false,
+      };
+
+    case DELETE_DOCTOR:
+      return {
+        ...state,
+        deleted: action.payload,
         loading: false,
       };
 

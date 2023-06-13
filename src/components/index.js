@@ -9,3 +9,6 @@ export { default as Services } from "./home/Services";
 
 export { default as FeaturedDoctors } from "./home/FeaturedDoctors";
 export { default as DashboardHeader } from "./utilities/DashboardHeader";
+
+export { default as DashDoctorsContainer } from "./Doctors/DashDoctorsContainer";
+export { default as DashDoctorCard } from "./Doctors/DashDoctorCard";

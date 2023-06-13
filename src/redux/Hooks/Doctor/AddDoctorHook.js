@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createDoctor } from "./../../actions/Doctorsaction";
+import { createDoctor, getAllDoctors } from "./../../actions/Doctorsaction";
 import avi from "../../../images/messi.jpg";
 import notify from "./../../../Hook/useNotifaction";
 
@@ -49,7 +49,6 @@ const AddDoctorHook = () => {
 
   const onChangeImage = async (e) => {
     if (e.target.files && e.target.files[0]) {
-      //   console.log(e.target.files[0]);
       setImage(URL.createObjectURL(e.target.files[0]));
       setSelectedFile(e.target.files[0]);
     }
@@ -82,18 +81,21 @@ const AddDoctorHook = () => {
 
   useEffect(() => {
     if (!loading) {
-      if (res?.status == 200) {
-        handleClose();
+      handleClose();
 
-        setName("");
-        setSpec("");
-        setAddress("");
-        setPhone("");
-        setInfo("");
-        setImage(avi);
-        setSelectedFile(null);
+      setName("");
+      setSpec("");
+      setAddress("");
+      setPhone("");
+      setInfo("");
+      setImage(avi);
+      setSelectedFile(null);
 
-        return notify("Doctor added successfully", "success");
+      if (res) {
+        dispatch(getAllDoctors());
+        if (res?.status == 200)
+          return notify("Doctor added successfully", "success");
+        else return notify("Something went wrong!", "error");
       }
     }
   }, [loading]);

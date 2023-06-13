@@ -56,6 +56,40 @@ html {
       overflow: hidden;
     }
 
+    .deleteHover {
+      position: relative;
+      &:hover::before,
+      &:hover::after {
+        display: block;
+        transition: 500ms;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: #fff;
+        opacity: 0.9;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: none;
+      }
+      &::after {
+        position: absolute;
+        content: "Delete";
+        z-index: 11;
+        font-size: 30px;
+        font-weight: bold;
+        opacity: 0.9;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        text-align: center;
+        left: 50%;
+        color: red;
+        display: none;
+      }
+    }
+
     .secTitle {
       color: $blue-200;
       font-family: $Noto;

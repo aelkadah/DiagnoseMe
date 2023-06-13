@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Container, Row, Button, Col, Form, Modal } from "react-bootstrap";
 import DashboardHeader from "../../components/utilities/DashboardHeader";
 import AddDoctorHook from "../../redux/Hooks/Doctor/AddDoctorHook";
+import DashDoctorsContainer from "../../components/Doctors/DashDoctorsContainer";
+import DoctorsHook from "../../redux/Hooks/Doctor/DoctorsHook";
 
 const DashDoctorsPage = () => {
   const [
@@ -23,14 +25,27 @@ const DashDoctorsPage = () => {
     handleSubmit,
   ] = AddDoctorHook();
 
+  const [doctors, loading, pageCount, getPage] = DoctorsHook();
+
   return (
     <Container>
       <DashboardHeader text="Dashboard / Doctors" />
       <Container className="">
         <Row className="mt-3">
-          <Button className="w-auto" onClick={handleShow}>
-            Add Doctor
-          </Button>
+          <Row className="d-flex justify-content-between align-items-center">
+            <h5 className="w-auto text-secondary">
+              All Doctors:
+              {doctors?.length >= 1 ? (
+                <span> ({doctors?.length})</span>
+              ) : (
+                <span> (0)</span>
+              )}
+            </h5>
+            <Button className="w-auto" onClick={handleShow}>
+              Add Doctor
+            </Button>
+          </Row>
+
           <Modal show={show} onHide={handleClose} size="lg">
             <Modal.Header closeButton>
               <Modal.Title>Add Doctor</Modal.Title>
@@ -114,7 +129,7 @@ const DashDoctorsPage = () => {
           </Modal>
         </Row>
 
-        <Row></Row>
+        <DashDoctorsContainer />
       </Container>
     </Container>
   );
