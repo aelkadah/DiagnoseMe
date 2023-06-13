@@ -37,10 +37,7 @@ const DoctorDetailsPage = () => {
       </Row>
       <Row className="mt-5">
         <Col xs={12} md={4} className="mb-3">
-          <img
-            alt=""
-            src="https://avatars.githubusercontent.com/u/73890344?v=4"
-          />
+          <img alt="" src={`http://127.0.0.1:8000/storage/${doctor.image}`} />
         </Col>
         <Col
           xs={12}
@@ -54,7 +51,9 @@ const DoctorDetailsPage = () => {
             </Button>
           </div>
           <div className="d-flex justify-content-start gap-3 w-auto ms-1">
-            <h6 className="w-auto opacity-75 mt-0 py-0">Blood Diseases</h6>
+            <h6 className="w-auto opacity-75 mt-0 py-0">
+              {doctor?.Specialization}
+            </h6>
             <div className="d-flex text-warning">
               <FontAwesomeIcon icon={faStar} fixedWidth />
               <FontAwesomeIcon icon={faStar} fixedWidth />
