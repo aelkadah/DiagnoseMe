@@ -35,6 +35,7 @@ import {
   DashDoctorsPage,
   DashServicesPage,
   DashNewsAddPage,
+  DashConditionsAddPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import FourthCheckupPage from "./pages/FourthCheckupPgae";
@@ -61,6 +62,10 @@ const router = createBrowserRouter(
       <Route path="/dashboard/services" element={<DashServicesPage />} />
       <Route path="/dashboard/doctors" element={<DashDoctorsPage />} />
       <Route path="/dashboard/conditions" element={<DashConditionsPage />} />
+      <Route
+        path="/dashboard/conditions/add"
+        element={<DashConditionsAddPage />}
+      />
       <Route path="/dashboard/news" element={<DashNewsPage />} />
       <Route path="/dashboard/news/add" element={<DashNewsAddPage />} />
       <Route path="/forgetpassword" element={<ForgetPasswordPage />} />
