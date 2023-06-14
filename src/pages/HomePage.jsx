@@ -106,7 +106,7 @@ const HomePage = () => {
       </div>
 
       {/* Newsssssss */}
-
+      {/* 
       <div className="new">
         <SecTitle title={"News"} desc="See our latest trending news" />
         <Row>
@@ -123,7 +123,7 @@ const HomePage = () => {
             <Button> More News </Button>
           </div>
         </Row>
-      </div>
+      </div> */}
 
       {/* last section */}
       <div className="last-sec mt-5">

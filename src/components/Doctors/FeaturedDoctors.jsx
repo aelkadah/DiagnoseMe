@@ -3,9 +3,9 @@ import { Container, Row, Spinner, Button } from "react-bootstrap";
 import SecTitle from "../utilities/SecTitle";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import DoctorCard from "./../utilities/DoctorCard";
 import { Link } from "react-router-dom";
 import DoctorsHook from "../../redux/Hooks/Doctor/DoctorsHook";
+import DoctorCard from "./DoctorCard";
 
 const FeaturedDoctors = () => {
   const [doctors, loading] = DoctorsHook();

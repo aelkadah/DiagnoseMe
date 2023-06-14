@@ -1,6 +1,7 @@
 import {
   GET_ERROR,
   GET_ALL_NEWS,
+  GET_ONE_ARTICLE,
   CREATE_ARTICLE,
   DELETE_ARTICLE,
 } from "../type";
@@ -14,6 +15,22 @@ export const getAllNews = (page) => async (dispatch) => {
 
     dispatch({
       type: GET_ALL_NEWS,
+      payload: response,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const getOneArticle = (id) => async (dispatch) => {
+  try {
+    const response = await useGetData(`/api/news/${id}`);
+
+    dispatch({
+      type: GET_ONE_ARTICLE,
       payload: response,
     });
   } catch (e) {
