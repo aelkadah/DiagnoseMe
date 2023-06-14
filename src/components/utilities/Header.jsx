@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   Container,
   Navbar,
@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <Navbar className="shadow-sm mb-3 py-1" expand="md">
       <Container>
-        <Navbar.Brand to="/" as={Link}>
+        <Navbar.Brand to="/" as={NavLink}>
           <img src={logo} alt="logo" height="50px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" />
@@ -36,26 +36,26 @@ const Header = () => {
             <Offcanvas.Title
               id="offcanvasNavbarLabel-expand-md"
               to="/"
-              as={Link}
+              as={NavLink}
             >
               <img src={logo} alt="logo" height="50px" />
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-start flex-grow-1 gap-1 pe-2 pt-1">
-              <Nav.Link to="/" as={Link} active>
+              <Nav.Link to="/" as={NavLink}>
                 Home
               </Nav.Link>
-              <Nav.Link to="/services" as={Link}>
+              <Nav.Link to="/services" as={NavLink}>
                 Services
               </Nav.Link>
-              <Nav.Link to="/doctors" as={Link}>
+              <Nav.Link to="/doctors" as={NavLink}>
                 Doctors
               </Nav.Link>
-              <Nav.Link to="/news" as={Link}>
+              <Nav.Link to="/news" as={NavLink}>
                 News
               </Nav.Link>
-              <Nav.Link to="/contact" as={Link}>
+              <Nav.Link to="/contact" as={NavLink}>
                 Contact
               </Nav.Link>
             </Nav>
@@ -65,19 +65,19 @@ const Header = () => {
                 <>
                   <Button
                     to="/login"
-                    as={Link}
+                    as={NavLink}
                     variant="light"
                     className="text-primary border-primary rounded-pill px-4"
                   >
                     Log in
                   </Button>
-                  <Button to="/signup" as={Link} className="rounded-pill ">
+                  <Button to="/signup" as={NavLink} className="rounded-pill ">
                     Sign up
                   </Button>
                 </>
               ) : (
                 <>
-                  <Button to="/checkup" as={Link} className="rounded-pill ">
+                  <Button to="/checkup" as={NavLink} className="rounded-pill ">
                     Checkup
                   </Button>
 
@@ -89,7 +89,7 @@ const Header = () => {
                     <Dropdown.Menu>
                       {JSON.parse(localStorage.getItem("userInfo")).role ==
                       1 ? (
-                        <Dropdown.Item as={Link} to="/dashboard">
+                        <Dropdown.Item as={NavLink} to="/dashboard">
                           <FontAwesomeIcon
                             icon={faSliders}
                             className="ps-0 pe-2"
@@ -98,7 +98,7 @@ const Header = () => {
                         </Dropdown.Item>
                       ) : null}
 
-                      <Dropdown.Item as={Link} to="/profile">
+                      <Dropdown.Item as={NavLink} to="/profile">
                         <FontAwesomeIcon
                           icon={faUserCircle}
                           className="ps-0 pe-2"
