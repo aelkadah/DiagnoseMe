@@ -4,12 +4,12 @@ import React from "react";
 import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const DashboardHeader = ({ text }) => {
+const DashboardHeader = ({ text, url }) => {
   return (
     <Row className="d-flex justify-content-between align-items-center mt-2  ">
       <h5 className="w-auto d-flex align-items-center gap-2 text-black-50">
         <Link
-          to={`/dashboard`}
+          to={url ? `${url}` : `/dashboard`}
           className="bg-light d-flex align-items-center justify-content-center rounded-circle mt-1"
           style={{ height: "40px", width: "40px" }}
         >
