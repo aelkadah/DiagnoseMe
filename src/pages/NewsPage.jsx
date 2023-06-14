@@ -56,8 +56,6 @@ const NewsPage = () => {
   ];
   return (
     <Container className="form-section">
-      <Return />
-      <Call />
       <SecTitle title={"News"} desc="See our latest trending news" />
       <div style={{ textAlign: "center" }}>
         <div style={{ justifyContent: "center" }} className="search-box d-flex">
