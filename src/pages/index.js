@@ -9,7 +9,13 @@ export { default as ResetPasswordPage } from "./auth/ResetPasswordPage";
 export { default as ResetPasswordNotification } from "./auth/ResetPasswordNotification";
 export { default as ContactPage } from "./ContactPage";
 export { default as ServicesPage } from "./ServicesPage";
-export { default as NewsPage } from "./NewsPage";
+
+export { default as ConditionsPage } from "./Conditions/ConditionsPage";
+export { default as ConditionDetailsPage } from "./Conditions/ConditionDetailsPage";
+
+export { default as NewsPage } from "./News/NewsPage";
+export { default as ArticlePage } from "./News/ArticlePage";
+
 export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
 export { default as SecondCheckupPgae } from "./SecondCheckupPgae";
 export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
