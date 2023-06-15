@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Form, Button } from "react-bootstrap";
-import DashboardHeader from "./../../components/utilities/DashboardHeader";
+import { DashboardHeader } from "./../../components";
 import AddArticleHook from "../../redux/Hooks/News/AddArticleHook";
 
 const DashNewsAddPage = () => {
@@ -16,7 +16,7 @@ const DashNewsAddPage = () => {
 
   return (
     <Container>
-      <DashboardHeader text="Dashboard / News / Add" />
+      <DashboardHeader text="Dashboard / News / Add" url="/dashboard/news" />
 
       <Container>
         <Row className="mt-4">

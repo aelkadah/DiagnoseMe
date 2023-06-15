@@ -9,7 +9,7 @@ const ArticleCard = ({ article }) => {
         <Card className="newsCard">
           <div className="backgroundImg">
             <img src={`http://127.0.0.1:8000/storage/${article?.image}`} />
-            <span>{article?.date}</span>
+            <span>{new Date(article?.created_at).toDateString()}</span>
           </div>
           <Card.Body>
             <Card.Text
@@ -18,6 +18,9 @@ const ArticleCard = ({ article }) => {
             >
               <span className="w-auto">By Ahmed</span>
               <span className="w-auto">{article?.id} comments</span>
+            </Card.Text>
+            <Card.Text className="fw-normal truncate-two mb-2">
+              {article?.name}
             </Card.Text>
             <Card.Text className="mb-2 truncate-two">
               {article?.description}

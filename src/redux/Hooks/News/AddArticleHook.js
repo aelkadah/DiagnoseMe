@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { createArticle, getAllNews } from "./../../actions/NewsAction";
 import notify from "./../../../Hook/useNotifaction";
 import avi from "../../../images/messi.jpg";
 
 const AddArticleHook = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("");
@@ -56,9 +58,10 @@ const AddArticleHook = () => {
 
       if (res) {
         dispatch(getAllNews());
-        if (res?.status == 200)
-          return notify("Article added successfully", "success");
-        else return notify("Something went wrong!", "error");
+        if (res?.status == 200) {
+          notify("Article added successfully", "success");
+          return navigate("/dashboard/news");
+        } else return notify("Something went wrong!", "error");
       }
     }
   }, [loading]);

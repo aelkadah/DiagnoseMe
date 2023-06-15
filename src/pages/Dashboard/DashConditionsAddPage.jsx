@@ -16,7 +16,10 @@ const DashConditionsAddPage = () => {
 
   return (
     <Container>
-      <DashboardHeader text="Dashboard / Conditions / Add" />
+      <DashboardHeader
+        text="Dashboard / Conditions / Add"
+        url="/dashboard/conditions"
+      />
 
       <Container>
         <Row className="mt-4">

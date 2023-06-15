@@ -1,22 +1,20 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { getAllNews } from "./../../actions/NewsAction";
 
 const NewsHook = () => {
   const dispatch = useDispatch();
-  //when first load
+
   useEffect(() => {
     dispatch(getAllNews());
   }, []);
 
   let pageCount = 0;
 
-  //to get state from redux
-  //   const data = useSelector((state) => state.DoctorsReducer.Doctors);
-  //   const news = useSelector((state) => state.DoctorsReducer.Doctors.data);
-  //   const total = useSelector((state) => state.DoctorsReducer.Doctors.total);
-  //   const loading = useSelector((state) => state.DoctorsReducer.loading);
+  const news = useSelector((state) => state.NewsReducer.news);
+  const loading = useSelector((state) => state.NewsReducer.loading);
 
-  //   if (data?.last_page) pageCount = data.last_page;
+  if (news?.last_page) pageCount = news.last_page;
 
   const getPage = (page) => {
     dispatch(getAllNews(page));

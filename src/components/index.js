@@ -20,6 +20,7 @@ export { default as DashServiceCard } from "./Services/DashServiceCard";
 
 export { default as NewsContainer } from "./News/NewsContainer";
 export { default as ArticleCard } from "./News/ArticleCard";
+export { default as DashNewsContainer } from "./News/DashNewsContainer";
 export { default as DashArticleCard } from "./News/DashArticleCard";
 
 export { default as ConditionsContainer } from "./Conditions/ConditionsContainer";

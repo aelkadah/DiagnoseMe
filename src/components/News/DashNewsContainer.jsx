@@ -1,10 +1,9 @@
 import React from "react";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import NewsHook from "../../redux/Hooks/News/NewsHook";
-import ArticleCard from "./ArticleCard";
-import { Pagination } from "../../components";
+import { DashArticleCard, Pagination } from "../../components";
 
-const NewsContainer = () => {
+const DashNewsContainer = () => {
   const [news, loading, pageCount, getPage] = NewsHook();
 
   return (
@@ -14,12 +13,12 @@ const NewsContainer = () => {
           news?.data.map((article, index) => {
             return (
               <Col xs={12} md={6} lg={4} key={index}>
-                <ArticleCard article={article} />
+                <DashArticleCard article={article} />
               </Col>
             );
           })
         ) : (
-          <h2 className="text-center py-5">No, news right now!</h2>
+          <h2 className="text-center py-5">No, News right now!</h2>
         )
       ) : (
         <Container className="text-center py-4">
@@ -31,4 +30,4 @@ const NewsContainer = () => {
   );
 };
 
-export default NewsContainer;
+export default DashNewsContainer;
