@@ -41,7 +41,7 @@ const DashboardPage = () => {
             />
             <Card.Body className="w-auto">
               <h2 className="my-0 fw-bold text-secondary">
-                {services ? services.length : 0}
+                {services ? services?.total : 0}
               </h2>
               <h6 className="my-0 text-black-50">Services</h6>
             </Card.Body>

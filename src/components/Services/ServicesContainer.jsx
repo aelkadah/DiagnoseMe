@@ -2,15 +2,16 @@ import React from "react";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import ServicesHook from "../../redux/Hooks/Services/ServicesHook";
 import ServiceCard from "./ServiceCard";
+import { Pagination } from "../../components";
 
 const ServicesContainer = () => {
-  const [services, loading] = ServicesHook();
+  const [services, loading, pageCount, getPage] = ServicesHook();
 
   return (
     <Row>
       {!loading ? (
-        services?.length >= 1 ? (
-          services.map((service, index) => {
+        services?.data?.length >= 1 ? (
+          services?.data.map((service, index) => {
             return (
               <Col sm={12} md={6} lg={3} key={index}>
                 <ServiceCard service={service} />
@@ -25,6 +26,7 @@ const ServicesContainer = () => {
           <Spinner animation="border" variant="primary" />
         </Container>
       )}
+      <Pagination pageCount={pageCount} onPress={getPage} />
     </Row>
   );
 };

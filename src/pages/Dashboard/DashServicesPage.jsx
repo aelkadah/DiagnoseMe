@@ -6,6 +6,8 @@ import ServicesHook from "../../redux/Hooks/Services/ServicesHook";
 import AddServiceHook from "../../redux/Hooks/Services/AddServiceHook";
 
 const DashServicesPage = () => {
+  const [services] = ServicesHook();
+
   const [
     show,
     handleShow,
@@ -19,8 +21,6 @@ const DashServicesPage = () => {
     handleSubmit,
   ] = AddServiceHook();
 
-  const [services, loading] = ServicesHook();
-
   return (
     <Container>
       <DashboardHeader text="Dashboard / Services" />
@@ -29,11 +29,7 @@ const DashServicesPage = () => {
           <Row className="d-flex justify-content-between align-items-center">
             <h5 className="w-auto text-secondary">
               All Services:
-              {services?.length >= 1 ? (
-                <span> ({services?.length})</span>
-              ) : (
-                <span> (0)</span>
-              )}
+              {services ? <span> ({services?.total})</span> : <span> (0)</span>}
             </h5>
             <Button className="w-auto" onClick={handleShow}>
               Add Service
