@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import DoctorsHook from "./../../redux/Hooks/Doctor/DoctorsHook";
 import ServicesHook from "./../../redux/Hooks/Services/ServicesHook";
 import NewsHook from "./../../redux/Hooks/News/NewsHook";
+import { DashboardHeader } from "./../../components";
 
 const DashboardPage = () => {
   const [doctors, loading, pageCount, getPage, total] = DoctorsHook();
@@ -21,13 +22,7 @@ const DashboardPage = () => {
 
   return (
     <Container>
-      <Row className="d-flex justify-content-between align-items-center mt-2  ">
-        <h5 className="w-auto">Dashboard</h5>
-        <h6 className="w-auto d-flex align-items-center">
-          <FontAwesomeIcon icon={faCalendarAlt} className="ms-0 me-1" />
-          04/06/2023
-        </h6>
-      </Row>
+      <DashboardHeader text="DashBoard" url="/" />
       <Row className="mt-4">
         <Col xs={12} md={6}>
           <Card

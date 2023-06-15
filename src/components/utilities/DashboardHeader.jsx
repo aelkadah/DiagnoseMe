@@ -19,7 +19,7 @@ const DashboardHeader = ({ text, url }) => {
       </h5>
       <h6 className="w-auto d-flex align-items-center">
         <FontAwesomeIcon icon={faCalendarAlt} className="ms-0 me-1" />
-        04/06/2023
+        {new Date().toLocaleDateString()}
       </h6>
     </Row>
   );
