@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createNewUser } from "../../actions/Authaction";
+import { userRegister } from "../../actions/Authaction";
 import notify from "../../../Hook/useNotifaction";
-import { useEffect } from "react";
+
 const RegisterHook = () => {
   const [firstname, setfirstName] = useState("");
   const [lastname, setlasttName] = useState("");
@@ -42,7 +41,7 @@ const RegisterHook = () => {
     setConfirmPassword(e.target.value);
   };
 
-  const res = useSelector((state) => state.authReducer.createUser);
+  const res = useSelector((state) => state.authReducer.registered);
 
   const OnSubmit = async () => {
     if (firstname === "") {
@@ -63,14 +62,15 @@ const RegisterHook = () => {
 
     setLoading(true);
     await dispatch(
-      createNewUser({
+      userRegister({
         first_name: firstname,
         last_name: lastname,
         username: userName,
         email: email,
-        phone_number: phone,
         password: password,
         password_confirmation: confirmPassword,
+        phone_number: phone,
+        premium: "0",
         role: "0",
       })
     );
@@ -84,7 +84,8 @@ const RegisterHook = () => {
         if (res.status == 200) {
           // console.log(res.data.data.token);
           localStorage.setItem("token", res.data.data.token);
-          notify("تم تسجيل الحساب بنجاح", "success");
+          localStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
+          notify("Account registered successfully", "success");
           setTimeout(() => navigate("/"), 2000);
         }
       }

@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { SecTitle } from "../../components";
-import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
-import LoginHook from "../../redux/Hooks/Auth/LoginHook";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { SecTitle } from "../../../components";
+import loginpic from "/src/images/login.svg";
 import { ToastContainer } from "react-toastify";
+import DoctorLoginHook from "../../../redux/Hooks/Auth/DoctorLoginHook";
 
-const LoginPage = () => {
+const DoctorLoginPage = () => {
   const [
     email,
     password,
@@ -15,7 +15,7 @@ const LoginPage = () => {
     onChangePassword,
     onSubmit,
     isPress,
-  ] = LoginHook();
+  ] = DoctorLoginHook();
 
   return (
     <Container className="form-section">
@@ -67,7 +67,7 @@ const LoginPage = () => {
           <div className="mt-3" style={{ textAlign: "center" }}>
             <span>
               Don’t have an account ?{" "}
-              <Link style={{ textDecoration: "none" }} to="/signup">
+              <Link style={{ textDecoration: "none" }} to="/doctor-signup">
                 Sign up ?
               </Link>
             </span>
@@ -79,4 +79,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default DoctorLoginPage;

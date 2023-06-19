@@ -1,22 +1,41 @@
-import { CREATE_NEW_USER, LOGIN_USER } from "../type";
+import {
+  USER_REGISTER,
+  USER_LOGIN,
+  DOCTOR_REGISTER,
+  DOCTOR_LOGIN,
+} from "../type";
 
 const inital = {
-  createUser: [],
-  loginUser: [],
+  registered: [],
+  loggedin: [],
+  registeredDoc: [],
+  loggedinDoc: [],
   loading: true,
 };
 const authReducer = (state = inital, action) => {
   switch (action.type) {
-    case CREATE_NEW_USER:
+    case USER_REGISTER:
       return {
         ...state,
-        createUser: action.payload,
+        registered: action.payload,
       };
 
-    case LOGIN_USER:
+    case USER_LOGIN:
       return {
         ...state,
-        loginUser: action.payload,
+        loggedin: action.payload,
+      };
+
+    case DOCTOR_REGISTER:
+      return {
+        ...state,
+        registeredDoc: action.payload,
+      };
+
+    case DOCTOR_LOGIN:
+      return {
+        ...state,
+        loggedinDoc: action.payload,
       };
 
     default:

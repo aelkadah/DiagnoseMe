@@ -1,7 +1,13 @@
 export { default as ErrorPage } from "./ErrorPage";
+
 export { default as HomePage } from "./HomePage";
+
 export { default as LoginPage } from "./auth/LoginPage";
 export { default as SignupPage } from "./auth/SignupPage";
+
+export { default as DoctorLoginPage } from "./auth/Doctor/DoctorLoginPage";
+export { default as DoctorRegisterPage } from "./auth/Doctor/DoctorRegisterPage";
+
 export { default as ProfilePage } from "./ProfilePage";
 
 export { default as ForgetPasswordPage } from "./auth/ForgetPasswordPage";

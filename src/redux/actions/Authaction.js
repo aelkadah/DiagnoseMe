@@ -1,34 +1,78 @@
-import { CREATE_NEW_USER, LOGIN_USER } from "../type";
-import { useInsertData } from "../../Hook/useInsertData";
+import {
+  USER_REGISTER,
+  USER_LOGIN,
+  DOCTOR_REGISTER,
+  GET_ERROR,
+  DOCTOR_LOGIN,
+} from "../type";
+import {
+  useInsertData,
+  useInsertDataWithImage,
+} from "../../Hook/useInsertData";
 
-export const createNewUser = (data) => async (dispatch) => {
+export const userRegister = (data) => async (dispatch) => {
   try {
     const response = await useInsertData("/api/user/register", data);
 
     dispatch({
-      type: CREATE_NEW_USER,
+      type: USER_REGISTER,
       payload: response,
       loading: true,
     });
   } catch (e) {
     dispatch({
-      type: CREATE_NEW_USER,
+      type: USER_REGISTER,
       payload: e.response,
     });
   }
 };
 
-export const loginUser = (data) => async (dispatch) => {
+export const userLogin = (data) => async (dispatch) => {
   try {
     const response = await useInsertData(`/api/user/login`, data);
     dispatch({
-      type: LOGIN_USER,
+      type: USER_LOGIN,
       payload: response,
       loading: true,
     });
   } catch (e) {
     dispatch({
-      type: LOGIN_USER,
+      type: USER_LOGIN,
+      payload: e.response,
+    });
+  }
+};
+
+export const doctorRegister = (formData) => async (dispatch) => {
+  try {
+    const response = await useInsertDataWithImage(
+      `/api/doctor/register`,
+      formData
+    );
+    dispatch({
+      type: DOCTOR_REGISTER,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const doctorLogin = (data) => async (dispatch) => {
+  try {
+    const response = await useInsertData(`/api/doctor/login`, data);
+    dispatch({
+      type: DOCTOR_LOGIN,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: DOCTOR_LOGIN,
       payload: e.response,
     });
   }

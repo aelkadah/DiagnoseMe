@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import notify from "../../../Hook/useNotifaction";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../../actions/Authaction";
 import { useNavigate } from "react-router-dom";
+import { doctorLogin } from "../../actions/Authaction";
+import notify from "../../../Hook/useNotifaction";
 
-const LoginHook = () => {
+const DoctorLoginHook = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -12,6 +12,7 @@ const LoginHook = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(true);
   const [isPress, setIsPress] = useState(false);
+
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -28,7 +29,7 @@ const LoginHook = () => {
     setLoading(true);
 
     await dispatch(
-      userLogin({
+      doctorLogin({
         email,
         password,
       })
@@ -37,7 +38,7 @@ const LoginHook = () => {
     setLoading(false);
     setIsPress(false);
   };
-  const res = useSelector((state) => state.authReducer.loggedin);
+  const res = useSelector((state) => state.authReducer.loggedinDoc);
 
   useEffect(() => {
     if (!loading) {
@@ -63,4 +64,4 @@ const LoginHook = () => {
     isPress,
   ];
 };
-export default LoginHook;
+export default DoctorLoginHook;

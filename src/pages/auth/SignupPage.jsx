@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
-import { Link } from "react-router-dom";
-import Call from "../../components/utilities/Call";
-import axios from "axios";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 import RegisterHook from "../../redux/Hooks/Auth/RegisterHook";
 import { ToastContainer } from "react-toastify";
-import notify from "../../Hook/useNotifaction";
+
 const SignupPage = () => {
   const [
     firstname,
@@ -32,7 +27,6 @@ const SignupPage = () => {
 
   return (
     <Container className="form-section">
-      <Call />
       <SecTitle title={"Signup"} />
       <Row>
         <Col xs={12} md={6} className="pb-4">
