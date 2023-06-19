@@ -25,7 +25,7 @@ export { default as ArticlePage } from "./News/ArticlePage";
 export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
 export { default as SecondCheckupPgae } from "./SecondCheckupPgae";
 export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
-export { default as FourthCheckupPgae } from "./FourthCheckupPgae";
+export { default as FourthCheckupPage } from "./FourthCheckupPage";
 
 export { default as DoctorsPage } from "./Doctors/DoctorsPage";
 export { default as DoctorDetailsPage } from "./Doctors/DoctorDetailsPage";
