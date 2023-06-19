@@ -1,18 +1,37 @@
-import React, { useState } from "react";
-import { getDay } from "date-fns";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getDay, setHours, setMinutes } from "date-fns";
 import notify from "./../../../Hook/useNotifaction";
+import { makeReservation } from "../../actions/Doctorsaction";
 
-const ReserveHook = () => {
+const ReserveHook = (id) => {
+  const dispatch = useDispatch();
+
+  let availableDays = [0, 1, 2, 4, 5];
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  let availableDays = [0, 2, 4, 5];
+  const [loading, setLoading] = useState(true);
+
+  const res = useSelector((state) => state.DoctorsReducer.reservation);
 
   const [choosenDate, setChoosenDate] = useState("");
+  const [choosenTime, setChoosenTime] = useState("");
 
-  const [startDate, setStartDate] = useState(null);
+  const [startDate, setStartDate] = useState(
+    setHours(setMinutes(new Date(), 0), 0)
+  );
+
+  const filterPassedTime = (time) => {
+    const currentDate = new Date();
+    const selectedDate = new Date(time);
+
+    return currentDate.getTime() < selectedDate.getTime();
+  };
+
   const isWeekday = (date) => {
     const day = getDay(date);
     return availableDays.includes(day);
@@ -27,20 +46,39 @@ const ReserveHook = () => {
       new Date(date - tzoffset).toISOString().slice(0, -1).split("T")[0]
     );
 
-    console.log(date);
+    setChoosenTime(
+      JSON.stringify(date.toTimeString().split(" ")[0]).split('"')[1]
+    );
   };
 
   const handleSubmit = async (e) => {
     e.persist();
     if (choosenDate == "") return notify("Please choose a date!", "warn");
+    else if (choosenTime == "") return notify("Please choose a time!", "warn");
 
     setShow(false);
 
-    console.log("sumbit clicked");
-
-    console.log(choosenDate);
-    // console.log(date);
+    setLoading(true);
+    await dispatch(
+      makeReservation({
+        date: choosenDate,
+        time: choosenTime,
+        doctor_id: id,
+      })
+    );
+    setLoading(false);
   };
+
+  useEffect(() => {
+    if (!loading) {
+      //   if (res) console.log(res);
+      if (res?.status == 200)
+        return notify("Reservation created successfully", "success");
+      else if (res?.status == 403)
+        return notify("Sorry time is reserved", "warn");
+      else return notify("Something went wrong", "error");
+    }
+  }, [loading]);
 
   return [
     show,
@@ -49,6 +87,7 @@ const ReserveHook = () => {
     startDate,
     setStartDate,
     isWeekday,
+    filterPassedTime,
     handleChooseDate,
     handleSubmit,
   ];

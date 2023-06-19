@@ -28,6 +28,7 @@ const DoctorDetailsPage = () => {
     startDate,
     setStartDate,
     isWeekday,
+    filterPassedTime,
     handleChooseDate,
     handleSubmit,
   ] = ReserveHook(id);
@@ -67,12 +68,7 @@ const DoctorDetailsPage = () => {
             </h3>
 
             {JSON.parse(localStorage.getItem("userInfo"))?.premium == 1 ? (
-              <Button
-                className="px-3 rounded-5"
-                // as={Link}
-                // to={`/reserve/${doctor?.id}`}
-                onClick={handleShow}
-              >
+              <Button className="px-3 rounded-5" onClick={handleShow}>
                 Reserve a visit
               </Button>
             ) : (
@@ -113,22 +109,16 @@ const DoctorDetailsPage = () => {
         <Modal.Header closeButton>
           <Modal.Title>Reserve and appointment</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="d-flex flex-column align-items-center">
           <DatePicker
+            inline
             selected={startDate}
             onChange={handleChooseDate}
             filterDate={isWeekday}
             minDate={new Date()}
-            placeholderText="MM/DD/YYYY"
-            showIcon
-            inline
-            showTimeInput
-            // showTimeSelect
-            // timeFormat="p"
-            // timeIntervals={15}
-            // dateFormat="Pp"
-            className="border text-danger w-auto "
-            // timeClassName="d-flex"
+            dateFormat="yyyy-MM-dd h:mm aa"
+            showTimeSelect
+            filterTime={filterPassedTime}
           />
         </Modal.Body>
         <Modal.Footer>

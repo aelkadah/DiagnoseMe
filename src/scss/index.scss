@@ -45,6 +45,10 @@ html {
       }
     }
 
+    .react-datepicker {
+      display: inline-flex !important;
+    }
+
     .text-noto {
       font-family: $Noto;
     }

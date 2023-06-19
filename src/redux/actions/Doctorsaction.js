@@ -12,6 +12,7 @@ import {
   CREATE_DOCTOR,
   DELETE_DOCTOR,
   CHANGE_AVAILABLE_DAYS,
+  MAKE_RESERVATION,
 } from "../type";
 
 export const getAllDoctors = (page) => async (dispatch) => {
@@ -97,6 +98,23 @@ export const changeAvailableDays = (data) => async (dispatch) => {
     dispatch({
       type: CHANGE_AVAILABLE_DAYS,
       payload: "Error " + e,
+    });
+  }
+};
+
+export const makeReservation = (data) => async (dispatch) => {
+  try {
+    const response = await useInsertDataWithToken("/api/schedule", data);
+
+    dispatch({
+      type: MAKE_RESERVATION,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: MAKE_RESERVATION,
+      payload: e.response,
     });
   }
 };
