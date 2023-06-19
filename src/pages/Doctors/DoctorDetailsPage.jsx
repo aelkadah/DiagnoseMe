@@ -2,6 +2,7 @@ import {
   faArrowLeft,
   faEllipsisVertical,
   faLocationDot,
+  faPhone,
   faStar,
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
@@ -45,14 +46,22 @@ const DoctorDetailsPage = () => {
           className="d-flex flex-column align-items-sm-center align-items-md-start"
         >
           <div className="w-100 d-flex flex-md-row flex-column mb-1 mb-md-0 justify-content-between align-items-center">
-            <h3 className="mb-2">Dr. {doctor?.name}</h3>
-            <Button className="px-3 rounded-5" disabled>
-              Message
-            </Button>
+            <h3 className="mb-2">
+              Dr. {doctor?.first_name} {doctor?.last_name}
+            </h3>
+
+            {JSON.parse(localStorage.getItem("userInfo"))?.premium == 1 ? (
+              <Button className="px-3 rounded-5">Reserve a visit</Button>
+            ) : (
+              <Button className="px-3 rounded-5" disabled>
+                Reserve a visit
+              </Button>
+            )}
           </div>
+
           <div className="d-flex justify-content-start gap-3 w-auto ms-1">
             <h6 className="w-auto opacity-75 mt-0 py-0">
-              {doctor?.Specialization}
+              {doctor?.specialization}
             </h6>
             <div className="d-flex text-warning">
               <FontAwesomeIcon icon={faStar} fixedWidth />
@@ -66,6 +75,11 @@ const DoctorDetailsPage = () => {
           <h6 className="d-flex justify-content-start align-items-center text-danger">
             <FontAwesomeIcon icon={faLocationDot} fixedWidth />
             {doctor?.address}
+          </h6>
+
+          <h6 className="d-flex justify-content-start align-items-center text-danger">
+            <FontAwesomeIcon icon={faPhone} fixedWidth className="ms-0 me-2" />
+            {doctor?.phone_number}
           </h6>
 
           <p className="text-secondary mt-2">{doctor?.info}</p>

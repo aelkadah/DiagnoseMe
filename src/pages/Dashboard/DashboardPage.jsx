@@ -22,7 +22,7 @@ const DashboardPage = () => {
 
   return (
     <Container>
-      <DashboardHeader text="DashBoard" url="/" />
+      <DashboardHeader text="Dashboard" url="/" />
       <Row className="mt-4">
         <Col xs={12} md={6}>
           <Card

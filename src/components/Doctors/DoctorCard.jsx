@@ -13,23 +13,25 @@ const DoctorCard = ({ doctor }) => {
             <img
               src={`http://127.0.0.1:8000/storage/${doctor.image}`}
               className="img-fluid rounded-start"
-              alt={`${doctor.name} Image`}
+              alt={`${doctor?.first_name} Image`}
             />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h4 className="card-name mb-1">Dr. {doctor.name}</h4>
-              <h6 className="text-secondary">{doctor.Specialization}</h6>
+              <h4 className="card-name mb-1">
+                Dr. {doctor?.first_name} {doctor?.last_name}
+              </h4>
+              <h6 className="text-secondary">{doctor?.specialization}</h6>
               <p className="text-secondary truncate-two text-secondary my-2">
-                {doctor.info}
+                {doctor?.info}
               </p>
               <h6 className="text-secondary">
                 <FontAwesomeIcon icon={faLocationDot} className="ms-0 me-1" />
-                {doctor.address}
+                {doctor?.address}
               </h6>
               <h6 className="text-secondary">
                 <FontAwesomeIcon icon={faPhone} className="ms-0 me-1" />
-                {doctor.PhoneNumber}
+                {doctor?.phone_number}
               </h6>
             </div>
           </div>
