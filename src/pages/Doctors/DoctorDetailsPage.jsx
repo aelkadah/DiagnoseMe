@@ -1,3 +1,5 @@
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
   faEllipsisVertical,
@@ -6,15 +8,29 @@ import {
   faStar,
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import DoctorDetailsHook from "../../redux/Hooks/Doctor/DoctorDetailsHook";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
+
+import ReserveHook from "../../redux/Hooks/Schedule/ReserveHook";
 
 const DoctorDetailsPage = () => {
   const { id } = useParams();
   const [doctor, loading] = DoctorDetailsHook(id);
+
+  const [
+    show,
+    handleShow,
+    handleClose,
+    startDate,
+    setStartDate,
+    isWeekday,
+    handleChooseDate,
+    handleSubmit,
+  ] = ReserveHook(id);
 
   return (
     <Container>
@@ -38,7 +54,7 @@ const DoctorDetailsPage = () => {
       </Row>
       <Row className="mt-5">
         <Col xs={12} md={4} className="mb-3">
-          <img alt="" src={`http://127.0.0.1:8000/storage/${doctor.image}`} />
+          <img alt="" src={`http://127.0.0.1:8000/storage/${doctor?.image}`} />
         </Col>
         <Col
           xs={12}
@@ -51,7 +67,14 @@ const DoctorDetailsPage = () => {
             </h3>
 
             {JSON.parse(localStorage.getItem("userInfo"))?.premium == 1 ? (
-              <Button className="px-3 rounded-5">Reserve a visit</Button>
+              <Button
+                className="px-3 rounded-5"
+                // as={Link}
+                // to={`/reserve/${doctor?.id}`}
+                onClick={handleShow}
+              >
+                Reserve a visit
+              </Button>
             ) : (
               <Button className="px-3 rounded-5" disabled>
                 Reserve a visit
@@ -85,6 +108,42 @@ const DoctorDetailsPage = () => {
           <p className="text-secondary mt-2">{doctor?.info}</p>
         </Col>
       </Row>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Reserve and appointment</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <DatePicker
+            selected={startDate}
+            onChange={handleChooseDate}
+            filterDate={isWeekday}
+            minDate={new Date()}
+            placeholderText="MM/DD/YYYY"
+            showIcon
+            inline
+            showTimeInput
+            // showTimeSelect
+            // timeFormat="p"
+            // timeIntervals={15}
+            // dateFormat="Pp"
+            className="border text-danger w-auto "
+            // timeClassName="d-flex"
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="light"
+            className="border border-opacity-10"
+            onClick={handleClose}
+          >
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

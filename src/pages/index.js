@@ -39,3 +39,5 @@ export { default as DashConditionsPage } from "./Dashboard/DashConditionsPage";
 export { default as DashConditionsAddPage } from "./Dashboard/DashConditionsAddPage";
 export { default as DashNewsPage } from "./Dashboard/DashNewsPage";
 export { default as DashNewsAddPage } from "./Dashboard/DashNewsAddPage";
+
+export { default as ReservationPage } from "./Premium/ReservationPage";
