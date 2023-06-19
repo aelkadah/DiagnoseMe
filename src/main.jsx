@@ -42,6 +42,7 @@ import {
   ArticlePage,
   DoctorLoginPage,
   DoctorRegisterPage,
+  WorkingDaysPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import { Slide, ToastContainer } from "react-toastify";
@@ -65,6 +66,9 @@ const router = createBrowserRouter(
       <Route path="/doctor-login" element={<DoctorLoginPage />} />
       <Route path="/doctor-signup" element={<DoctorRegisterPage />} />
       <Route path="/profile" element={<ProfilePage />} />
+
+      <Route path="/dashboard/working-days" element={<WorkingDaysPage />} />
+
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/dashboard/services" element={<DashServicesPage />} />
       <Route path="/dashboard/doctors" element={<DashDoctorsPage />} />

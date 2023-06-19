@@ -30,6 +30,8 @@ export { default as FourthCheckupPage } from "./FourthCheckupPage";
 export { default as DoctorsPage } from "./Doctors/DoctorsPage";
 export { default as DoctorDetailsPage } from "./Doctors/DoctorDetailsPage";
 
+export { default as WorkingDaysPage } from "./Dashboard/Doctor/WorkingDaysPage";
+
 export { default as DashboardPage } from "./Dashboard/DashboardPage";
 export { default as DashServicesPage } from "./Dashboard/DashServicesPage";
 export { default as DashDoctorsPage } from "./Dashboard/DashDoctorsPage";

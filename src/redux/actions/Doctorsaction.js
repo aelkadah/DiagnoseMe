@@ -1,5 +1,9 @@
 import useGetData from "./../../Hook/useGetData";
-import { useInsertDataWithImage } from "../../Hook/useInsertData";
+import {
+  useInsertData,
+  useInsertDataWithImage,
+  useInsertDataWithToken,
+} from "../../Hook/useInsertData";
 import useDeleteData from "../../Hook/useDeleteData";
 import {
   GET_ALL_Doctors,
@@ -7,6 +11,7 @@ import {
   GET_ERROR,
   CREATE_DOCTOR,
   DELETE_DOCTOR,
+  CHANGE_AVAILABLE_DAYS,
 } from "../type";
 
 export const getAllDoctors = (page) => async (dispatch) => {
@@ -71,6 +76,26 @@ export const deleteDoctor = (id) => async (dispatch) => {
   } catch (e) {
     dispatch({
       type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const changeAvailableDays = (data) => async (dispatch) => {
+  try {
+    const response = await useInsertDataWithToken(
+      "/api/doctor/AvailableDays",
+      data
+    );
+
+    dispatch({
+      type: CHANGE_AVAILABLE_DAYS,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: CHANGE_AVAILABLE_DAYS,
       payload: "Error " + e,
     });
   }
