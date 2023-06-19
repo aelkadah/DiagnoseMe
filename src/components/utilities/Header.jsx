@@ -62,7 +62,6 @@ const Header = () => {
                 Contact
               </Nav.Link>
             </Nav>
-
             <div className="d-flex gap-2">
               {!localStorage.getItem("userInfo") ? (
                 <>
@@ -80,9 +79,11 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <Button to="/checkup" as={NavLink} className="rounded-pill ">
-                    Checkup
-                  </Button>
+                  {JSON.parse(localStorage.getItem("userInfo"))?.role == 0 ? (
+                    <Button to="/checkup" as={NavLink} className="rounded-pill">
+                      Checkup
+                    </Button>
+                  ) : null}
 
                   <Dropdown>
                     <Dropdown.Toggle className="py-2 px-3 bg-white text-primary border-0 d-flex align-items-center h-100">
@@ -90,9 +91,22 @@ const Header = () => {
                       {JSON.parse(localStorage.getItem("userInfo")).first_name}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
+                      {/* Admin Dashboard */}
                       {JSON.parse(localStorage.getItem("userInfo")).role ==
                       1 ? (
                         <Dropdown.Item as={NavLink} to="/dashboard">
+                          <FontAwesomeIcon
+                            icon={faSliders}
+                            className="ps-0 pe-2"
+                          />
+                          Dashboard
+                        </Dropdown.Item>
+                      ) : null}
+
+                      {/* Doctor Dashboard */}
+                      {JSON.parse(localStorage.getItem("userInfo")).role ==
+                      2 ? (
+                        <Dropdown.Item as={NavLink} to="/doctor/dashboard">
                           <FontAwesomeIcon
                             icon={faSliders}
                             className="ps-0 pe-2"
