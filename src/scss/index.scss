@@ -49,6 +49,13 @@ html {
       font-family: $Noto;
     }
 
+    .truncateOne {
+      -webkit-line-clamp: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
     .truncate-two {
       -webkit-line-clamp: 3;
       display: -webkit-box;

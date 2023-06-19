@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
-import ConditionCard from "./ConditionCard";
+import DashConditionCard from "./DashConditionCard";
 import ConditionsHook from "../../redux/Hooks/Conditions/ConditionsHook";
 import { Pagination } from "../../components";
 
-const ConditionsContainer = () => {
+const DashConditionsContainer = () => {
   const [conditions, loading, pageCount, getPage] = ConditionsHook();
 
   return (
@@ -13,8 +13,8 @@ const ConditionsContainer = () => {
         conditions?.data?.length >= 1 ? (
           conditions?.data.map((condition, index) => {
             return (
-              <Col xs={12} md={4} key={index}>
-                <ConditionCard condition={condition} />
+              <Col xs={12} md={4} lg={3} key={index}>
+                <DashConditionCard condition={condition} />
               </Col>
             );
           })
@@ -31,4 +31,4 @@ const ConditionsContainer = () => {
   );
 };
 
-export default ConditionsContainer;
+export default DashConditionsContainer;
