@@ -91,22 +91,9 @@ const Header = () => {
                       {JSON.parse(localStorage.getItem("userInfo")).first_name}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      {/* Admin Dashboard */}
-                      {JSON.parse(localStorage.getItem("userInfo")).role ==
-                      1 ? (
+                      {JSON.parse(localStorage.getItem("userInfo")).role == 1 ||
+                      JSON.parse(localStorage.getItem("userInfo")).role == 2 ? (
                         <Dropdown.Item as={NavLink} to="/dashboard">
-                          <FontAwesomeIcon
-                            icon={faSliders}
-                            className="ps-0 pe-2"
-                          />
-                          Dashboard
-                        </Dropdown.Item>
-                      ) : null}
-
-                      {/* Doctor Dashboard */}
-                      {JSON.parse(localStorage.getItem("userInfo")).role ==
-                      2 ? (
-                        <Dropdown.Item as={NavLink} to="/doctor/dashboard">
                           <FontAwesomeIcon
                             icon={faSliders}
                             className="ps-0 pe-2"
