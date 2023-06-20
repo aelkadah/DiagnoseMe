@@ -4,7 +4,6 @@ import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import { Link } from "react-router-dom";
 import LoginHook from "../../redux/Hooks/Auth/LoginHook";
-import { ToastContainer } from "react-toastify";
 
 const LoginPage = () => {
   const [
@@ -74,7 +73,6 @@ const LoginPage = () => {
           </div>
         </Col>
       </Row>
-      <ToastContainer />
     </Container>
   );
 };

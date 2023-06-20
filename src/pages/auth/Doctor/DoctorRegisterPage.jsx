@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../../components";
 import loginpic from "/src/images/login.svg";
-import { ToastContainer } from "react-toastify";
 import DoctorRegisterHook from "../../../redux/Hooks/Auth/DoctorRegisterHook";
 
 const DoctorRegisterPage = () => {
@@ -18,6 +17,10 @@ const DoctorRegisterPage = () => {
     onChangeEmail,
     phone,
     onChangePhone,
+    address,
+    onChangeAddress,
+    info,
+    onChangeInfo,
     pass,
     onChangePass,
     passConf,
@@ -33,10 +36,10 @@ const DoctorRegisterPage = () => {
     <Container className="form-section">
       <SecTitle title={"Signup"} />
       <Row>
-        <Col xs={12} md={6} className="pb-4">
+        <Col xs={12} md={5} className="pb-4">
           <img src={loginpic} style={{ width: "100%" }} />
         </Col>
-        <Col sm={12} lg={6}>
+        <Col sm={12} lg={7}>
           <Form>
             <Row>
               <Col xs={6}>
@@ -44,7 +47,7 @@ const DoctorRegisterPage = () => {
                   <Form.Label>First Name </Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter your first name here..."
+                    placeholder="Type your first name..."
                     onChange={onChangeFName}
                     value={fname}
                   />
@@ -55,32 +58,85 @@ const DoctorRegisterPage = () => {
                   <Form.Label>Last Name</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter your last name here..."
+                    placeholder="Type your last name..."
                     onChange={onChangeLName}
                     value={lname}
                   />
                 </Form.Group>
               </Col>
             </Row>
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your name here..."
-                onChange={onChangeEmail}
-                value={email}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter your username here..."
-                onChange={onChangeUser}
-                value={user}
-              />
-            </Form.Group>
-
+            <Row>
+              <Col xs={12} md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your name here..."
+                    onChange={onChangeEmail}
+                    value={email}
+                  />
+                </Form.Group>
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter your username here..."
+                    onChange={onChangeUser}
+                    value={user}
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Phone number </Form.Label>
+                  <Form.Control
+                    type="tel"
+                    placeholder="Enter your phone number here..."
+                    onChange={onChangePhone}
+                    value={phone}
+                  />
+                </Form.Group>
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Address</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Type your address here..."
+                    onChange={onChangeAddress}
+                    value={address}
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Password </Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder="Enter your password here..."
+                    onChange={onChangePass}
+                    value={pass}
+                  />
+                </Form.Group>
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Confirm Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    placeholder=" Please confirm your password.."
+                    onChange={onChangePassConf}
+                    value={passConf}
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
             <Form.Group className="mb-3">
               <Form.Label>Specialization</Form.Label>
               <Form.Control
@@ -90,46 +146,21 @@ const DoctorRegisterPage = () => {
                 value={spec}
               />
             </Form.Group>
-
             <Form.Group className="mb-3">
-              <Form.Label>Phone number </Form.Label>
+              <Form.Label>Information</Form.Label>
               <Form.Control
-                type="tel"
-                placeholder="Enter your phone number here..."
-                onChange={onChangePhone}
-                value={phone}
+                as="textarea"
+                rows={3}
+                placeholder="Enter your information here...."
+                value={info}
+                onChange={onChangeInfo}
               />
             </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Password </Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Enter your password here..."
-                onChange={onChangePass}
-                value={pass}
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder=" Please confirm your password.."
-                onChange={onChangePassConf}
-                value={passConf}
-              />
-            </Form.Group>
-
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-4">
               <Form.Label>Profile Picture</Form.Label>
               <Form.Control type="file" onChange={onChangeImage} />
             </Form.Group>
-            <Button
-              style={{ width: "100%", borderRadius: "10px" }}
-              variant="primary"
-              onClick={handleRegister}
-            >
+            <Button className="w-100" onClick={handleRegister}>
               Sign up{" "}
             </Button>
           </Form>
@@ -143,8 +174,6 @@ const DoctorRegisterPage = () => {
           </div>
         </Col>
       </Row>
-
-      <ToastContainer />
     </Container>
   );
 };

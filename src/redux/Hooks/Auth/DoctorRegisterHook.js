@@ -16,6 +16,8 @@ const DoctorRegisterHook = () => {
   const [user, setUser] = useState("");
   const [spec, setSpec] = useState("");
   const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [info, setInfo] = useState("");
   const [pass, setPass] = useState("");
   const [passConf, setPassConf] = useState("");
   const [image, setImage] = useState(avi);
@@ -23,45 +25,16 @@ const DoctorRegisterHook = () => {
 
   const res = useSelector((state) => state.authReducer.registeredDoc);
 
-  const onChangeFName = (e) => {
-    e.persist();
-    setFName(e.target.value);
-  };
-
-  const onChangeLName = (e) => {
-    e.persist();
-    setLName(e.target.value);
-  };
-
-  const onChangeUser = (e) => {
-    e.persist();
-    setUser(e.target.value);
-  };
-
-  const onChangeEmail = (e) => {
-    e.persist();
-    setEmail(e.target.value);
-  };
-
-  const onChangeSpec = (e) => {
-    e.persist();
-    setSpec(e.target.value);
-  };
-
-  const onChangePhone = (e) => {
-    e.persist();
-    setPhone(e.target.value);
-  };
-
-  const onChangePass = (e) => {
-    e.persist();
-    setPass(e.target.value);
-  };
-
-  const onChangePassConf = (e) => {
-    e.persist();
-    setPassConf(e.target.value);
-  };
+  const onChangeFName = (e) => setFName(e.target.value);
+  const onChangeLName = (e) => setLName(e.target.value);
+  const onChangeUser = (e) => setUser(e.target.value);
+  const onChangeEmail = (e) => setEmail(e.target.value);
+  const onChangeSpec = (e) => setSpec(e.target.value);
+  const onChangePhone = (e) => setPhone(e.target.value);
+  const onChangeAddress = (e) => setAddress(e.target.value);
+  const onChangeInfo = (e) => setInfo(e.target.value);
+  const onChangePass = (e) => setPass(e.target.value);
+  const onChangePassConf = (e) => setPassConf(e.target.value);
 
   const onChangeImage = async (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -79,11 +52,15 @@ const DoctorRegisterHook = () => {
       email === "" ||
       phone == "" ||
       spec == "" ||
+      address == "" ||
+      info == "" ||
       pass == "" ||
       passConf == "" ||
       selectedFile === null
     )
       return notify("Please enter required fields!", "warn");
+
+    if (pass !== passConf) return notify("Please confirm password", "warn");
 
     const formData = new FormData();
     formData.append("first_name", fname);
@@ -91,6 +68,8 @@ const DoctorRegisterHook = () => {
     formData.append("username", user);
     formData.append("email", email);
     formData.append("phone_number", phone);
+    formData.append("address", address);
+    formData.append("info", info);
     formData.append("password", pass);
     formData.append("password_confirmation", passConf);
     formData.append("specialization", spec);
@@ -109,6 +88,8 @@ const DoctorRegisterHook = () => {
       setUser("");
       setEmail("");
       setPhone("");
+      setAddress("");
+      setInfo("");
       setPass("");
       setPassConf("");
       setSpec("");
@@ -136,6 +117,10 @@ const DoctorRegisterHook = () => {
     onChangeEmail,
     phone,
     onChangePhone,
+    address,
+    onChangeAddress,
+    info,
+    onChangeInfo,
     pass,
     onChangePass,
     passConf,

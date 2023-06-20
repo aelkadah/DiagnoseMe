@@ -4,7 +4,6 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../components";
 import loginpic from "/src/images/login.svg";
 import RegisterHook from "../../redux/Hooks/Auth/RegisterHook";
-import { ToastContainer } from "react-toastify";
 
 const SignupPage = () => {
   const [
@@ -120,8 +119,6 @@ const SignupPage = () => {
           </div>
         </Col>
       </Row>
-
-      <ToastContainer />
     </Container>
   );
 };

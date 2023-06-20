@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../../components";
 import loginpic from "/src/images/login.svg";
-import { ToastContainer } from "react-toastify";
 import DoctorLoginHook from "../../../redux/Hooks/Auth/DoctorLoginHook";
 
 const DoctorLoginPage = () => {
@@ -74,7 +73,6 @@ const DoctorLoginPage = () => {
           </div>
         </Col>
       </Row>
-      <ToastContainer />
     </Container>
   );
 };
