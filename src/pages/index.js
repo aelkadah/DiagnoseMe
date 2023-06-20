@@ -31,6 +31,7 @@ export { default as DoctorsPage } from "./Doctors/DoctorsPage";
 export { default as DoctorDetailsPage } from "./Doctors/DoctorDetailsPage";
 
 export { default as WorkingDaysPage } from "./Dashboard/Doctor/WorkingDaysPage";
+export { default as DoctorSchedulePage } from "./Dashboard/Doctor/DoctorSchedulePage";
 
 export { default as DashboardPage } from "./Dashboard/DashboardPage";
 export { default as DashServicesPage } from "./Dashboard/DashServicesPage";

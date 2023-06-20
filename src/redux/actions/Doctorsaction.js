@@ -1,4 +1,3 @@
-import useGetData from "./../../Hook/useGetData";
 import {
   useInsertData,
   useInsertDataWithImage,
@@ -14,7 +13,9 @@ import {
   CHANGE_AVAILABLE_DAYS,
   MAKE_RESERVATION,
   GET_WORKING_DAYS,
+  GET_SCHEDULE,
 } from "../type";
+import useGetData, { useGetDataToken } from "../../Hook/useGetData";
 
 export const getAllDoctors = (page) => async (dispatch) => {
   try {
@@ -72,6 +73,23 @@ export const deleteDoctor = (id) => async (dispatch) => {
     const response = await useDeleteData(`/api/doctor/${id}`);
     dispatch({
       type: DELETE_DOCTOR,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const getSchedule = () => async (dispatch) => {
+  try {
+    const response = await useGetDataToken(`/api/mySchedules`);
+
+    dispatch({
+      type: GET_SCHEDULE,
       payload: response,
       loading: true,
     });

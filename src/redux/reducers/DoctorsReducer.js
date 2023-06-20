@@ -7,12 +7,14 @@ import {
   CHANGE_AVAILABLE_DAYS,
   MAKE_RESERVATION,
   GET_WORKING_DAYS,
+  GET_SCHEDULE,
 } from "../type";
 
 const inital = {
   Doctors: [],
   oneDoctor: [],
   created: [],
+  schedule: [],
   workingDays: [],
   availableDays: [],
   reservation: [],
@@ -46,6 +48,13 @@ const DoctorsReducer = (state = inital, action) => {
       return {
         ...state,
         deleted: action.payload,
+        loading: false,
+      };
+
+    case GET_SCHEDULE:
+      return {
+        ...state,
+        schedule: action.payload,
         loading: false,
       };
 
