@@ -3,7 +3,9 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarAlt,
+  faCalendarCheck,
   faChevronRight,
+  faClipboardList,
   faNewspaper,
   faNotesMedical,
   faPuzzlePiece,
@@ -112,6 +114,46 @@ const DashboardPage = () => {
                 {news ? news?.total : 0}
               </h2>
               <h6 className="my-0 text-black-50">News</h6>
+            </Card.Body>
+            <Card.Body className="d-flex flex-row-reverse h-100">
+              <FontAwesomeIcon icon={faChevronRight} fixedWidth />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={12} md={6}>
+          <Card
+            as={Link}
+            to="/dashboard/working-days"
+            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer an-card"
+          >
+            <FontAwesomeIcon
+              icon={faCalendarCheck}
+              fixedWidth
+              className="text-primary"
+              style={{ fontSize: "60px" }}
+            />
+            <Card.Body className="w-auto">
+              <h2 className="my-2 fw-bold text-secondary">Working Days</h2>
+            </Card.Body>
+            <Card.Body className="d-flex flex-row-reverse h-100">
+              <FontAwesomeIcon icon={faChevronRight} fixedWidth />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={12} md={6}>
+          <Card
+            as={Link}
+            to="/dashboard/schedule"
+            className="bg-light border-0 shadow-sm mb-4 d-flex flex-row align-items-center px-5 cursor-pointer an-card"
+          >
+            <FontAwesomeIcon
+              icon={faClipboardList}
+              fixedWidth
+              className="text-primary"
+              style={{ fontSize: "60px" }}
+            />
+            <Card.Body className="w-auto">
+              <h2 className="my-2 fw-bold text-secondary">Schedule</h2>
             </Card.Body>
             <Card.Body className="d-flex flex-row-reverse h-100">
               <FontAwesomeIcon icon={faChevronRight} fixedWidth />
