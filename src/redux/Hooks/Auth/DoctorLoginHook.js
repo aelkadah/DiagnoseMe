@@ -48,7 +48,7 @@ const DoctorLoginHook = () => {
         localStorage.setItem("token", res.data.data.token);
         localStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
         notify("Successfully Logged in", "success");
-        setTimeout(() => navigate("/"), 2000);
+        setTimeout(() => navigate("/"), 1000);
       } else if (res?.status != 200)
         return notify("Email or Password is Incorrect!", "error");
     }

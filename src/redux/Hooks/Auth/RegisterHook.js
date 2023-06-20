@@ -86,7 +86,7 @@ const RegisterHook = () => {
           localStorage.setItem("token", res.data.data.token);
           localStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
           notify("Account registered successfully", "success");
-          setTimeout(() => navigate("/"), 2000);
+          setTimeout(() => navigate("/"), 1000);
         }
       }
     }
