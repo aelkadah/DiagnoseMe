@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeAvailableDays } from "../../actions/Doctorsaction";
 import notify from "../../../Hook/useNotifaction";
+import AvailableDaysHook from "./AvailableDaysHook";
 
 const ChooseAvailableDaysHook = () => {
-  const dispatch = useDispatch();
+  let id = JSON.parse(localStorage.getItem("userInfo"))?.id;
+  const [availableDays] = AvailableDaysHook(id);
 
-  const AvailableDayss = [1, 2, 4];
+  const dispatch = useDispatch();
 
   const [selectedDays, setSelectedDays] = useState([]);
 
@@ -23,15 +25,17 @@ const ChooseAvailableDaysHook = () => {
   const res = useSelector((state) => state.DoctorsReducer.availableDays);
 
   useEffect(() => {
-    if (AvailableDayss?.includes(0)) setSunVal(true);
-    if (AvailableDayss?.includes(1)) setMonVal(true);
-    if (AvailableDayss?.includes(2)) setTueVal(true);
-    if (AvailableDayss?.includes(3)) setWedVal(true);
-    if (AvailableDayss?.includes(4)) setThuVal(true);
-    if (AvailableDayss?.includes(5)) setFriVal(true);
-    if (AvailableDayss?.includes(6)) setSatVal(true);
-    else return;
-  }, []);
+    if (availableDays) {
+      if (availableDays?.includes(0)) setSunVal(true);
+      if (availableDays?.includes(1)) setMonVal(true);
+      if (availableDays?.includes(2)) setTueVal(true);
+      if (availableDays?.includes(3)) setWedVal(true);
+      if (availableDays?.includes(4)) setThuVal(true);
+      if (availableDays?.includes(5)) setFriVal(true);
+      if (availableDays?.includes(6)) setSatVal(true);
+      else return;
+    }
+  }, [availableDays]);
 
   const onChangeSat = async (e) => await setSatVal(e.target.checked);
   const onChangeSun = async (e) => await setSunVal(e.target.checked);
@@ -65,8 +69,8 @@ const ChooseAvailableDaysHook = () => {
   useEffect(() => {
     if (!loading) {
       if (res?.status == 200)
-        return notify("Schedule working days updated successfully", "success");
-      else return notify("Something Went Wrong", "error");
+        return notify("Working days updated successfully", "success");
+      else return notify("Something went wrong", "error");
     }
   }, [loading]);
 

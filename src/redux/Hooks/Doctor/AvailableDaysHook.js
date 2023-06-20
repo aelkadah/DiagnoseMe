@@ -11,10 +11,10 @@ const AvailableDaysHook = (id) => {
 
   const loading = useSelector((state) => state.DoctorsReducer.loading);
   const availableDays = useSelector(
-    (state) => state.DoctorsReducer.workingDays
+    (state) => state.DoctorsReducer.workingDays.data?.Days
   );
 
-  return [loading, availableDays];
+  return [availableDays, loading];
 };
 
 export default AvailableDaysHook;

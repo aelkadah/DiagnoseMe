@@ -2,15 +2,8 @@ import React from "react";
 import { Container, Row, Form, Button, Col } from "react-bootstrap";
 import { DashboardHeader } from "../../../components";
 import ChooseAvailableDaysHook from "../../../redux/Hooks/Doctor/ChooseAvailableDaysHook";
-import AvailableDaysHook from "../../../redux/Hooks/Doctor/AvailableDaysHook";
 
 const WorkingDaysPage = () => {
-  let id = JSON.parse(localStorage.getItem("userInfo"))?.id;
-
-  const [loading, availableDays] = AvailableDaysHook(id);
-
-  if (availableDays) console.log(availableDays);
-
   const [
     satVal,
     onChangeSat,
