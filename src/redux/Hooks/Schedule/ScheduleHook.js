@@ -9,7 +9,7 @@ const ScheduleHook = () => {
 
   const id = JSON.parse(localStorage.getItem("userInfo"))?.id;
 
-  const schedule = useSelector((state) => state.DoctorsReducer.schedule);
+  const schedule = useSelector((state) => state.DoctorsReducer.schedule.data);
 
   useEffect(() => {
     if (id) dispatch(getSchedule());
