@@ -13,6 +13,7 @@ import {
   DELETE_DOCTOR,
   CHANGE_AVAILABLE_DAYS,
   MAKE_RESERVATION,
+  GET_WORKING_DAYS,
 } from "../type";
 
 export const getAllDoctors = (page) => async (dispatch) => {
@@ -73,6 +74,22 @@ export const deleteDoctor = (id) => async (dispatch) => {
       type: DELETE_DOCTOR,
       payload: response,
       loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const getAvailableDays = (id) => async (dispatch) => {
+  try {
+    const response = await useGetData(`/api/AvailableDays/${id}`);
+
+    dispatch({
+      type: GET_WORKING_DAYS,
+      payload: response,
     });
   } catch (e) {
     dispatch({

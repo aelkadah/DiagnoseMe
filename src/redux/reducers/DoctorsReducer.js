@@ -6,12 +6,14 @@ import {
   DELETE_DOCTOR,
   CHANGE_AVAILABLE_DAYS,
   MAKE_RESERVATION,
+  GET_WORKING_DAYS,
 } from "../type";
 
 const inital = {
   Doctors: [],
   oneDoctor: [],
   created: [],
+  workingDays: [],
   availableDays: [],
   reservation: [],
   deleted: null,
@@ -51,6 +53,13 @@ const DoctorsReducer = (state = inital, action) => {
       return {
         ...state,
         availableDays: action.payload,
+        loading: false,
+      };
+
+    case GET_WORKING_DAYS:
+      return {
+        ...state,
+        workingDays: action.payload,
         loading: false,
       };
 

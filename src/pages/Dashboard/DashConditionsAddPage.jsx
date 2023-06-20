@@ -5,12 +5,18 @@ import AddConditionHook from "../../redux/Hooks/Conditions/AddConditionHook";
 
 const DashConditionsAddPage = () => {
   const [
-    title,
-    onChangeTitle,
-    desc,
-    onChangeDesc,
-    image,
-    onChangeImage,
+    overview,
+    onChangeOverview,
+    symptoms,
+    onChangeSymptoms,
+    risks,
+    onChangeRisks,
+    prognosis,
+    onChangePrognosis,
+    diagnosis,
+    onChangeDiagnosis,
+    treatment,
+    onChangeTreatment,
     handleSubmit,
   ] = AddConditionHook();
 
@@ -24,26 +30,62 @@ const DashConditionsAddPage = () => {
       <Container>
         <Row className="mt-4">
           <Form.Group className="mb-3">
-            <Form.Label>Condition Cover</Form.Label>
-            <Form.Control type="file" onChange={onChangeImage} />
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Condition Title</Form.Label>
+            <Form.Label>Condition Overview</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Type title here..."
-              value={title}
-              onChange={onChangeTitle}
+              placeholder="Condition overview here..."
+              value={overview}
+              onChange={onChangeOverview}
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Condition Description</Form.Label>
+            <Form.Label>Condition Symptoms</Form.Label>
             <Form.Control
               as="textarea"
-              rows={7}
+              rows={3}
               placeholder="Some information about descriptioon...."
-              value={desc}
-              onChange={onChangeDesc}
+              value={symptoms}
+              onChange={onChangeSymptoms}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Condition Risks</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Some information about descriptioon...."
+              value={risks}
+              onChange={onChangeRisks}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Condition Prognosis</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Some information about descriptioon...."
+              value={prognosis}
+              onChange={onChangePrognosis}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Condition Diagnosis</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Some information about descriptioon...."
+              value={diagnosis}
+              onChange={onChangeDiagnosis}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Condition Treatment</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Some information about descriptioon...."
+              value={treatment}
+              onChange={onChangeTreatment}
             />
           </Form.Group>
           <Row className="d-flex justify-content-end px-0">
