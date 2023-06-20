@@ -8,13 +8,12 @@ import {
   faStar,
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button, Spinner } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import DoctorDetailsHook from "../../redux/Hooks/Doctor/DoctorDetailsHook";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
-
 import ReserveHook from "../../redux/Hooks/Schedule/ReserveHook";
 
 const DoctorDetailsPage = () => {
@@ -53,57 +52,70 @@ const DoctorDetailsPage = () => {
           <FontAwesomeIcon icon={faEllipsisVertical} fixedWidth />
         </span>
       </Row>
-      <Row className="mt-5">
-        <Col xs={12} md={4} className="mb-3">
-          <img alt="" src={`http://127.0.0.1:8000/storage/${doctor?.image}`} />
-        </Col>
-        <Col
-          xs={12}
-          md={8}
-          className="d-flex flex-column align-items-sm-center align-items-md-start"
-        >
-          <div className="w-100 d-flex flex-md-row flex-column mb-1 mb-md-0 justify-content-between align-items-center">
-            <h3 className="mb-2">
-              Dr. {doctor?.first_name} {doctor?.last_name}
-            </h3>
+      {!loading ? (
+        <Row className="mt-5">
+          <Col xs={12} md={4} className="mb-3">
+            <img
+              alt=""
+              src={`http://127.0.0.1:8000/storage/${doctor?.image}`}
+            />
+          </Col>
+          <Col
+            xs={12}
+            md={8}
+            className="d-flex flex-column align-items-sm-center align-items-md-start"
+          >
+            <div className="w-100 d-flex flex-md-row flex-column mb-1 mb-md-0 justify-content-between align-items-center">
+              <h3 className="mb-2">
+                Dr. {doctor?.first_name} {doctor?.last_name}
+              </h3>
 
-            {JSON.parse(localStorage.getItem("userInfo"))?.premium == 1 ? (
-              <Button className="px-3 rounded-5" onClick={handleShow}>
-                Reserve a visit
-              </Button>
-            ) : (
-              <Button className="px-3 rounded-5" disabled>
-                Reserve a visit
-              </Button>
-            )}
-          </div>
-
-          <div className="d-flex justify-content-start gap-3 w-auto ms-1">
-            <h6 className="w-auto opacity-75 mt-0 py-0">
-              {doctor?.specialization}
-            </h6>
-            <div className="d-flex text-warning">
-              <FontAwesomeIcon icon={faStar} fixedWidth />
-              <FontAwesomeIcon icon={faStar} fixedWidth />
-              <FontAwesomeIcon icon={faStar} fixedWidth />
-              <FontAwesomeIcon icon={faStar} fixedWidth />
-              <FontAwesomeIcon icon={faStarHalfStroke} fixedWidth />
+              {JSON.parse(localStorage.getItem("userInfo"))?.premium == 1 ? (
+                <Button className="px-3 rounded-5" onClick={handleShow}>
+                  Reserve a visit
+                </Button>
+              ) : (
+                <Button className="px-3 rounded-5" disabled>
+                  Reserve a visit
+                </Button>
+              )}
             </div>
-          </div>
 
-          <h6 className="d-flex justify-content-start align-items-center text-danger">
-            <FontAwesomeIcon icon={faLocationDot} fixedWidth />
-            {doctor?.address}
-          </h6>
+            <div className="d-flex justify-content-start gap-3 w-auto ms-1">
+              <h6 className="w-auto opacity-75 mt-0 py-0">
+                {doctor?.specialization}
+              </h6>
+              <div className="d-flex text-warning">
+                <FontAwesomeIcon icon={faStar} fixedWidth />
+                <FontAwesomeIcon icon={faStar} fixedWidth />
+                <FontAwesomeIcon icon={faStar} fixedWidth />
+                <FontAwesomeIcon icon={faStar} fixedWidth />
+                <FontAwesomeIcon icon={faStarHalfStroke} fixedWidth />
+              </div>
+            </div>
 
-          <h6 className="d-flex justify-content-start align-items-center text-danger">
-            <FontAwesomeIcon icon={faPhone} fixedWidth className="ms-0 me-2" />
-            {doctor?.phone_number}
-          </h6>
+            <h6 className="d-flex justify-content-start align-items-center text-danger">
+              <FontAwesomeIcon icon={faLocationDot} fixedWidth />
+              {doctor?.address}
+            </h6>
 
-          <p className="text-secondary mt-2">{doctor?.info}</p>
-        </Col>
-      </Row>
+            <h6 className="d-flex justify-content-start align-items-center text-danger">
+              <FontAwesomeIcon
+                icon={faPhone}
+                fixedWidth
+                className="ms-0 me-2"
+              />
+              {doctor?.phone_number}
+            </h6>
+
+            <p className="text-secondary mt-2">{doctor?.info}</p>
+          </Col>
+        </Row>
+      ) : (
+        <Container className="text-center py-4">
+          <Spinner animation="border" variant="primary" />
+        </Container>
+      )}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

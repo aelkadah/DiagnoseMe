@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDay, setHours, setMinutes } from "date-fns";
 import notify from "./../../../Hook/useNotifaction";
 import { makeReservation } from "../../actions/Doctorsaction";
+import AvailableDaysHook from "../Doctor/AvailableDaysHook";
 
 const ReserveHook = (id) => {
   const dispatch = useDispatch();
 
-  let availableDays = [0, 1, 2, 4, 5];
+  const [availableDays] = AvailableDaysHook(id);
 
   const [show, setShow] = useState(false);
 
