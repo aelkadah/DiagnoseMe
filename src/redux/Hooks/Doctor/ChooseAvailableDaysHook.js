@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { changeAvailableDays } from "../../actions/Doctorsaction";
+import {
+  changeAvailableDays,
+  getAvailableDays,
+} from "../../actions/Doctorsaction";
 import notify from "../../../Hook/useNotifaction";
 import AvailableDaysHook from "./AvailableDaysHook";
 
@@ -72,6 +75,7 @@ const ChooseAvailableDaysHook = () => {
     if (!loading) {
       if (res?.status == 200) {
         notify("Working days updated successfully", "success");
+        dispatch(getAvailableDays(id));
         return navigate("/dashboard");
       } else return notify("Something went wrong", "error");
     }

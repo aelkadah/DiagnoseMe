@@ -6,7 +6,7 @@ import notify from "../../../Hook/useNotifaction";
 const DiabetesHook = () => {
   const dispatch = useDispatch();
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -81,5 +81,3 @@ const DiabetesHook = () => {
 };
 
 export default DiabetesHook;
-
-// http://147.182.201.161/?gender=Female&age=80.0&hypertension=0&heart_disease=1&bmi=25.19&HbA1c_level=6.6&blood_glucose_level=140
