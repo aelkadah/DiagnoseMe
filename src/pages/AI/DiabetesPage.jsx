@@ -1,5 +1,13 @@
 import React from "react";
-import { Container, Row, Col, Form, Modal, Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Modal,
+  Button,
+  Spinner,
+} from "react-bootstrap";
 import DiabetesHook from "../../redux/Hooks/AI/DiabetesHook";
 import { DashboardHeader } from "../../components";
 import image from "../../images/ai.png";
@@ -26,6 +34,9 @@ const DiabetesPage = () => {
     glucose,
     onChangeGlucose,
     handleSubmit,
+    result,
+    handleDone,
+    handleFindDoctor,
   ] = DiabetesHook();
 
   return (
@@ -149,25 +160,76 @@ const DiabetesPage = () => {
             backdrop="static"
             keyboard={false}
           >
-            <Modal.Body className="text-center d-flex flex-column align-items-center pt-3 pb-4">
-              <div
-                className="rounded-circle bg-success my-4 d-flex justify-content-center align-items-center"
-                style={{ width: "200px", height: "200px" }}
-              >
-                <img src={congratulations} style={{ width: "fit-content" }} />
-              </div>
-              <h3 className="text-success ">Congratulations</h3>
-              <h5 className="mt-0 text-black-50">Your analysis are negative</h5>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button
-                variant="primary"
-                className="w-100 mx-5 rounded-3"
-                onClick={handleClose}
-              >
-                Done
-              </Button>
-            </Modal.Footer>
+            {result && result !== "" ? (
+              result === "congratz" ? (
+                <Modal.Body className="text-center d-flex flex-column align-items-center pt-3 pb-4">
+                  <div
+                    className="rounded-circle bg-success my-4 d-flex justify-content-center align-items-center"
+                    style={{ width: "200px", height: "200px" }}
+                  >
+                    <img
+                      src={congratulations}
+                      style={{ width: "fit-content" }}
+                    />
+                  </div>
+                  <h3 className="text-success">Congratulations</h3>
+                  <h5 className="mt-0 text-black-50">
+                    Your analysis are negative
+                  </h5>
+                </Modal.Body>
+              ) : (
+                <Modal.Body className="text-center d-flex flex-column align-items-center pt-3 pb-4">
+                  <div
+                    className="rounded-circle bg-danger my-4 d-flex justify-content-center align-items-center"
+                    style={{ width: "200px", height: "200px" }}
+                  >
+                    <img src={unfortunately} style={{ width: "70%" }} />
+                  </div>
+                  <h3 className="text-danger">Unfortunately</h3>
+                  <h5 className="mt-0 text-black-50">
+                    Your analysis are positive!
+                    <span className="d-block mt-1">
+                      Find a doctor and make an appointment
+                    </span>
+                  </h5>
+                </Modal.Body>
+              )
+            ) : (
+              <Container className="text-center py-4">
+                <Spinner animation="border" variant="primary" />
+              </Container>
+            )}
+
+            {result && result !== "" ? (
+              result == "congratz" ? (
+                <Modal.Footer className="d-flex justify-content-center py-3">
+                  <Button
+                    variant="success"
+                    className="w-50 rounded-3"
+                    onClick={handleDone}
+                  >
+                    Done
+                  </Button>
+                </Modal.Footer>
+              ) : (
+                <Modal.Footer className="d-flex justify-content-end py-3">
+                  <Button
+                    variant="danger"
+                    className="rounded-3"
+                    onClick={handleDone}
+                  >
+                    Close
+                  </Button>
+                  <Button
+                    variant="primary"
+                    className="rounded-3"
+                    onClick={handleFindDoctor}
+                  >
+                    Find a Doctor
+                  </Button>
+                </Modal.Footer>
+              )
+            ) : null}
           </Modal>
         </Col>
       </Row>
