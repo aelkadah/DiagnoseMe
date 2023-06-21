@@ -46,6 +46,7 @@ import {
   ReservationPage,
   DoctorSchedulePage,
   AlzheimerPage,
+  DiabetesPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import { Slide, ToastContainer } from "react-toastify";
@@ -101,23 +102,24 @@ const router = createBrowserRouter(
       <Route path="/checkup3" element={<ThirdCheckupPage />} />
       <Route path="/checkup4" element={<FourthCheckupPage />} />
       <Route path="/alzheimer" element={<AlzheimerPage />} />
+      <Route path="/diabetes" element={<DiabetesPage />} />
     </Route>
   )
 );
 
 // @ts-ignore
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ThemeProvider dir="ltr">
-      <Provider store={store}>
-        <RouterProvider router={router} />
-      </Provider>
-      <ToastContainer
-        transition={Slide}
-        autoClose={2000}
-        closeOnClick
-        newestOnTop
-      />
-    </ThemeProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ThemeProvider dir="ltr">
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+    <ToastContainer
+      transition={Slide}
+      autoClose={1000}
+      closeOnClick
+      newestOnTop
+    />
+  </ThemeProvider>
+  // </React.StrictMode>
 );

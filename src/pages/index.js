@@ -45,3 +45,4 @@ export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
 export { default as FourthCheckupPage } from "./FourthCheckupPage";
 
 export { default as AlzheimerPage } from "./AI/AlzheimerPage";
+export { default as DiabetesPage } from "./AI/DiabetesPage";

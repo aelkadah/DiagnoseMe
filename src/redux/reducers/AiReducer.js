@@ -1,7 +1,8 @@
-import { ALZHEIMER_CHECK } from "../type";
+import { ALZHEIMER_CHECK, DIABETES_CHECK } from "../type";
 
 const inital = {
   alzheimer: [],
+  diabetes: [],
   loading: true,
 };
 
@@ -11,6 +12,13 @@ const AiReducer = (state = inital, action) => {
       return {
         ...state,
         alzheimer: action.payload,
+        loading: false,
+      };
+
+    case DIABETES_CHECK:
+      return {
+        ...state,
+        diabetes: action.payload,
         loading: false,
       };
 

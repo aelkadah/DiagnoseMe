@@ -55,23 +55,22 @@ p {
   // }
 }
 
-// .form-select {
-//   font-size: inherit;
-//   border: 1px solid $secondary;
-//   border-radius: 0 !important;
-//   padding-top: 0.75rem !important;
-//   padding-bottom: 0.75rem !important;
-//   &:hover {
-//     border: 1px solid #000;
-//   }
-//   &:focus {
-//     border: 1px solid $primary;
-//     box-shadow: none;
-//   }
-//   &:disabled {
-//     border: 0;
-//   }
-// }
+.form-select {
+  background-color: $gray-100;
+  font-size: inherit;
+  border: none;
+  border-radius: 0 !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+
+  &:focus {
+    border: 1px solid $primary;
+    box-shadow: none;
+  }
+  &:disabled {
+    border: 0;
+  }
+}
 
 .control-arrow {
   background: none !important;

@@ -1,14 +1,20 @@
-import React from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import image from "../../images/ai.png";
 import AlzheimerHook from "../../redux/Hooks/AI/AlzheimerHook";
+import DashboardHeader from "./../../components/utilities/DashboardHeader";
 
 const AlzheimerPage = () => {
   const [handleChangeImage, handleSubmit] = AlzheimerHook();
 
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Container>
-      <Row>Headiiiiiiiiiing</Row>
+      <DashboardHeader text="Checkup / AlZheimer" url="/checkup" />
       <Row className="mt-5">
         <Col xs={12} md={4}>
           <img src={image} alt="AI" />
@@ -23,6 +29,26 @@ const AlzheimerPage = () => {
           <div className="d-flex justify-content-end">
             <Button onClick={handleSubmit}>Submit</Button>
           </div>
+
+          <Modal
+            show={show}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}
+          >
+            <Modal.Header closeButton>
+              <Modal.Title></Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              I will not close if you click outside me. Don not even try to
+              press escape key.
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleClose}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </Col>
       </Row>
     </Container>
