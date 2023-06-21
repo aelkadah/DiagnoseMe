@@ -20,12 +20,6 @@ export { default as ConditionsPage } from "./Conditions/ConditionsPage";
 export { default as ConditionDetailsPage } from "./Conditions/ConditionDetailsPage";
 
 export { default as NewsPage } from "./News/NewsPage";
-export { default as ArticlePage } from "./News/ArticlePage";
-
-export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
-export { default as SecondCheckupPgae } from "./SecondCheckupPgae";
-export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
-export { default as FourthCheckupPage } from "./FourthCheckupPage";
 
 export { default as DoctorsPage } from "./Doctors/DoctorsPage";
 export { default as DoctorDetailsPage } from "./Doctors/DoctorDetailsPage";
@@ -42,3 +36,12 @@ export { default as DashNewsPage } from "./Dashboard/DashNewsPage";
 export { default as DashNewsAddPage } from "./Dashboard/DashNewsAddPage";
 
 export { default as ReservationPage } from "./Premium/ReservationPage";
+
+export { default as ArticlePage } from "./News/ArticlePage";
+
+export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
+export { default as SecondCheckupPgae } from "./SecondCheckupPgae";
+export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
+export { default as FourthCheckupPage } from "./FourthCheckupPage";
+
+export { default as AlzheimerPage } from "./AI/AlzheimerPage";

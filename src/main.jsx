@@ -45,6 +45,7 @@ import {
   WorkingDaysPage,
   ReservationPage,
   DoctorSchedulePage,
+  AlzheimerPage,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import { Slide, ToastContainer } from "react-toastify";
@@ -99,6 +100,7 @@ const router = createBrowserRouter(
       <Route path="/checkup2" element={<SecondCheckupPgae />} />
       <Route path="/checkup3" element={<ThirdCheckupPage />} />
       <Route path="/checkup4" element={<FourthCheckupPage />} />
+      <Route path="/alzheimer" element={<AlzheimerPage />} />
     </Route>
   )
 );
