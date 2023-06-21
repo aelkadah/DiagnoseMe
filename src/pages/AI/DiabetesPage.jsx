@@ -77,7 +77,7 @@ const DiabetesPage = () => {
                     value={hypertension}
                     onChange={onChangeHypertension}
                   >
-                    <option value="0">No</option>
+                    <option value={0}>No</option>
                     <option value="1">Yes</option>
                   </Form.Select>
                 </Form.Group>
@@ -93,7 +93,7 @@ const DiabetesPage = () => {
                     value={heartdiseases}
                     onChange={onChangeHeartdiseases}
                   >
-                    <option value="0">No</option>
+                    <option value={0}>No</option>
                     <option value="1">Yes</option>
                   </Form.Select>
                 </Form.Group>

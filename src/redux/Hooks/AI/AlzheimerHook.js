@@ -7,7 +7,12 @@ import notify from "./../../../Hook/useNotifaction";
 const AlzheimerHook = () => {
   const dispatch = useDispatch();
 
-  const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [loading, setLoading] = useState(true);
   const [image, setImage] = useState(ai);
   const [selectedFile, setSelectedFile] = useState(null);
 
@@ -30,7 +35,6 @@ const AlzheimerHook = () => {
     const formData = new FormData();
     formData.append("file", selectedFile);
 
-    // console.log(formData);
     setLoading(true);
     await dispatch(checkAlzheimer(formData));
     setLoading(false);
@@ -40,7 +44,7 @@ const AlzheimerHook = () => {
     if (!loading) if (res) console.log(res);
   }, [loading]);
 
-  return [handleChangeImage, handleSubmit];
+  return [show, handleClose, handleChangeImage, handleSubmit];
 };
 
 export default AlzheimerHook;

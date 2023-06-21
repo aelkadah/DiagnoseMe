@@ -4,7 +4,7 @@ import useDiabetes from "../../Hook/useDiabetes";
 
 export const checkAlzheimer = (formData) => async (dispatch) => {
   try {
-    const response = await useAlzheimer("/predict", formData);
+    const response = await useAlzheimer(formData);
     dispatch({
       type: ALZHEIMER_CHECK,
       payload: response,
@@ -21,14 +21,8 @@ export const checkAlzheimer = (formData) => async (dispatch) => {
 export const checkDiabetes = (data) => async (dispatch) => {
   try {
     const response = await useDiabetes(
-      "?gender=Female&age=80.0&hypertension=0&heart_disease=1&bmi=25.19&HbA1c_level=6.6&blood_glucose_level=140",
-      data
+      `/?gender=${data?.gender}&age=${data?.age}&hypertension=${data?.hypertension}&heart_disease=${data?.heart_disease}&bmi=${data?.bmi}&HbA1c_level=${data?.HbA1c_level}&blood_glucose_level=${data?.blood_glucose_level}`
     );
-
-    // const response = await useDiabetes(
-    //   `?gender=${data?.gender}&age=${data?.age}.0&hypertension=${data?.hypertension}&heart_disease=${data?.heart_disease}&bmi=${data?.bmi}&HbA1c_level=${data?.HbA1c_level}&blood_glucose_level=${data?.blood_glucose_level}`,
-    //   data
-    // );
 
     dispatch({
       type: DIABETES_CHECK,

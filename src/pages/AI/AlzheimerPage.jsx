@@ -1,16 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import image from "../../images/ai.png";
 import AlzheimerHook from "../../redux/Hooks/AI/AlzheimerHook";
 import DashboardHeader from "./../../components/utilities/DashboardHeader";
 
 const AlzheimerPage = () => {
-  const [handleChangeImage, handleSubmit] = AlzheimerHook();
-
-  const [show, setShow] = useState(true);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show, handleClose, handleChangeImage, handleSubmit] = AlzheimerHook();
 
   return (
     <Container>

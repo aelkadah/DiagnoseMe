@@ -5,7 +5,6 @@ const useAlzheimer = async (url, parmas) => {
     headers: { "Content-Type": "multipart/form-data" },
   };
   const res = await zheimerUrl.post(url, parmas, config);
-  console.log(res);
   return res;
 };
 

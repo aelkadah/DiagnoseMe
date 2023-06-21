@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkDiabetes } from "../../actions/AiAction";
 import notify from "../../../Hook/useNotifaction";
-import axios from "axios";
 
 const DiabetesHook = () => {
   const dispatch = useDispatch();
@@ -16,13 +15,13 @@ const DiabetesHook = () => {
 
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
-  const [hypertension, setHypertension] = useState("");
-  const [heartdiseases, setHeartdiseases] = useState("");
+  const [hypertension, setHypertension] = useState(0);
+  const [heartdiseases, setHeartdiseases] = useState(0);
   const [bmi, setBmi] = useState("");
   const [hba1c, setHbA1clevel] = useState("");
   const [glucose, setGlucose] = useState("");
 
-  const res = useSelector((state) => state.AiReducer.AiReducer);
+  const res = useSelector((state) => state.AiReducer.diabetes);
 
   const onChangeAge = (e) => setAge(e.target.value);
   const onChangeGender = (e) => setGender(e.target.value);
@@ -34,50 +33,29 @@ const DiabetesHook = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submit clicked");
 
-    // if (
-    //   gender == "" ||
-    //   age == "" ||
-    //   hypertension == "" ||
-    //   heartdiseases == "" ||
-    //   bmi == "" ||
-    //   hba1c == "" ||
-    //   glucose == ""
-    // )
-    //   return notify("Please fill required fields!", "warn");
-
-    // console.log({
-    //   gender,
-    //   age,
-    //   hypertension,
-    //   heart_disease: heartdiseases,
-    //   bmi,
-    //   HbA1c_level: hba1c,
-    //   blood_glucose_level: glucose,
-    // });
+    if (gender == "" || age == "" || bmi == "" || hba1c == "" || glucose == "")
+      return notify("Please fill required fields!", "warn");
 
     setLoading(true);
 
-    await dispatch(checkDiabetes());
-
-    // await dispatch(
-    //   checkDiabetes({
-    //     gender: "Female",
-    //     age: 80,
-    //     hypertension: 0,
-    //     heart_disease: 1,
-    //     bmi: 25.19,
-    //     HbA1c_level: 6.6,
-    //     blood_glucose_level: 140,
-    //   })
-    // );
+    await dispatch(
+      checkDiabetes({
+        gender,
+        age,
+        hypertension,
+        heart_disease: heartdiseases,
+        bmi,
+        HbA1c_level: hba1c,
+        blood_glucose_level: glucose,
+      })
+    );
 
     setLoading(false);
   };
 
   useEffect(() => {
-    if (!loading) if (res) console.log(res);
+    if (!loading) if (res?.data) console.log(res.data);
   }, [loading]);
 
   return [
