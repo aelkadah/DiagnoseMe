@@ -42,7 +42,7 @@ const Header = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-start flex-grow-1 gap-1 pe-2 pt-1">
+            <Nav className="justify-content-start flex-grow-1 pt-1">
               <Nav.Link to="/" as={NavLink}>
                 Home
               </Nav.Link>
@@ -58,9 +58,9 @@ const Header = () => {
               <Nav.Link to="/news" as={NavLink}>
                 News
               </Nav.Link>
-              <Nav.Link to="/contact" as={NavLink}>
+              {/* <Nav.Link to="/contact" as={NavLink}>
                 Contact
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
             <div className="d-flex gap-2">
               {!localStorage.getItem("userInfo") ? (
