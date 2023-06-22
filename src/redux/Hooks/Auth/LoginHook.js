@@ -12,13 +12,10 @@ const LoginHook = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(true);
   const [isPress, setIsPress] = useState(false);
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
 
-  const onChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
+  const onChangeEmail = (e) => setEmail(e.target.value);
+
+  const onChangePassword = (e) => setPassword(e.target.value);
 
   const onSubmit = async () => {
     if (email === "") return notify("Please enter your email!", "warn");
@@ -26,21 +23,19 @@ const LoginHook = () => {
 
     setIsPress(true);
     setLoading(true);
-
     await dispatch(
       userLogin({
         email,
         password,
       })
     );
-
     setLoading(false);
     setIsPress(false);
   };
   const res = useSelector((state) => state.authReducer.loggedin);
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading)
       if (res?.status == 200) {
         setEmail("");
         setPassword("");
@@ -50,7 +45,6 @@ const LoginHook = () => {
         setTimeout(() => navigate("/"), 1000);
       } else if (res?.status != 200)
         return notify("Email or Password is Incorrect!", "error");
-    }
   }, [loading]);
 
   return [

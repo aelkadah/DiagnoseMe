@@ -44,7 +44,7 @@ const LoginPage = () => {
                 value={password}
                 onChange={onChangePassword}
               />
-              <div style={{ textAlign: "end" }}>
+              <div style={{ textAlign: "end" }} className="mt-2">
                 <span>
                   Forget password ?{" "}
                   <Link style={{ textDecoration: "none" }} to="/resetpassword">
@@ -55,12 +55,8 @@ const LoginPage = () => {
               </div>
             </Form.Group>
 
-            <Button
-              style={{ width: "100%", borderRadius: "10px" }}
-              variant="primary"
-              onClick={onSubmit}
-            >
-              Submit
+            <Button className="w-100" variant="primary" onClick={onSubmit}>
+              Login
             </Button>
           </Form>
           <div className="mt-3" style={{ textAlign: "center" }}>

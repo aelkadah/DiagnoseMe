@@ -119,7 +119,7 @@ const DoctorDetailsPage = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Reserve and appointment</Modal.Title>
+          <Modal.Title>Book an appointment</Modal.Title>
         </Modal.Header>
         <Modal.Body className="d-flex flex-column align-items-center">
           <DatePicker

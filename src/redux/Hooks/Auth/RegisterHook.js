@@ -16,49 +16,29 @@ const RegisterHook = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const onChangefirstName = (e) => {
-    setfirstName(e.target.value);
-  };
-
-  const onChangelastName = (e) => {
-    setlasttName(e.target.value);
-  };
-
-  const onChangeuserName = (e) => {
-    SetUserName(e.target.value);
-  };
-
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const onChangePhone = (e) => {
-    setPhone(e.target.value);
-  };
-  const onChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
-  const onChangeConfirmPassword = (e) => {
-    setConfirmPassword(e.target.value);
-  };
+  const onChangefirstName = (e) => setfirstName(e.target.value);
+  const onChangelastName = (e) => setlasttName(e.target.value);
+  const onChangeuserName = (e) => SetUserName(e.target.value);
+  const onChangeEmail = (e) => setEmail(e.target.value);
+  const onChangePhone = (e) => setPhone(e.target.value);
+  const onChangePassword = (e) => setPassword(e.target.value);
+  const onChangeConfirmPassword = (e) => setConfirmPassword(e.target.value);
 
   const res = useSelector((state) => state.authReducer.registered);
 
   const OnSubmit = async () => {
-    if (firstname === "") {
+    if (firstname === "")
       return notify("Please enter your first name!", "warn");
-    } else if (lastname === "") {
+    else if (lastname === "")
       return notify("Please enter your lasts name!", "warn");
-    } else if (userName === "") {
-      return notify("Please enter username!", "warn");
-    } else if (phone.length <= 10) {
+    else if (userName === "") return notify("Please enter username!", "warn");
+    else if (phone.length <= 10)
       return notify("Please enter phone number", "warn");
-    } else if (password == "") {
-      return notify("Please type a password", "warn");
-    } else if (password < 10) {
+    else if (password == "") return notify("Please type a password", "warn");
+    else if (password < 10)
       return notify("Phone number cannot be less than 10 numbers", "warn");
-    } else if (password != confirmPassword) {
+    else if (password != confirmPassword)
       return notify("Password confirmation is not correctly!", "warn");
-    }
 
     setLoading(true);
     await dispatch(
@@ -78,18 +58,13 @@ const RegisterHook = () => {
   };
 
   useEffect(() => {
-    if (loading === false) {
-      if (res) {
-        // console.log(res);
-        if (res.status == 200) {
-          // console.log(res.data.data.token);
-          localStorage.setItem("token", res.data.data.token);
-          localStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
-          notify("Account registered successfully", "success");
-          setTimeout(() => navigate("/"), 1000);
-        }
+    if (!loading && res)
+      if (res.status == 200) {
+        localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("userInfo", JSON.stringify(res.data.data.user));
+        notify("Account registered successfully", "success");
+        setTimeout(() => navigate("/"), 1000);
       }
-    }
   }, [loading]);
 
   return [
