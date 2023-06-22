@@ -71,16 +71,15 @@ const DiabetesHook = () => {
     if (!loading)
       if (res?.status == 200 && res?.data?.response == 200) {
         handleShow();
-        if (res.data.result == false) {
-          setResult("congratz");
-          setAge("");
-          setGender("");
-          setHypertension(0);
-          setHeartdiseases(0);
-          setBmi("");
-          setHbA1clevel("");
-          setGlucose("");
-        } else if (res.data.result == true) setResult("sorry");
+        setAge("");
+        setGender("");
+        setHypertension(0);
+        setHeartdiseases(0);
+        setBmi("");
+        setHbA1clevel("");
+        setGlucose("");
+        if (res.data.result == false) setResult("congratz");
+        else if (res.data.result == true) setResult("sorry");
       } else return notify("Something went wrong!", "error");
   }, [loading]);
 
