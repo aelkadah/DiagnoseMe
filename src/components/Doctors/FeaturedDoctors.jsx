@@ -41,8 +41,8 @@ const FeaturedDoctors = () => {
           <Carousel
             responsive={responsive}
             swipeable={true}
-            itemClass="mx-2"
-            transitionDuration={800}
+            // itemClass="mx-2"
+            // transitionDuration={800}
           >
             {doctors?.map((doctor, index) => {
               return <DoctorCard doctor={doctor} key={index} />;
