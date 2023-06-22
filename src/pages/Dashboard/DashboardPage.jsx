@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faBrain,
   faCalendarCheck,
   faChevronRight,
   faClipboardList,
@@ -9,6 +10,7 @@ import {
   faNotesMedical,
   faPuzzlePiece,
   faUserDoctor,
+  faVial,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { DashboardHeader } from "./../../components";
@@ -158,6 +160,44 @@ const DashboardPage = () => {
                 />
                 <Card.Body className="w-auto">
                   <h2 className="my-2 fw-bold text-secondary">Schedule</h2>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col xs={12} md={6}>
+              <Card
+                as={Link}
+                to="/checkup/alzheimer"
+                className="bg-light border-0 shadow-sm mb-4 d-flex flex-column align-items-center p-5 cursor-pointer an-card"
+              >
+                <FontAwesomeIcon
+                  icon={faBrain}
+                  fixedWidth
+                  className="text-primary"
+                  style={{ fontSize: "60px" }}
+                />
+                <Card.Body className="w-auto">
+                  <h2 className="text-center my-2 fw-bold text-secondary">
+                    Al Zheimer MRI Analysis
+                  </h2>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col xs={12} md={6}>
+              <Card
+                as={Link}
+                to="/checkup/diabetes"
+                className="bg-light border-0 shadow-sm mb-4 d-flex flex-column align-items-center p-5 cursor-pointer an-card"
+              >
+                <FontAwesomeIcon
+                  icon={faVial}
+                  fixedWidth
+                  className="text-primary"
+                  style={{ fontSize: "60px" }}
+                />
+                <Card.Body className="w-auto">
+                  <h2 className="text-center my-2 fw-bold text-secondary">
+                    Diabetes Prediction
+                  </h2>
                 </Card.Body>
               </Card>
             </Col>

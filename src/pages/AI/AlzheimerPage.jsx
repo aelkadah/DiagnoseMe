@@ -49,9 +49,23 @@ const AlzheimerPage = () => {
                 <img src={congratulations} style={{ width: "fit-content" }} />
               </div>
               <h3 className="text-success">Congratulations</h3>
-              <h5 className="mt-0 text-black-50">Your analysis are negative</h5>
+              <h5 className="mt-0 text-black-50">
+                Your MRI analysis:
+                <span className="text-primary"> Non-Demented</span>
+              </h5>
             </Modal.Body>
-            <Modal.Footer className="d-flex justify-content-end py-3">
+            {result && result == "Non Demented" ? (
+              <Modal.Footer className="d-flex justify-content-end py-3 mx-5">
+                <Button
+                  variant="success"
+                  className="rounded-3 w-100"
+                  onClick={handleDone}
+                >
+                  Done
+                </Button>
+              </Modal.Footer>
+            ) : null}
+            {/* <Modal.Footer className="d-flex justify-content-end py-3">
               <Button
                 variant="danger"
                 className="rounded-3"
@@ -66,7 +80,7 @@ const AlzheimerPage = () => {
               >
                 Find a Doctor
               </Button>
-            </Modal.Footer>
+            </Modal.Footer> */}
           </Modal>
         </Col>
       </Row>

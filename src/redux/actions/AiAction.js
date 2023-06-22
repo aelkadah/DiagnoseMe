@@ -4,7 +4,7 @@ import useDiabetes from "../../Hook/useDiabetes";
 
 export const checkAlzheimer = (formData) => async (dispatch) => {
   try {
-    const response = await useAlzheimer(formData);
+    const response = await useAlzheimer("", formData);
     dispatch({
       type: ALZHEIMER_CHECK,
       payload: response,
@@ -12,8 +12,8 @@ export const checkAlzheimer = (formData) => async (dispatch) => {
     });
   } catch (e) {
     dispatch({
-      type: GET_ERROR,
-      payload: "Error " + e,
+      type: ALZHEIMER_CHECK,
+      payload: e.response,
     });
   }
 };

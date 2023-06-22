@@ -31,16 +31,18 @@ const AlzheimerHook = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submit clicked");
 
-    if (!selectedFile || selectedFile == "")
-      return notify("Please upload MRI file!", "warn");
+    // handleShow();
+
+    // if (!selectedFile || selectedFile == "")
+    //   return notify("Please upload MRI file!", "warn");
 
     const formData = new FormData();
     formData.append("file", selectedFile);
 
     setLoading(true);
     await dispatch(checkAlzheimer(formData));
+    // await console.log("xxxxxxxxxxx");
     setLoading(false);
   };
 
@@ -55,7 +57,15 @@ const AlzheimerHook = () => {
   };
 
   useEffect(() => {
-    if (!loading) if (res) console.log(res);
+    if (!loading)
+      if (res?.status == 200) {
+        if (res.data.error == false && res.data.response == 200) {
+          setResult(res.data.result);
+          handleShow();
+        } else return notify("Something went wrong!", "error");
+      } else {
+        return notify("Something went wrong!", "error");
+      }
   }, [loading]);
 
   return [
