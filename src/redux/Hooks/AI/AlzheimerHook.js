@@ -32,17 +32,14 @@ const AlzheimerHook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // handleShow();
-
-    // if (!selectedFile || selectedFile == "")
-    //   return notify("Please upload MRI file!", "warn");
+    if (!selectedFile || selectedFile == "")
+      return notify("Please upload MRI file!", "warn");
 
     const formData = new FormData();
     formData.append("file", selectedFile);
 
     setLoading(true);
     await dispatch(checkAlzheimer(formData));
-    // await console.log("xxxxxxxxxxx");
     setLoading(false);
   };
 
