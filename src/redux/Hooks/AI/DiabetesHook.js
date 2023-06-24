@@ -80,6 +80,7 @@ const DiabetesHook = () => {
         setGlucose("");
         if (res.data.result == false) setResult("congratz");
         else if (res.data.result == true) setResult("sorry");
+        localStorage.removeItem("required");
       } else return notify("Something went wrong!", "error");
   }, [loading]);
 

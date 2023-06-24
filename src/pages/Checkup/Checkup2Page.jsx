@@ -75,6 +75,12 @@ const Checkup2Page = () => {
                       className="bg-light mx-2 py-3 px-3 mb-3 rounded-3"
                       key={index}
                     >
+                      {item?.score >= 50
+                        ? localStorage.setItem("required", "alzheimer")
+                        : null}
+                      {item?.score >= 50
+                        ? localStorage.setItem("required", "diabetes")
+                        : null}
                       <h5 className="text-primary w-auto my-0 px-0 me-2 ms-0 mb-2">
                         {item?.condition}
                       </h5>

@@ -59,6 +59,7 @@ const AlzheimerHook = () => {
         if (res.data.error == false && res.data.response == 200) {
           setResult(res.data.result);
           handleShow();
+          localStorage.removeItem("required");
         } else return notify("Something went wrong!", "error");
       } else {
         return notify("Something went wrong!", "error");
