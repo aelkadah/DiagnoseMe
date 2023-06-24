@@ -24,8 +24,6 @@ import {
   DoctorsPage,
   ForgetPasswordPage,
   NewsPage,
-  FirstCheckupPgae,
-  SecondCheckupPgae,
   ThirdCheckupPage,
   FourthCheckupPage,
   ProfilePage,
@@ -47,6 +45,9 @@ import {
   DoctorSchedulePage,
   AlzheimerPage,
   DiabetesPage,
+  UpgradePage,
+  CheckupPage,
+  Checkup2Page,
 } from "./pages";
 import { ThemeProvider } from "react-bootstrap";
 import { Slide, ToastContainer } from "react-toastify";
@@ -72,6 +73,7 @@ const router = createBrowserRouter(
       <Route path="/doctor/signup" element={<DoctorRegisterPage />} />
 
       <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/upgrade" element={<UpgradePage />} />
 
       <Route path="/reserve/:id" element={<ReservationPage />} />
 
@@ -99,8 +101,9 @@ const router = createBrowserRouter(
       <Route path="/news/:id" element={<ArticlePage />} />
       <Route path="/conditions" element={<ConditionsPage />} />
       <Route path="/conditions/:id" element={<ConditionDetailsPage />} />
-      <Route path="/checkup" element={<FirstCheckupPgae />} />
-      <Route path="/checkup2" element={<SecondCheckupPgae />} />
+
+      <Route path="/checkup" element={<CheckupPage />} />
+      <Route path="/checkup2" element={<Checkup2Page />} />
       <Route path="/checkup3" element={<ThirdCheckupPage />} />
       <Route path="/checkup4" element={<FourthCheckupPage />} />
 
