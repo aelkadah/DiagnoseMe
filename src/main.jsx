@@ -24,8 +24,6 @@ import {
   DoctorsPage,
   ForgetPasswordPage,
   NewsPage,
-  ThirdCheckupPage,
-  FourthCheckupPage,
   ProfilePage,
   DashboardPage,
   DoctorDetailsPage,
@@ -104,8 +102,6 @@ const router = createBrowserRouter(
 
       <Route path="/checkup" element={<CheckupPage />} />
       <Route path="/checkup2" element={<Checkup2Page />} />
-      <Route path="/checkup3" element={<ThirdCheckupPage />} />
-      <Route path="/checkup4" element={<FourthCheckupPage />} />
 
       <Route path="/checkup/alzheimer" element={<AlzheimerPage />} />
       <Route path="/checkup/diabetes" element={<DiabetesPage />} />
