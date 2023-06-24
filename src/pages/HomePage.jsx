@@ -1,24 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
-import { FeaturedDoctors, Services, ServicesContainer } from "../components";
-import { SecTitle } from "../components";
+import { FeaturedDoctors, Services } from "../components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import doctor from "/src/images/doctor.svg";
-import {
-  faRightLong,
-  faArrowLeftRotate,
-  faArrowRightArrowLeft,
-} from "@fortawesome/free-solid-svg-icons";
 import Accordion from "react-bootstrap/Accordion";
 import question from "../images/qustion.svg";
-import Cards from "../components/utilities/card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Return from "./../components/utilities/Return";
 import Call from "../components/utilities/Call";
-import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [show, setShow] = useState(false);
@@ -34,33 +24,47 @@ const HomePage = () => {
     <Container>
       <Return />
       <Call />
+
       <Row
         className="flex-row-reverse"
         style={{ minHeight: "calc(100vh - 100px)" }}
       >
         <Col
           xs={12}
-          md={6}
+          md={5}
+          lg={6}
           className="text-center d-flex align-items-center justify-content-center"
         >
           <img src={landing} alt="" width="80%" />
         </Col>
-        <Col xs={12} md={6} className="d-flex align-items-center">
-          <div>
+        <Col
+          xs={12}
+          md={7}
+          lg={6}
+          className="d-flex align-items-center mt-3 mt-md-0"
+        >
+          <Row>
             <h1
-              className="text-noto fw-bold text-secondary"
+              className="text-noto fw-bold text-secondary text-center text-md-start"
               style={{ fontSize: "60px" }}
             >
               The Best Reliable Health Service In Your Hands
             </h1>
-            <p className="py-2 w-75">
+            <p className="py-2 w-100 w-md-75  text-center text-md-start">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
               temporibus odit natus at eum cupiditate. Deleniti doloribus beatae
               rem, ullam porro perspiciatis consequatur dicta neque itaque a
-              fugit dolorum ex.
+              fugit dolorum ex. Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Eos temporibus odit natus at eum cupiditate.
+              Deleniti doloribus beatae rem, ullam porro perspiciatis
+              consequatur dicta neque itaque a fugit dolorum ex.
             </p>
-            <Button className="rounded-pill py-3">Start Checkup</Button>
-          </div>
+            <Row className="d-flex justify-content-center justify-content-md-start">
+              <Button className="rounded-pill py-3 w-auto ">
+                Start Checkup
+              </Button>
+            </Row>
+          </Row>
         </Col>
       </Row>
 
