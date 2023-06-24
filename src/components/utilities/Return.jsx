@@ -1,5 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faPhone,
+  faRocket,
+} from "@fortawesome/free-solid-svg-icons";
 const Return = () => {
   const [backtotop, setbacktotop] = useState(false);
 
@@ -23,7 +29,10 @@ const Return = () => {
     <div>
       {backtotop && (
         <button className="butonn" onClick={scrollup}>
-          ↑{" "}
+          <FontAwesomeIcon
+            icon={faRocket}
+            style={{ rotate: "-42deg", width: "23" }}
+          />
         </button>
       )}
     </div>

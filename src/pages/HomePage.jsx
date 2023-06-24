@@ -18,6 +18,7 @@ import Cards from "../components/utilities/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Return from "./../components/utilities/Return";
 import Call from "../components/utilities/Call";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -164,7 +165,16 @@ const HomePage = () => {
                   </div>
                   <div className="text-center show-all-doctors-div">
                     {" "}
-                    <Button> GET FREE </Button>
+                    <Button>
+                      {" "}
+                      <Link
+                        to={"/login"}
+                        className=""
+                        style={{ color: "white" }}
+                      >
+                        get free
+                      </Link>{" "}
+                    </Button>
                   </div>
                 </Card>
               </Col>
@@ -194,7 +204,16 @@ const HomePage = () => {
                   </div>
                   <div className="text-center show-all-doctors-div">
                     {" "}
-                    <Button> GET PREMIUM </Button>
+                    <Button>
+                      {" "}
+                      <Link
+                        to={"/Payment"}
+                        className=""
+                        style={{ color: "white" }}
+                      >
+                        get PREMIUM
+                      </Link>{" "}
+                    </Button>
                   </div>
                 </Card>
               </Col>{" "}

@@ -26,3 +26,4 @@ export { default as DashArticleCard } from "./News/DashArticleCard";
 export { default as ConditionsContainer } from "./Conditions/ConditionsContainer";
 export { default as ConditionCard } from "./Conditions/ConditionCard";
 export { default as DashConditionCard } from "./Conditions/DashConditionCard";
+export { default as Payment } from "./Payment/Payment";
