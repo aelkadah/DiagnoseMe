@@ -1,9 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Spinner, Button } from "react-bootstrap";
 import { SecTitle } from "..";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ServicesHook from "../../redux/Hooks/Services/ServicesHook";
 import ServiceCard from "./../Services/ServiceCard";
 
@@ -35,11 +33,10 @@ const Services = () => {
           )}
         </Row>
       </Row>
-      <Row className="text-center mt-4">
-        <Link to="" className="text-noto fw-bold">
+      <Row className="text-center mt-4 d-flex justify-content-center">
+        <Button className="w-auto" to="/services" as={Link}>
           All Services
-          <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
+        </Button>
       </Row>
     </Container>
   );

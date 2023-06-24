@@ -9,6 +9,12 @@ import Accordion from "react-bootstrap/Accordion";
 import question from "../images/qustion.svg";
 import Return from "./../components/utilities/Return";
 import Call from "../components/utilities/Call";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleRight,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 const HomePage = () => {
   const [show, setShow] = useState(false);
@@ -140,16 +146,16 @@ const HomePage = () => {
       </div> */}
 
       {/* last section */}
-      <div className="last-sec mt-5">
+      {/* <div className="last-sec mt-5">
         <Row className="mt-5 align-items-center">
-          <Col lg={4}>
+          <Row xs={12} md={6} lg={4}>
             <h1>Let’s get started</h1>
             <p>
               Lorem ipsum is placeholder text commonly used in the graphic,
               print, and publishing industries{" "}
             </p>
-          </Col>
-          <Col lg={8}>
+          </Row>
+          <Col xs={12} md={6} lg={8}>
             <Row>
               <Col lg={6} md={12} sm={12}>
                 <Card>
@@ -233,7 +239,113 @@ const HomePage = () => {
             </Row>
           </Col>
         </Row>
-      </div>
+      </div> */}
+
+      <Row className="bg-primary text-white py-5 mt-5">
+        <Row className="text-center">
+          <h1 className="fw-bold">Let's Get Started</h1>
+          <h6 className="text-white fw-normal">
+            You have the chance to have our premium features for only 50.egp..
+            Hurry up!
+          </h6>
+        </Row>
+        <Row className="px-5 d-flex justify-content-around mt-3">
+          <Col
+            xs={12}
+            md={5}
+            className="bg-white rounded-4 text-black d-flex flex-column align-items-center py-4 mt-4"
+          >
+            <h6 className="text-center mb-0 text-primary">NORMAL</h6>
+            <h1 className="fw-bold mt-0 text-primary">FREE</h1>
+            <div className="d-flex w-75 ">
+              <ul className="list-unstyled d-flex flex-column gap-2 mt-2 mb-4">
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleXmark}
+                    fixedWidth
+                    className="text-danger ms-0 me-1"
+                  />
+                  Doctors Booking Appointments
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Symptoms Checker
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  MRI Scan Checking
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Diabetes Analysis Algorithm
+                </li>
+              </ul>
+            </div>
+            <Button className="rounded-5" to="/signup" as={Link}>
+              SIGN UP
+            </Button>
+          </Col>
+          <Col
+            xs={12}
+            md={5}
+            className="bg-white rounded-4 text-black d-flex flex-column align-items-center py-4 mt-4"
+          >
+            <h6 className="text-center mb-0 text-primary">PREMIUM</h6>
+            <h1 className="fw-bold mt-0 text-primary">50 EGP</h1>
+            <div className="d-flex w-75 ">
+              <ul className="list-unstyled d-flex flex-column gap-2 mt-2 mb-4">
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Doctors Booking Appointments
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Symptoms Checker
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  MRI Scan Checking
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Diabetes Analysis Algorithm
+                </li>
+              </ul>
+            </div>
+            <Button className="rounded-5" to="/payment" as={Link}>
+              GET PREMIUM
+            </Button>
+          </Col>
+        </Row>
+      </Row>
 
       <Modal
         show={show}

@@ -167,7 +167,7 @@ const DoctorRegisterPage = () => {
           <div className="mt-3" style={{ textAlign: "center" }}>
             <span>
               Already have an account?{" "}
-              <Link style={{ textDecoration: "none" }} to="/doctor-login">
+              <Link style={{ textDecoration: "none" }} to="/doctor/login">
                 Log in
               </Link>{" "}
             </span>
