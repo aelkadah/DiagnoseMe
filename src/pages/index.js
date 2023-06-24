@@ -9,6 +9,7 @@ export { default as DoctorLoginPage } from "./auth/Doctor/DoctorLoginPage";
 export { default as DoctorRegisterPage } from "./auth/Doctor/DoctorRegisterPage";
 
 export { default as ProfilePage } from "./ProfilePage";
+export { default as UpgradePage } from "./Premium/UpgradePage";
 
 export { default as ForgetPasswordPage } from "./auth/ForgetPasswordPage";
 export { default as ResetPasswordPage } from "./auth/ResetPasswordPage";
@@ -39,10 +40,7 @@ export { default as ReservationPage } from "./Premium/ReservationPage";
 
 export { default as ArticlePage } from "./News/ArticlePage";
 
-export { default as FirstCheckupPgae } from "./FirstCheckupPgae";
-export { default as SecondCheckupPgae } from "./SecondCheckupPgae";
-export { default as ThirdCheckupPage } from "./ThirdCheckupPage";
-export { default as FourthCheckupPage } from "./FourthCheckupPage";
-
+export { default as CheckupPage } from "./Checkup/CheckupPage";
+export { default as Checkup2Page } from "./Checkup/Checkup2Page";
 export { default as AlzheimerPage } from "./AI/AlzheimerPage";
 export { default as DiabetesPage } from "./AI/DiabetesPage";

@@ -5,6 +5,7 @@ import ServicesReducer from "./ServicesReducer";
 import NewsReducer from "./NewsReducer";
 import ConditionsReducer from "./ConditionsReducer";
 import AiReducer from "./AiReducer";
+import CheckupReducer from "./CheckupReducer";
 
 export default combineReducers({
   authReducer: authReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   NewsReducer: NewsReducer,
   ConditionsReducer: ConditionsReducer,
   AiReducer: AiReducer,
+  CheckupReducer: CheckupReducer,
 });

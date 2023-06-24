@@ -1,21 +1,18 @@
 import React, { useState } from "react";
-import { SecTitle } from "../components";
+import { SecTitle } from "../../components";
 import { Container, Row, Col, Card, Pagination, Button } from "react-bootstrap";
-import digonse from "./../images/dignose.svg";
-import man from "./../images/man.svg";
-import women from "./../images/women.svg";
+import digonse from "../../images/dignose.svg";
+import man from "../../images/man.svg";
+import women from "../../images/women.svg";
 import { Link } from "react-router-dom";
-const FirstCheckupPgae = () => {
-  const [age, setage] = useState(0);
 
+const CheckupPage = () => {
+  const [age, setage] = useState(0);
   const incage = () => {
     setage(age + 1);
   };
-
   const dicage = () => {
-    if (age > 0) {
-      setage(age - 1);
-    }
+    if (age > 0) setage(age - 1);
   };
 
   return (
@@ -23,30 +20,29 @@ const FirstCheckupPgae = () => {
       <SecTitle title={"Checkup"} desc="Feel free to start your checkup" />
 
       <Row className="age-gender-section mt-5 align-items-center">
-        <Col lg={6}>
+        <Col xs={12} md={5}>
           <img src={digonse} alt="" />
         </Col>
-        <Col lg={6}>
+        <Col xs={12} md={7}>
           <div className="bg p-5">
-            <h1>hello</h1>
+            <h1>Hello</h1>
             <h2>lets get started</h2>
 
             <div className="age  mt-4">
-              <span>select your age</span>
+              <span>Select Age</span>
 
               <div className="d-flex justify-content-evenly mt-2">
                 <Button onClick={incage}>+</Button>
-                <input value={age} type="text" />
+                <input value={age} type="text" onChange={(e) => {}} />
                 <Button onClick={dicage}>-</Button>
               </div>
             </div>
 
             <div className="genders mt-4">
-              <span>Select your gender</span>
+              <span>Select Gender</span>
               <div className="d-flex justify-content-evenly mt-2">
                 <Button className="man-btn">
-                  {" "}
-                  <img src={man} alt="" />
+                  <img src={man} alt=".." />
                 </Button>
 
                 <Button className="women-btn">
@@ -55,13 +51,17 @@ const FirstCheckupPgae = () => {
               </div>
             </div>
           </div>
+          <Row className="mt-3">
+            <Col>
+              <Button className="w-100 rounded-2" to="/checkup2" as={Link}>
+                Continue
+              </Button>
+            </Col>
+          </Row>
         </Col>
-        <Link className="mt-4 continue" to="/SecondCheckupPgae">
-          continue
-        </Link>
       </Row>
     </Container>
   );
 };
 
-export default FirstCheckupPgae;
+export default CheckupPage;

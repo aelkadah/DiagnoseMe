@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
 import { FeaturedDoctors, Services, ServicesContainer } from "../components";
@@ -21,6 +21,15 @@ import Call from "../components/utilities/Call";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    if (localStorage.getItem("required")) setShow(true);
+  }, []);
+
   return (
     <Container>
       <Return />
@@ -221,6 +230,48 @@ const HomePage = () => {
           </Col>
         </Row>
       </div>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Something missing</Modal.Title>
+        </Modal.Header>
+        {localStorage.getItem("required") == "diabetes" ? (
+          <Modal.Body className="p-3">
+            You missed something... Check your Diabetes A1C Analysis now for
+            free.
+          </Modal.Body>
+        ) : null}
+        {localStorage.getItem("required") == "alzheimer" ? (
+          <Modal.Body className="p-3">
+            You missed something... Check your MRI now for free.
+          </Modal.Body>
+        ) : null}
+
+        <Modal.Footer>
+          <Button
+            variant="light"
+            className="border border-opacity-50"
+            onClick={handleClose}
+          >
+            Close
+          </Button>
+          {localStorage.getItem("required") == "diabetes" ? (
+            <Button to="/checkup/diabetes" as={Link}>
+              Check now
+            </Button>
+          ) : null}
+          {localStorage.getItem("required") == "alzheimer" ? (
+            <Button to="/checkup/alzheimer" as={Link}>
+              Check now
+            </Button>
+          ) : null}
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
