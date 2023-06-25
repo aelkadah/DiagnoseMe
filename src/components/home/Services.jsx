@@ -9,7 +9,7 @@ const Services = () => {
   const [services, loading, pageCount, getPage] = ServicesHook();
 
   return (
-    <Container className="bg-light py-4">
+    <Container className="bg-light py-4 mt-5">
       <Row className="bg-light">
         <SecTitle title="Services" desc="What we provide?" />
         <Row>

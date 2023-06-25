@@ -69,9 +69,9 @@ const HomePage = () => {
         </Col>
       </Row>
 
-      <Covid />
-
       <Services />
+
+      <Covid />
 
       <FeaturedDoctors />
 
@@ -137,102 +137,6 @@ const HomePage = () => {
           <div className="text-center show-all-doctors-div">
             <Button> More News </Button>
           </div>
-        </Row>
-      </div> */}
-
-      {/* last section */}
-      {/* <div className="last-sec mt-5">
-        <Row className="mt-5 align-items-center">
-          <Row xs={12} md={6} lg={4}>
-            <h1>Let’s get started</h1>
-            <p>
-              Lorem ipsum is placeholder text commonly used in the graphic,
-              print, and publishing industries{" "}
-            </p>
-          </Row>
-          <Col xs={12} md={6} lg={8}>
-            <Row>
-              <Col lg={6} md={12} sm={12}>
-                <Card>
-                  <span className="text-center">STARTUP</span>
-                  <h2>free</h2>
-                  <div className="d-flex ">
-                    <span>x</span>
-
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="text-center show-all-doctors-div">
-                    {" "}
-                    <Button>
-                      {" "}
-                      <Link
-                        to={"/login"}
-                        className=""
-                        style={{ color: "white" }}
-                      >
-                        get free
-                      </Link>{" "}
-                    </Button>
-                  </div>
-                </Card>
-              </Col>
-              <Col lg={6} md={12} sm={12}>
-                <Card>
-                  <span className="text-center">PREMIUM</span>
-                  <h2>50 egp</h2>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="d-flex ">
-                    <span>x</span>
-                    <span>Unlimited doctor meetings</span>
-                  </div>
-                  <div className="text-center show-all-doctors-div">
-                    {" "}
-                    <Button>
-                      {" "}
-                      <Link
-                        to={"/Payment"}
-                        className=""
-                        style={{ color: "white" }}
-                      >
-                        get PREMIUM
-                      </Link>{" "}
-                    </Button>
-                  </div>
-                </Card>
-              </Col>{" "}
-            </Row>
-          </Col>
         </Row>
       </div> */}
 
