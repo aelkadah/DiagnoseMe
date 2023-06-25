@@ -9,12 +9,13 @@ import {
   faStarHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col, Modal, Button, Spinner } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import DoctorDetailsHook from "../../redux/Hooks/Doctor/DoctorDetailsHook";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import ReserveHook from "../../redux/Hooks/Schedule/ReserveHook";
+import notify from "../../Hook/useNotifaction";
 
 const DoctorDetailsPage = () => {
   const { id } = useParams();
@@ -31,6 +32,8 @@ const DoctorDetailsPage = () => {
     handleChooseDate,
     handleSubmit,
   ] = ReserveHook(id);
+
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -76,7 +79,13 @@ const DoctorDetailsPage = () => {
                   Reserve a visit
                 </Button>
               ) : (
-                <Button className="px-3 rounded-5" disabled>
+                <Button
+                  className="px-3 rounded-5"
+                  onClick={() => {
+                    notify("You need to upgrade plan to premium", "warn");
+                    navigate("/payment");
+                  }}
+                >
                   Reserve a visit
                 </Button>
               )}

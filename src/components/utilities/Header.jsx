@@ -11,6 +11,8 @@ import {
 import logo from "../../images/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCrow,
+  faCrown,
   faRightFromBracket,
   faSliders,
   faUserCircle,
@@ -86,10 +88,28 @@ const Header = () => {
                   ) : null}
 
                   <Dropdown>
-                    <Dropdown.Toggle className="py-2 px-3 bg-white text-primary border-0 d-flex align-items-center h-100">
-                      Hi!{" "}
-                      {JSON.parse(localStorage.getItem("userInfo")).first_name}
-                    </Dropdown.Toggle>
+                    {JSON.parse(localStorage.getItem("userInfo")).premium ==
+                    1 ? (
+                      <Dropdown.Toggle className="py-2 px-3 bg-white text-primary border-0 d-flex align-items-center h-100">
+                        {
+                          JSON.parse(localStorage.getItem("userInfo"))
+                            .first_name
+                        }
+                        <FontAwesomeIcon
+                          icon={faCrown}
+                          fixedWidth
+                          className="text-warning"
+                        />{" "}
+                      </Dropdown.Toggle>
+                    ) : (
+                      <Dropdown.Toggle className="py-2 px-3 bg-white text-primary border-0 d-flex align-items-center h-100">
+                        Hi!{" "}
+                        {
+                          JSON.parse(localStorage.getItem("userInfo"))
+                            .first_name
+                        }
+                      </Dropdown.Toggle>
+                    )}
                     <Dropdown.Menu>
                       {JSON.parse(localStorage.getItem("userInfo")).role == 1 ||
                       JSON.parse(localStorage.getItem("userInfo")).role == 2 ? (

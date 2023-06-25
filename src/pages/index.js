@@ -44,3 +44,4 @@ export { default as CheckupPage } from "./Checkup/CheckupPage";
 export { default as Checkup2Page } from "./Checkup/Checkup2Page";
 export { default as AlzheimerPage } from "./AI/AlzheimerPage";
 export { default as DiabetesPage } from "./AI/DiabetesPage";
+export { default as PaymentPage } from "./Premium/PaymentPage";

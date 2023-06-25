@@ -46,8 +46,8 @@ import {
   UpgradePage,
   CheckupPage,
   Checkup2Page,
+  PaymentPage,
 } from "./pages";
-import Payment from "./components/Payment/Payment";
 import { ThemeProvider } from "react-bootstrap";
 import { Slide, ToastContainer } from "react-toastify";
 
@@ -106,7 +106,7 @@ const router = createBrowserRouter(
 
       <Route path="/checkup/alzheimer" element={<AlzheimerPage />} />
       <Route path="/checkup/diabetes" element={<DiabetesPage />} />
-      <Route path="/payment" element={<Payment />} />
+      <Route path="/payment" element={<PaymentPage />} />
     </Route>
   )
 );
