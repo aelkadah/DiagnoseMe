@@ -58,11 +58,20 @@ const Payment = () => {
 
   return (
     <div className="container text-center" style={{ paddingTop: "10%" }}>
-      <Row>
-        <Col>oenfow</Col>
+      <Row className="align-items-center">
+        <Col>
+          <ul className="text-start servess bg-primary">
+            <li>Doctors Booking Appointments</li>
+            <li>Symptoms Checker</li>
+            <li>MRI Scan Checking</li>
+            <li>Diabetes Analysis Algorithm</li>
+          </ul>
+        </Col>
 
         <Col>
-          <div>pay 50 pound</div>
+          <div>
+            <h1>pay 50 pound</h1>
+          </div>
           <div
             style={{
               textAlign: "end",
@@ -81,7 +90,7 @@ const Payment = () => {
             amount={priceForStripe}
             description={`Your total is 50 pound`}
             token={payNow}
-            className="mt-2 btn"
+            className="mt-2 btn w-100"
           />
         </Col>
       </Row>
