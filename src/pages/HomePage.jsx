@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button, Card, Col, Container, Modal, Row } from "react-bootstrap";
 import Covid from "../components/home/Covid";
 import landing from "../images/landing.svg";
-import { FeaturedDoctors, Services, ServicesContainer } from "../components";
-import { SecTitle } from "../components";
+import { FeaturedDoctors, Services } from "../components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import doctor from "/src/images/doctor.svg";
-import {
-  faRightLong,
-  faArrowLeftRotate,
-  faArrowRightArrowLeft,
-} from "@fortawesome/free-solid-svg-icons";
 import Accordion from "react-bootstrap/Accordion";
 import question from "../images/qustion.svg";
-import Cards from "../components/utilities/card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Return from "./../components/utilities/Return";
 import Call from "../components/utilities/Call";
-import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleRight,
+  faCircleCheck,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 const HomePage = () => {
   const [show, setShow] = useState(false);
@@ -34,33 +30,47 @@ const HomePage = () => {
     <Container>
       <Return />
       <Call />
+
       <Row
         className="flex-row-reverse"
         style={{ minHeight: "calc(100vh - 100px)" }}
       >
         <Col
           xs={12}
-          md={6}
+          md={5}
+          lg={6}
           className="text-center d-flex align-items-center justify-content-center"
         >
           <img src={landing} alt="" width="80%" />
         </Col>
-        <Col xs={12} md={6} className="d-flex align-items-center">
-          <div>
+        <Col
+          xs={12}
+          md={7}
+          lg={6}
+          className="d-flex align-items-center mt-3 mt-md-0"
+        >
+          <Row>
             <h1
-              className="text-noto fw-bold text-secondary"
+              className="text-noto fw-bold text-secondary text-center text-md-start"
               style={{ fontSize: "60px" }}
             >
               The Best Reliable Health Service In Your Hands
             </h1>
-            <p className="py-2 w-75">
+            <p className="py-2 w-100 w-md-75  text-center text-md-start">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
               temporibus odit natus at eum cupiditate. Deleniti doloribus beatae
               rem, ullam porro perspiciatis consequatur dicta neque itaque a
-              fugit dolorum ex.
+              fugit dolorum ex. Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Eos temporibus odit natus at eum cupiditate.
+              Deleniti doloribus beatae rem, ullam porro perspiciatis
+              consequatur dicta neque itaque a fugit dolorum ex.
             </p>
-            <Button className="rounded-pill py-3">Start Checkup</Button>
-          </div>
+            <Row className="d-flex justify-content-center justify-content-md-start">
+              <Button className="rounded-pill py-3 w-auto ">
+                Start Checkup
+              </Button>
+            </Row>
+          </Row>
         </Col>
       </Row>
 
@@ -136,16 +146,16 @@ const HomePage = () => {
       </div> */}
 
       {/* last section */}
-      <div className="last-sec mt-5">
+      {/* <div className="last-sec mt-5">
         <Row className="mt-5 align-items-center">
-          <Col lg={4}>
+          <Row xs={12} md={6} lg={4}>
             <h1>Let’s get started</h1>
             <p>
               Lorem ipsum is placeholder text commonly used in the graphic,
               print, and publishing industries{" "}
             </p>
-          </Col>
-          <Col lg={8}>
+          </Row>
+          <Col xs={12} md={6} lg={8}>
             <Row>
               <Col lg={6} md={12} sm={12}>
                 <Card>
@@ -229,7 +239,113 @@ const HomePage = () => {
             </Row>
           </Col>
         </Row>
-      </div>
+      </div> */}
+
+      <Row className="bg-primary text-white py-5 mt-5">
+        <Row className="text-center">
+          <h1 className="fw-bold">Let's Get Started</h1>
+          <h6 className="text-white fw-normal">
+            You have the chance to have our premium features for only 50.egp..
+            Hurry up!
+          </h6>
+        </Row>
+        <Row className="px-5 d-flex justify-content-around mt-3">
+          <Col
+            xs={12}
+            md={5}
+            className="bg-white rounded-4 text-black d-flex flex-column align-items-center py-4 mt-4"
+          >
+            <h6 className="text-center mb-0 text-primary">NORMAL</h6>
+            <h1 className="fw-bold mt-0 text-primary">FREE</h1>
+            <div className="d-flex w-75 ">
+              <ul className="list-unstyled d-flex flex-column gap-2 mt-2 mb-4">
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleXmark}
+                    fixedWidth
+                    className="text-danger ms-0 me-1"
+                  />
+                  Doctors Booking Appointments
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Symptoms Checker
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  MRI Scan Checking
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Diabetes Analysis Algorithm
+                </li>
+              </ul>
+            </div>
+            <Button className="rounded-5" to="/signup" as={Link}>
+              SIGN UP
+            </Button>
+          </Col>
+          <Col
+            xs={12}
+            md={5}
+            className="bg-white rounded-4 text-black d-flex flex-column align-items-center py-4 mt-4"
+          >
+            <h6 className="text-center mb-0 text-primary">PREMIUM</h6>
+            <h1 className="fw-bold mt-0 text-primary">50 EGP</h1>
+            <div className="d-flex w-75 ">
+              <ul className="list-unstyled d-flex flex-column gap-2 mt-2 mb-4">
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Doctors Booking Appointments
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Symptoms Checker
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  MRI Scan Checking
+                </li>
+                <li>
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    fixedWidth
+                    className="text-primary ms-0 me-1"
+                  />
+                  Diabetes Analysis Algorithm
+                </li>
+              </ul>
+            </div>
+            <Button className="rounded-5" to="/payment" as={Link}>
+              GET PREMIUM
+            </Button>
+          </Col>
+        </Row>
+      </Row>
 
       <Modal
         show={show}

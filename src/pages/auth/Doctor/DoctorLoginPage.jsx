@@ -55,18 +55,14 @@ const DoctorLoginPage = () => {
               </div>
             </Form.Group>
 
-            <Button
-              style={{ width: "100%", borderRadius: "10px" }}
-              variant="primary"
-              onClick={onSubmit}
-            >
-              Submit
+            <Button className="w-100" variant="primary" onClick={onSubmit}>
+              Login
             </Button>
           </Form>
           <div className="mt-3" style={{ textAlign: "center" }}>
             <span>
               Don’t have an account ?{" "}
-              <Link style={{ textDecoration: "none" }} to="/doctor-signup">
+              <Link style={{ textDecoration: "none" }} to="/doctor/signup">
                 Sign up ?
               </Link>
             </span>
