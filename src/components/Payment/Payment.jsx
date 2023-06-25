@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Container, Row, Col } from "react-bootstrap";
 
 const Payment = () => {
   const [price, setprice] = useState("");
@@ -57,31 +58,33 @@ const Payment = () => {
 
   return (
     <div className="container text-center" style={{ paddingTop: "10%" }}>
-      <div>pay 50 pound</div>
-      <div
-        style={{
-          textAlign: "end",
-          fontSize: " 15px",
-          marginRight: "5px",
-          marginTop: "5px",
-        }}
-      ></div>
+      <Row>
+        <Col>oenfow</Col>
 
-      <div>
-        <StripeCheckout
-          stripeKey={publishableKey}
-          label=" pay now"
-          name="Pay With Credit Card"
-          billingAddress
-          shippingAddress
-          amount={priceForStripe}
-          description={`Your total is 50 pound`}
-          token={payNow}
-          className="mt-2 btn"
-        />
-      </div>
+        <Col>
+          <div>pay 50 pound</div>
+          <div
+            style={{
+              textAlign: "end",
+              fontSize: " 15px",
+              marginRight: "5px",
+              marginTop: "5px",
+            }}
+          ></div>
 
-      <ToastContainer />
+          <StripeCheckout
+            stripeKey={publishableKey}
+            label=" pay now"
+            name="Pay With Credit Card"
+            billingAddress
+            shippingAddress
+            amount={priceForStripe}
+            description={`Your total is 50 pound`}
+            token={payNow}
+            className="mt-2 btn"
+          />
+        </Col>
+      </Row>
     </div>
   );
 };
