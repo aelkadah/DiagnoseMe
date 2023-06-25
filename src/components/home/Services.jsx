@@ -7,7 +7,6 @@ import ServiceCard from "./../Services/ServiceCard";
 
 const Services = () => {
   const [services, loading, pageCount, getPage] = ServicesHook();
-  if (services) console.log(services);
 
   return (
     <Container className="bg-light py-4">
