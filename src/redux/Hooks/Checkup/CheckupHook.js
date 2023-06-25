@@ -37,6 +37,9 @@ const CheckupHook = (selected) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (selected?.length == 0)
+      return notify("Please choose symptoms you suffer", "warn");
+
     setLoading(true);
     await dispatch(
       predictDisease({

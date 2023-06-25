@@ -120,14 +120,24 @@ const SignupPage = () => {
               </Col>
             </Row>
           </Form>
-          <div className="mt-3" style={{ textAlign: "center" }}>
-            <span>
-              Already have an account?{" "}
-              <Link style={{ textDecoration: "none" }} to="/login">
-                Log in
-              </Link>{" "}
-            </span>
-          </div>
+          <Row className="d-flex justify-content-between align-items-center w">
+            <div className="w-auto mt-1">
+              <span>
+                Are you a doctor?{" "}
+                <Link style={{ textDecoration: "none" }} to="/doctor/signup">
+                  Sign up
+                </Link>{" "}
+              </span>
+            </div>
+            <div className="w-auto mt-1">
+              <span>
+                Already have an account?{" "}
+                <Link style={{ textDecoration: "none" }} to="/login">
+                  Log in
+                </Link>{" "}
+              </span>
+            </div>
+          </Row>
         </Col>
       </Row>
     </Container>

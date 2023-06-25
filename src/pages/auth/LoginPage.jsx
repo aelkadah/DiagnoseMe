@@ -19,6 +19,7 @@ const LoginPage = () => {
   return (
     <Container className="form-section">
       <SecTitle title={"Login"} />
+
       <Row>
         <div className="col-lg-6 col-md-12 col-sm-12">
           <img src={loginpic} style={{ width: "100%" }} />
@@ -59,14 +60,24 @@ const LoginPage = () => {
               Login
             </Button>
           </Form>
-          <div className="mt-3" style={{ textAlign: "center" }}>
-            <span>
-              Don’t have an account ?{" "}
-              <Link style={{ textDecoration: "none" }} to="/signup">
-                Sign up ?
-              </Link>
-            </span>
-          </div>
+          <Row className="d-flex justify-content-between align-items-center w">
+            <div className="w-auto mt-1">
+              <span>
+                Are you a doctor ?{" "}
+                <Link style={{ textDecoration: "none" }} to="/doctor/login">
+                  Login ?
+                </Link>
+              </span>
+            </div>
+            <div className="w-auto mt-1">
+              <span>
+                Don’t have an account ?{" "}
+                <Link style={{ textDecoration: "none" }} to="/signup">
+                  Sign up ?
+                </Link>
+              </span>
+            </div>
+          </Row>
         </Col>
       </Row>
     </Container>

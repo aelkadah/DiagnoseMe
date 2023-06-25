@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { SecTitle } from "../../../components";
-import loginpic from "/src/images/login.svg";
+import loginpic from "/src/images/doctor-sign.svg";
 import DoctorRegisterHook from "../../../redux/Hooks/Auth/DoctorRegisterHook";
 
 const DoctorRegisterPage = () => {

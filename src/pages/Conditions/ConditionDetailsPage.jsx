@@ -25,7 +25,9 @@ const ConditionDetailsPage = () => {
       </Row>
       <Row className="mt-3">
         <h4 className="fw-bold">Symptoms:</h4>
-        <ul style={{ listStyle: "auto" }} className="ps-5">
+        <p>{condition?.symptoms}</p>
+
+        {/* <ul style={{ listStyle: "auto" }} className="ps-5">
           <Row>
             {condition?.symptoms?.split(", ").map((item, index) => (
               <Col xs={12} md={6} key={index}>
@@ -33,7 +35,7 @@ const ConditionDetailsPage = () => {
               </Col>
             ))}
           </Row>
-        </ul>
+        </ul> */}
       </Row>
       <Row className="mt-1">
         <h4 className="fw-bold">Prognosis:</h4>
@@ -46,7 +48,8 @@ const ConditionDetailsPage = () => {
       </Row>
       <Row className="mt-1">
         <h4 className="fw-bold">Risks:</h4>
-        <ul style={{ listStyle: "auto" }} className="ps-5">
+        <p>{condition?.risks}</p>
+        {/* <ul style={{ listStyle: "auto" }} className="ps-5">
           <Row>
             {condition?.risks.split(", ").map((item, index) => (
               <Col xs={12} md={6} key={index}>
@@ -54,7 +57,7 @@ const ConditionDetailsPage = () => {
               </Col>
             ))}
           </Row>
-        </ul>
+        </ul> */}
       </Row>
       <Row className="mt-1">
         <h4 className="fw-bold">Treatment:</h4>

@@ -86,16 +86,16 @@ const Checkup2Page = () => {
                       </h5>
                       <Row className="d-flex align-items-center">
                         <h6 className="text-black-50 px-0 w-auto mt-1 me-2 ms-0">
-                          Score: {item?.score}
+                          Score: {parseInt(item?.score)}%
                         </h6>
                         <ProgressBar
                           className="rounded-2 p-0 w-50 flex-grow-1 h-75"
                           now={item?.score}
-                          label={`${item?.score}%`}
+                          label={`${parseInt(item?.score)}%`}
                           animated
                         />
                       </Row>
-                      {item?.condition == "AlZheimer" ? (
+                      {item?.condition == "Alzheimer" ? (
                         <h6 className="text-black-50 px-0 w-100 me-2 ms-0">
                           <span className="flex-grow-1 me-2 ms-0">
                             Hint: Make MRI and check it for free
