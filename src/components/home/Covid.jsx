@@ -29,7 +29,7 @@ const Covid = () => {
           </h1>
           <br />
           <Row className="text-center text-md-start">
-            <Link to="/news/1">
+            <Link to="/news/3">
               Read more
               <FontAwesomeIcon icon={faArrowRight} />
             </Link>

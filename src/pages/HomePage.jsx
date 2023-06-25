@@ -56,15 +56,10 @@ const HomePage = () => {
             >
               The Best Reliable Health Service In Your Hands
             </h1>
-            <p className="py-2 w-100 w-md-75  text-center text-md-start">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
-              temporibus odit natus at eum cupiditate. Deleniti doloribus beatae
-              rem, ullam porro perspiciatis consequatur dicta neque itaque a
-              fugit dolorum ex. Lorem ipsum, dolor sit amet consectetur
-              adipisicing elit. Eos temporibus odit natus at eum cupiditate.
-              Deleniti doloribus beatae rem, ullam porro perspiciatis
-              consequatur dicta neque itaque a fugit dolorum ex.
-            </p>
+            <h5 className="fw-normal py-2 w-100 w-md-75  text-center text-md-start">
+              Check your symptoms and find out what could be causing them. It's
+              fast, free and anonymous.
+            </h5>
             <Row className="d-flex justify-content-center justify-content-md-start">
               <Button className="rounded-pill py-3 w-auto ">
                 Start Checkup
