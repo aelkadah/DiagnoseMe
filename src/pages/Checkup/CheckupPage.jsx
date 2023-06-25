@@ -7,7 +7,7 @@ import women from "../../images/women.svg";
 import { Link } from "react-router-dom";
 
 const CheckupPage = () => {
-  const [age, setage] = useState(0);
+  const [age, setage] = useState(22);
   const incage = () => {
     setage(age + 1);
   };
