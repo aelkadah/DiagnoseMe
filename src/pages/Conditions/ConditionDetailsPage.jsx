@@ -9,10 +9,6 @@ const ConditionDetailsPage = () => {
   const { id } = useParams();
   const [condition, loading] = ConditionDetailsHook(id);
 
-  if (condition) console.log(condition);
-
-  const data = "asf, asasdf, asdg, fsdvjnmlaskc, ksdlv, sDLVzdsf";
-
   return (
     <Container>
       <DashboardHeader
@@ -31,7 +27,7 @@ const ConditionDetailsPage = () => {
         <h4 className="fw-bold">Symptoms:</h4>
         <ul style={{ listStyle: "auto" }} className="ps-5">
           <Row>
-            {data.split(", ").map((item, index) => (
+            {condition?.symptoms?.split(", ").map((item, index) => (
               <Col xs={12} md={6} key={index}>
                 <li style={{ lineHeight: "1.4" }}>{item}</li>
               </Col>
@@ -41,33 +37,18 @@ const ConditionDetailsPage = () => {
       </Row>
       <Row className="mt-1">
         <h4 className="fw-bold">Prognosis:</h4>
-        <ul style={{ listStyle: "auto" }} className="ps-5">
-          <Row>
-            {data.split(", ").map((item, index) => (
-              <Col xs={12} md={6} key={index}>
-                <li style={{ lineHeight: "1.4" }}>{item}</li>
-              </Col>
-            ))}
-          </Row>
-        </ul>
+        <p>{condition?.prognosis}</p>
       </Row>
+
       <Row className="mt-1">
         <h4 className="fw-bold">Diagnosis:</h4>
-        <ul style={{ listStyle: "auto" }} className="ps-5">
-          <Row>
-            {data.split(", ").map((item, index) => (
-              <Col xs={12} md={6} key={index}>
-                <li style={{ lineHeight: "1.4" }}>{item}</li>
-              </Col>
-            ))}
-          </Row>
-        </ul>
+        <p>{condition?.diagnosis}</p>
       </Row>
       <Row className="mt-1">
         <h4 className="fw-bold">Risks:</h4>
         <ul style={{ listStyle: "auto" }} className="ps-5">
           <Row>
-            {data.split(", ").map((item, index) => (
+            {condition?.risks.split(", ").map((item, index) => (
               <Col xs={12} md={6} key={index}>
                 <li style={{ lineHeight: "1.4" }}>{item}</li>
               </Col>
@@ -77,15 +58,7 @@ const ConditionDetailsPage = () => {
       </Row>
       <Row className="mt-1">
         <h4 className="fw-bold">Treatment:</h4>
-        <ul style={{ listStyle: "auto" }} className="ps-5">
-          <Row>
-            {data.split(", ").map((item, index) => (
-              <Col xs={12} md={6} key={index}>
-                <li style={{ lineHeight: "1.4" }}>{item}</li>
-              </Col>
-            ))}
-          </Row>
-        </ul>
+        <p>{condition?.treatment}</p>
       </Row>
     </Container>
   );

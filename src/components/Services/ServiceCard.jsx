@@ -2,7 +2,10 @@ import React from "react";
 
 const ServiceCard = ({ service }) => {
   return (
-    <div className="bg-white rounded py-4 px-2 text-center d-flex flex-column align-items-center gap-2">
+    <div
+      className="bg-white rounded py-4 px-2 text-center d-flex flex-column align-items-center gap-2 mb-4"
+      style={{ minHeight: "350px" }}
+    >
       <div
         className="d-flex align-items-center justify-content-center mb-3"
         style={{ width: "100px", height: "100px" }}

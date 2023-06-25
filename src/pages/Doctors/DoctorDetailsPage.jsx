@@ -58,6 +58,7 @@ const DoctorDetailsPage = () => {
             <img
               alt=""
               src={`http://127.0.0.1:8000/storage/${doctor?.image}`}
+              style={{ maxHeight: "75vh", width: "auto" }}
             />
           </Col>
           <Col

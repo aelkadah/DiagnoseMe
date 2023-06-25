@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Spinner, Button } from "react-bootstrap";
 import { SecTitle } from "..";
-import { Link } from "react-router-dom";
 import ServicesHook from "../../redux/Hooks/Services/ServicesHook";
 import ServiceCard from "./../Services/ServiceCard";
 
@@ -17,7 +17,7 @@ const Services = () => {
             services?.data?.length >= 1 ? (
               services?.data.map((service, index) => {
                 return (
-                  <Col xs={6} md={3} key={index}>
+                  <Col xs={6} lg={3} key={index}>
                     <ServiceCard service={service} />
                   </Col>
                 );
@@ -32,11 +32,11 @@ const Services = () => {
           )}
         </Row>
       </Row>
-      <Row className="text-center mt-4 d-flex justify-content-center">
+      {/* <Row className="d-flex justify-content-center text-center">
         <Button className="w-auto" to="/services" as={Link}>
           All Services
         </Button>
-      </Row>
+      </Row> */}
     </Container>
   );
 };
